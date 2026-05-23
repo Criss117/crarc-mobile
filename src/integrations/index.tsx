@@ -1,4 +1,4 @@
-import { DBProvider } from "./db";
+import { DBProvider } from "./db/provider";
 import { FontsProvider } from "./fonts";
 import { HeroUIProvider } from "./hero-ui";
 import { QueryProvider } from "./query";

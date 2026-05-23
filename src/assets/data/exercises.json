@@ -1,0 +1,605 @@
+[
+  {
+    "id": "press-banca-plano",
+    "name": "Press de Banca Plano",
+    "searchName": "press banca plano pecho barra",
+    "instructions": "Acuéstate en el banco con los pies apoyados en el suelo. Agarra la barra con un agarre ligeramente más ancho que el ancho de hombros. Baja la barra de forma controlada hasta el pecho y empuja hacia arriba hasta extender los codos por completo.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "press-banca-inclinado",
+    "name": "Press de Banca Inclinado",
+    "searchName": "press banca inclinado pecho superior barra",
+    "instructions": "Ajusta el banco a 30-45 grados. Acuéstate y agarra la barra con agarre ancho. Baja la barra hacia la parte superior del pecho de forma controlada y empuja hacia arriba sin bloquear los codos al final.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "press-banca-declinado",
+    "name": "Press de Banca Declinado",
+    "searchName": "press banca declinado pecho inferior barra",
+    "instructions": "Ajusta el banco en declive y asegura los pies. Agarra la barra con agarre ancho, bájala hacia la parte inferior del pecho y empuja hacia arriba de forma explosiva manteniendo los hombros retractos.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "press-mancuernas-plano",
+    "name": "Press de Mancuernas Plano",
+    "searchName": "press mancuernas plano pecho",
+    "instructions": "Acuéstate en el banco con una mancuerna en cada mano. Baja las mancuernas de forma controlada hasta que los codos queden ligeramente por debajo del nivel del banco y empuja hacia arriba juntando las mancuernas al final del movimiento.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "press-mancuernas-inclinado",
+    "name": "Press de Mancuernas Inclinado",
+    "searchName": "press mancuernas inclinado pecho superior",
+    "instructions": "Ajusta el banco a 30-45 grados. Con una mancuerna en cada mano, baja de forma controlada hasta que los codos estén a 90 grados y empuja hacia arriba sin chocar las mancuernas.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "aperturas-mancuernas",
+    "name": "Aperturas con Mancuernas",
+    "searchName": "aperturas mancuernas pecho apertura fly",
+    "instructions": "Acuéstate en el banco con las mancuernas sobre el pecho, palmas enfrentadas. Baja los brazos en arco con una ligera flexión en los codos hasta sentir el estiramiento en el pecho y vuelve al punto inicial contrayendo el pectoral.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "aperturas-cable-cruzado",
+    "name": "Aperturas en Cable Cruzado",
+    "searchName": "aperturas cable cruzado pecho crossover",
+    "instructions": "Párate en el centro de la máquina de cables con los agarres en posición alta. Inclínate ligeramente hacia adelante y junta las manos al frente en un movimiento de arco, contrayendo el pecho. Regresa de forma controlada.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "cable"
+  },
+  {
+    "id": "fondos-paralelas",
+    "name": "Fondos en Paralelas",
+    "searchName": "fondos paralelas pecho triceps dips",
+    "instructions": "Sujétate de las paralelas con los brazos extendidos. Inclínate ligeramente hacia adelante para enfatizar el pecho. Baja doblando los codos hasta que los hombros estén a la altura de los codos y empuja hacia arriba.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "flexiones",
+    "name": "Flexiones",
+    "searchName": "flexiones pecho push up lagartijas",
+    "instructions": "Colócate en posición de plancha con las manos ligeramente más anchas que los hombros. Baja el pecho hasta casi tocar el suelo manteniendo el cuerpo recto y empuja hacia arriba hasta extender los codos.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "press-smith-plano",
+    "name": "Press en Smith Plano",
+    "searchName": "press smith maquina plano pecho",
+    "instructions": "Acuéstate en el banco dentro de la máquina Smith. Ajusta la barra a la altura correcta, desbloquéala y bájala al pecho de forma controlada. Empuja hacia arriba hasta extender los brazos y bloquea al terminar.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "smith_machine"
+  },
+  {
+    "id": "press-militar-barra",
+    "name": "Press Militar con Barra",
+    "searchName": "press militar barra hombros overhead press",
+    "instructions": "De pie o sentado, sostén la barra a la altura de los hombros con agarre ligeramente más ancho que el hombro. Empuja la barra hacia arriba hasta extender los codos completamente y bájala de forma controlada hasta la posición inicial.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "press-mancuernas-hombros",
+    "name": "Press de Mancuernas para Hombros",
+    "searchName": "press mancuernas hombros shoulder press",
+    "instructions": "Sentado con respaldo, sostén las mancuernas a la altura de los hombros con los codos a 90 grados. Empuja hacia arriba hasta casi extender los codos y baja de forma controlada sin llegar a la posición de descanso completo.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "elevaciones-laterales",
+    "name": "Elevaciones Laterales",
+    "searchName": "elevaciones laterales hombros deltoides medio",
+    "instructions": "De pie, sostén las mancuernas a los lados del cuerpo. Levanta los brazos de forma lateral hasta la altura de los hombros con los codos ligeramente flexionados. Baja de forma controlada evitando el impulso.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "elevaciones-frontales",
+    "name": "Elevaciones Frontales",
+    "searchName": "elevaciones frontales hombros deltoides anterior",
+    "instructions": "De pie, sostén las mancuernas frente a los muslos. Levanta un brazo hacia adelante hasta la altura del hombro con el codo ligeramente flexionado y baja de forma controlada. Alterna entre brazos.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "remo-al-menton",
+    "name": "Remo al Mentón",
+    "searchName": "remo menton trapecio hombros barra",
+    "instructions": "De pie, agarra la barra con agarre estrecho. Levanta la barra hacia el mentón guiando con los codos hacia arriba y afuera. Los codos deben superar la altura de la muñeca. Baja de forma controlada.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "pajaros-mancuernas",
+    "name": "Pájaros con Mancuernas",
+    "searchName": "pajaros mancuernas deltoides posterior reverse fly",
+    "instructions": "Inclínate hacia adelante hasta que el torso esté casi paralelo al suelo. Con las mancuernas colgando, levanta los brazos hacia los lados en arco hasta la altura del hombro contrayendo el deltoides posterior.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "curl-biceps-barra",
+    "name": "Curl de Bíceps con Barra",
+    "searchName": "curl biceps barra rosca directa",
+    "instructions": "De pie, agarra la barra con agarre supino al ancho de los hombros. Mantén los codos pegados al cuerpo y flexiona los brazos llevando la barra hacia los hombros. Baja de forma controlada sin balancear el torso.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "curl-biceps-mancuernas-alterno",
+    "name": "Curl de Bíceps Alterno con Mancuernas",
+    "searchName": "curl biceps mancuernas alterno rosca",
+    "instructions": "De pie con una mancuerna en cada mano, alterna flexionando un brazo llevando la mancuerna al hombro con supinación de la muñeca. Mantén el codo fijo y baja de forma controlada antes de cambiar de brazo.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "curl-martillo",
+    "name": "Curl Martillo",
+    "searchName": "curl martillo biceps braquial hammer curl",
+    "instructions": "De pie con las mancuernas en agarre neutro (palmas enfrentadas). Flexiona los brazos llevando las mancuernas hacia los hombros sin rotar la muñeca. Baja de forma controlada manteniendo el agarre neutro.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "curl-concentrado",
+    "name": "Curl Concentrado",
+    "searchName": "curl concentrado biceps mancuerna sentado",
+    "instructions": "Sentado, apoya el codo en la parte interna del muslo. Con la mancuerna en agarre supino, flexiona el brazo llevando la mancuerna hacia el hombro. Contrae el bíceps al máximo en la parte superior y baja controlado.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "curl-predicador",
+    "name": "Curl en Predicador",
+    "searchName": "curl predicador biceps scott bench",
+    "instructions": "Apoya los brazos en el banco predicador con la barra en agarre supino. Flexiona los codos llevando la barra hacia arriba sin despegar los brazos del apoyo. Baja de forma lenta y controlada hasta la extensión completa.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "extension-triceps-polea",
+    "name": "Extensión de Tríceps en Polea",
+    "searchName": "extension triceps polea cable pushdown",
+    "instructions": "De pie frente a la polea alta, agarra la cuerda o barra con agarre prono. Mantén los codos fijos pegados al cuerpo y extiende los brazos hacia abajo hasta la extensión completa. Sube de forma controlada.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "cable"
+  },
+  {
+    "id": "press-frances",
+    "name": "Press Francés",
+    "searchName": "press frances triceps skull crusher tumbado",
+    "instructions": "Acuéstate en el banco con la barra EZ o barra recta extendida sobre el pecho. Flexiona los codos llevando la barra hacia la frente o detrás de la cabeza. Extiende los codos para volver a la posición inicial.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "fondos-banco-triceps",
+    "name": "Fondos en Banco para Tríceps",
+    "searchName": "fondos banco triceps dips silla",
+    "instructions": "Apoya las manos en el borde de un banco con los dedos mirando hacia adelante. Estira las piernas hacia adelante y baja doblando los codos hasta los 90 grados. Empuja hacia arriba extendiendo los codos sin bloquearlos.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "extension-triceps-sobre-cabeza",
+    "name": "Extensión de Tríceps Sobre la Cabeza",
+    "searchName": "extension triceps sobre cabeza overhead mancuerna",
+    "instructions": "Sentado o de pie, sostén una mancuerna con ambas manos sobre la cabeza con los codos apuntando al techo. Baja la mancuerna detrás de la cabeza flexionando los codos y extiende hacia arriba contrayendo el tríceps.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "dominadas-agarre-prono",
+    "name": "Dominadas Agarre Prono",
+    "searchName": "dominadas agarre prono pull up espalda",
+    "instructions": "Cuelga de la barra con agarre prono (palmas hacia adelante) al ancho de hombros o más. Tira de tu cuerpo hacia arriba hasta que la barbilla supere la barra. Baja de forma controlada hasta la extensión completa.",
+    "difficulty": "advanced",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "dominadas-agarre-supino",
+    "name": "Dominadas Agarre Supino (Chin-up)",
+    "searchName": "dominadas agarre supino chin up biceps espalda",
+    "instructions": "Cuelga de la barra con agarre supino (palmas hacia ti) al ancho de los hombros. Tira del cuerpo hacia arriba hasta que la barbilla supere la barra activando el bíceps y el dorsal. Baja de forma controlada.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "jalones-al-pecho",
+    "name": "Jalones al Pecho",
+    "searchName": "jalones pecho polea alta lat pulldown dorsal",
+    "instructions": "Sentado en la máquina de polea alta, agarra la barra con agarre ancho. Tira de la barra hacia el pecho llevando los codos hacia abajo y atrás, contrayendo el dorsal. Sube de forma controlada hasta la extensión completa.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "cable"
+  },
+  {
+    "id": "remo-barra-inclinado",
+    "name": "Remo con Barra Inclinado",
+    "searchName": "remo barra inclinado espalda bent over row",
+    "instructions": "Inclínate hacia adelante con la espalda recta hasta que el torso esté casi paralelo al suelo. Agarra la barra con agarre prono y tira hacia el abdomen llevando los codos hacia atrás. Baja de forma controlada.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "remo-mancuerna-un-brazo",
+    "name": "Remo con Mancuerna a Un Brazo",
+    "searchName": "remo mancuerna un brazo espalda one arm row",
+    "instructions": "Apoya una rodilla y mano en el banco. Con la mancuerna en la mano libre, tira hacia arriba llevando el codo hacia el techo y contrayendo el dorsal. Baja de forma controlada manteniendo la espalda paralela al suelo.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "remo-cable-sentado",
+    "name": "Remo en Cable Sentado",
+    "searchName": "remo cable sentado espalda polea baja seated row",
+    "instructions": "Sentado en la máquina de polea baja, agarra el accesorio con los brazos extendidos y espalda recta. Tira hacia el abdomen llevando los codos hacia atrás y contrayendo la espalda. Extiende de forma controlada.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "cable"
+  },
+  {
+    "id": "peso-muerto-convencional",
+    "name": "Peso Muerto Convencional",
+    "searchName": "peso muerto convencional deadlift espalda piernas",
+    "instructions": "Con los pies al ancho de caderas y la barra sobre los empeines, agáchate y agarra la barra. Mantén la espalda recta, el pecho arriba y empuja el suelo hacia abajo para levantarte. Baja la barra de forma controlada.",
+    "difficulty": "advanced",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "peso-muerto-rumano",
+    "name": "Peso Muerto Rumano",
+    "searchName": "peso muerto rumano isquiotibiales glúteos RDL",
+    "instructions": "De pie con la barra en la cadera, mantén las piernas ligeramente flexionadas. Inclínate hacia adelante empujando las caderas hacia atrás y bajando la barra por las piernas hasta sentir el estiramiento en los isquiotibiales. Vuelve a la posición inicial.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "sentadilla-trasera",
+    "name": "Sentadilla Trasera",
+    "searchName": "sentadilla trasera back squat cuadriceps piernas",
+    "instructions": "Con la barra sobre los trapecios, coloca los pies al ancho de hombros con las puntas ligeramente hacia afuera. Baja flexionando caderas y rodillas hasta que los muslos estén paralelos al suelo. Empuja hacia arriba manteniendo el torso erguido.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "sentadilla-frontal",
+    "name": "Sentadilla Frontal",
+    "searchName": "sentadilla frontal front squat cuadriceps barra",
+    "instructions": "Coloca la barra sobre los deltoides anteriores con los codos altos. Baja manteniendo el torso muy erguido hasta que los muslos estén paralelos al suelo. Empuja hacia arriba sin dejar caer los codos.",
+    "difficulty": "advanced",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "sentadilla-goblet",
+    "name": "Sentadilla Goblet",
+    "searchName": "sentadilla goblet mancuerna pesa rusa principiantes",
+    "instructions": "Sostén una mancuerna o kettlebell frente al pecho con ambas manos. Coloca los pies al ancho de hombros, baja hasta que los muslos estén paralelos al suelo manteniendo el torso erguido. Empuja hacia arriba.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "kettlebell"
+  },
+  {
+    "id": "sentadilla-hack",
+    "name": "Sentadilla Hack",
+    "searchName": "sentadilla hack maquina cuadriceps hack squat",
+    "instructions": "Colócate en la máquina de hack squat con los hombros bajo los soportes y los pies al ancho de caderas. Baja flexionando las rodillas hasta los 90 grados y empuja hacia arriba sin bloquear las rodillas.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "machine"
+  },
+  {
+    "id": "prensa-de-piernas",
+    "name": "Prensa de Piernas",
+    "searchName": "prensa piernas leg press cuadriceps maquina",
+    "instructions": "Siéntate en la máquina con los pies al ancho de hombros sobre la plataforma. Libera los seguros y baja la plataforma flexionando las rodillas hasta los 90 grados. Empuja hacia arriba sin bloquear completamente las rodillas.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "machine"
+  },
+  {
+    "id": "extension-cuadriceps-maquina",
+    "name": "Extensión de Cuádriceps en Máquina",
+    "searchName": "extension cuadriceps maquina leg extension",
+    "instructions": "Sentado en la máquina con las piernas bajo el rodillo, extiende las rodillas hasta la posición horizontal contrayendo el cuádriceps. Baja de forma controlada hasta los 90 grados sin llegar a soltar el peso.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "machine"
+  },
+  {
+    "id": "curl-femoral-maquina",
+    "name": "Curl Femoral en Máquina",
+    "searchName": "curl femoral maquina isquiotibiales leg curl",
+    "instructions": "Acuéstate boca abajo en la máquina con el rodillo sobre los talones. Flexiona las rodillas llevando los talones hacia los glúteos. Mantén la cadera pegada al banco y baja de forma controlada.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "machine"
+  },
+  {
+    "id": "zancada-mancuernas",
+    "name": "Zancada con Mancuernas",
+    "searchName": "zancada mancuernas lunge cuadriceps gluteos",
+    "instructions": "De pie con una mancuerna en cada mano, da un paso adelante y baja la rodilla trasera casi hasta el suelo. Mantén el torso erguido y la rodilla delantera sobre el tobillo. Empuja hacia atrás para volver a la posición inicial.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "zancada-bulgara",
+    "name": "Zancada Búlgara",
+    "searchName": "zancada bulgara split squat cuadriceps gluteos",
+    "instructions": "Apoya el pie trasero en un banco. Con el pie delantero alejado, baja el cuerpo flexionando la rodilla delantera hasta los 90 grados. Empuja hacia arriba con el talón del pie delantero. Agrega mancuernas para mayor resistencia.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "hip-thrust",
+    "name": "Hip Thrust",
+    "searchName": "hip thrust gluteos barra banco",
+    "instructions": "Apoya la parte alta de la espalda en un banco con la barra sobre las caderas. Baja las caderas hacia el suelo y empuja hacia arriba contrayendo los glúteos al máximo. Mantén la barbilla metida y los pies al ancho de caderas.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "patada-trasera-cable",
+    "name": "Patada Trasera en Cable",
+    "searchName": "patada trasera cable gluteos donkey kick",
+    "instructions": "Coloca el accesorio de tobillo en la polea baja. Apoya las manos en la máquina, inclínate ligeramente y lleva la pierna hacia atrás y arriba contrayendo el glúteo. Vuelve de forma controlada sin dejar caer la pierna.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "cable"
+  },
+  {
+    "id": "abduccion-cadera-maquina",
+    "name": "Abducción de Cadera en Máquina",
+    "searchName": "abduccion cadera maquina gluteo medio hip abduction",
+    "instructions": "Sentado en la máquina de abducción, coloca las rodillas contra los soportes exteriores. Abre las piernas hacia afuera contra la resistencia contrayendo el glúteo medio. Regresa de forma controlada sin dejar caer el peso.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "machine"
+  },
+  {
+    "id": "pantorrillas-de-pie",
+    "name": "Elevación de Pantorrillas de Pie",
+    "searchName": "pantorrillas de pie calf raise gemelos",
+    "instructions": "De pie en el borde de un escalón o plataforma con los talones fuera. Baja los talones hasta sentir el estiramiento en los gemelos y sube de puntillas contrayendo al máximo. Sostén un segundo arriba y baja de forma controlada.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "machine"
+  },
+  {
+    "id": "pantorrillas-sentado",
+    "name": "Elevación de Pantorrillas Sentado",
+    "searchName": "pantorrillas sentado seated calf raise soleo",
+    "instructions": "Sentado en la máquina con las rodillas bajo el soporte, coloca la parte delantera del pie en la plataforma. Baja los talones hasta el estiramiento y sube de puntillas contrayendo el sóleo. El movimiento debe ser lento y controlado.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "machine"
+  },
+  {
+    "id": "peso-muerto-sumo",
+    "name": "Peso Muerto Sumo",
+    "searchName": "peso muerto sumo piernas aductores glúteos sumo deadlift",
+    "instructions": "Coloca los pies más anchos que el ancho de hombros con las puntas hacia afuera. Agarra la barra con agarre neutro entre las piernas. Mantén la espalda recta y empuja el suelo para levantarte. Baja de forma controlada.",
+    "difficulty": "advanced",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "good-morning",
+    "name": "Good Morning",
+    "searchName": "good morning isquiotibiales espalda baja barra",
+    "instructions": "Con la barra sobre los trapecios, coloca los pies al ancho de caderas. Inclínate hacia adelante desde las caderas manteniendo la espalda recta hasta que el torso esté casi paralelo al suelo. Vuelve a la posición inicial contrayendo glúteos e isquiotibiales.",
+    "difficulty": "advanced",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "crunch-abdominal",
+    "name": "Crunch Abdominal",
+    "searchName": "crunch abdominal abdomen core",
+    "instructions": "Acuéstate boca arriba con las rodillas flexionadas y manos detrás de la cabeza. Eleva los hombros del suelo contrayendo el recto abdominal sin tirar del cuello. Baja de forma controlada sin apoyar completamente la espalda.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "crunch-en-polea",
+    "name": "Crunch en Polea",
+    "searchName": "crunch polea cable abdomen core",
+    "instructions": "Arrodíllado frente a la polea alta, agarra la cuerda detrás de la cabeza. Contrae el abdomen llevando los codos hacia las rodillas sin usar los brazos como palanca. Sube de forma controlada manteniendo la tensión.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "cable"
+  },
+  {
+    "id": "plancha",
+    "name": "Plancha",
+    "searchName": "plancha plank core abdomen isometrico",
+    "instructions": "Apoya los antebrazos y la punta de los pies en el suelo. Mantén el cuerpo en línea recta desde la cabeza hasta los talones. Activa el core, los glúteos y los cuádriceps. Evita que la cadera suba o baje.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "rueda-abdominal",
+    "name": "Rueda Abdominal",
+    "searchName": "rueda abdominal ab wheel rollout core",
+    "instructions": "Arrodíllado con la rueda frente a ti, empuja la rueda hacia adelante extendiendo el cuerpo hasta casi tocar el suelo. Mantén el core activo y vuelve jalando la rueda hacia las rodillas sin doblar la espalda.",
+    "difficulty": "advanced",
+    "imageUrl": null,
+    "equipment": "other"
+  },
+  {
+    "id": "elevacion-piernas-colgado",
+    "name": "Elevación de Piernas Colgado",
+    "searchName": "elevacion piernas colgado hanging leg raise abdomen",
+    "instructions": "Cuélgate de la barra con agarre prono. Eleva las piernas juntas hasta la posición horizontal o más arriba manteniendo el core tenso. Baja de forma controlada sin balancearte.",
+    "difficulty": "advanced",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "encogimientos-trapecio",
+    "name": "Encogimientos de Hombros",
+    "searchName": "encogimientos hombros trapecio shrugs barra mancuernas",
+    "instructions": "De pie con la barra o mancuernas en agarre prono frente al cuerpo. Eleva los hombros hacia las orejas contrayendo el trapecio. Mantén un segundo arriba y baja de forma controlada sin rotar los hombros.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "face-pull",
+    "name": "Face Pull",
+    "searchName": "face pull cable deltoides posterior trapecio rotadores",
+    "instructions": "Ajusta la polea a la altura de la cara. Agarra la cuerda con ambas manos en agarre neutro. Tira hacia la cara separando las manos y llevando los codos hacia atrás y afuera. Regresa de forma controlada.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "cable"
+  },
+  {
+    "id": "pull-over-mancuerna",
+    "name": "Pull Over con Mancuerna",
+    "searchName": "pull over mancuerna dorsal pecho pullover",
+    "instructions": "Acuéstate transversalmente en el banco apoyando solo los omóplatos. Sostén la mancuerna sobre el pecho. Baja la mancuerna en arco detrás de la cabeza con los codos ligeramente flexionados y sube activando el dorsal.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "swing-kettlebell",
+    "name": "Swing con Kettlebell",
+    "searchName": "swing kettlebell pesa rusa glúteos potencia",
+    "instructions": "De pie con los pies al ancho de hombros, sostén la kettlebell con ambas manos. Empuja las caderas hacia atrás para balancear la kettlebell entre las piernas y luego impulsa las caderas hacia adelante proyectando la kettlebell hasta la altura de los hombros.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "kettlebell"
+  },
+  {
+    "id": "turkish-get-up",
+    "name": "Turkish Get Up",
+    "searchName": "turkish get up kettlebell cuerpo completo estabilidad",
+    "instructions": "Acuéstate con la kettlebell extendida hacia arriba en una mano. Siguiendo la secuencia: rodar al codo, apoyar la mano, levantar la cadera, pasar la rodilla al suelo, arrodillarse, levantarse. Repite en reversa para bajar.",
+    "difficulty": "advanced",
+    "imageUrl": null,
+    "equipment": "kettlebell"
+  },
+  {
+    "id": "press-arnold",
+    "name": "Press Arnold",
+    "searchName": "press arnold hombros rotacion mancuernas",
+    "instructions": "Sentado con las mancuernas frente al pecho con las palmas hacia ti. Al empujar hacia arriba, rota las palmas hacia afuera hasta quedar en la posición de press convencional. Invierte el movimiento al bajar.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "dumbbell"
+  },
+  {
+    "id": "remo-t",
+    "name": "Remo en T",
+    "searchName": "remo en T t-bar row espalda dorsal",
+    "instructions": "Con un extremo de la barra fijo en el suelo y el otro con peso, agarra el accesorio de V. Inclínate hacia adelante con la espalda recta y tira la barra hacia el pecho llevando los codos hacia atrás. Baja de forma controlada.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "extensiones-espalda",
+    "name": "Extensiones de Espalda",
+    "searchName": "extensiones espalda hyperextension lumbar glúteos",
+    "instructions": "Colócate en el banco de hiperextensiones con las caderas sobre el soporte y los pies asegurados. Baja el torso hacia el suelo y sube hasta que el cuerpo forme una línea recta contrayendo la espalda baja y glúteos.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "sentadilla-bulgara-barra",
+    "name": "Sentadilla con Barra en Casa",
+    "searchName": "sentadilla barra goblet casa sin maquina",
+    "instructions": "De pie con los pies al ancho de hombros y una barra frente al pecho o sobre los trapecios. Baja flexionando caderas y rodillas manteniendo el torso erguido hasta que los muslos estén paralelos al suelo. Empuja hacia arriba.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "barbell"
+  },
+  {
+    "id": "remo-banda-elastica",
+    "name": "Remo con Banda Elástica",
+    "searchName": "remo banda elastica espalda resistencia band row",
+    "instructions": "Ancla la banda a un punto fijo a la altura del pecho. De pie o sentado, agarra los extremos de la banda y tira hacia el abdomen llevando los codos hacia atrás y contrayendo la espalda. Regresa de forma controlada.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "band"
+  },
+  {
+    "id": "sentadilla-banda-elastica",
+    "name": "Sentadilla con Banda Elástica",
+    "searchName": "sentadilla banda elastica cuadriceps resistencia",
+    "instructions": "Pisa la banda con ambos pies al ancho de hombros y sostén los extremos a la altura de los hombros. Realiza una sentadilla manteniendo el torso erguido bajando hasta que los muslos estén paralelos al suelo. Sube de forma controlada.",
+    "difficulty": "beginner",
+    "imageUrl": null,
+    "equipment": "band"
+  },
+  {
+    "id": "burpee",
+    "name": "Burpee",
+    "searchName": "burpee cuerpo completo cardio funcional",
+    "instructions": "De pie, agáchate y apoya las manos en el suelo. Lanza los pies hacia atrás a posición de plancha, baja el pecho al suelo, empuja hacia arriba, lleva los pies hacia las manos y salta hacia arriba con los brazos sobre la cabeza.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  },
+  {
+    "id": "sentadilla-salto",
+    "name": "Sentadilla con Salto",
+    "searchName": "sentadilla salto jump squat pliometrico piernas",
+    "instructions": "Realiza una sentadilla normal y en la fase de subida explota hacia arriba saltando. Aterriza suavemente con las rodillas ligeramente flexionadas y de inmediato baja a la siguiente repetición.",
+    "difficulty": "intermediate",
+    "imageUrl": null,
+    "equipment": "bodyweight"
+  }
+]

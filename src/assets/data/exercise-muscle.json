@@ -1,0 +1,1847 @@
+[
+  {
+    "exerciseId": "press-banca-plano",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-banca-plano",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-banca-plano",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-banca-plano",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-banca-plano",
+    "muscleId": "pectoral-menor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-banca-inclinado",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-banca-inclinado",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-banca-inclinado",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-banca-inclinado",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-banca-declinado",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-banca-declinado",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-banca-declinado",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-banca-declinado",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-mancuernas-plano",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-mancuernas-plano",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-mancuernas-plano",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-mancuernas-plano",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-mancuernas-inclinado",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-mancuernas-inclinado",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-mancuernas-inclinado",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-mancuernas-inclinado",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "aperturas-mancuernas",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "aperturas-mancuernas",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "aperturas-mancuernas",
+    "muscleId": "biceps-braquial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "aperturas-mancuernas",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "aperturas-cable-cruzado",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "aperturas-cable-cruzado",
+    "muscleId": "pectoral-menor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "aperturas-cable-cruzado",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "aperturas-cable-cruzado",
+    "muscleId": "biceps-braquial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "fondos-paralelas",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "fondos-paralelas",
+    "muscleId": "triceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "fondos-paralelas",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "fondos-paralelas",
+    "muscleId": "pectoral-menor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "fondos-paralelas",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "flexiones",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "flexiones",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "flexiones",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "flexiones",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "flexiones",
+    "muscleId": "recto-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "flexiones",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-smith-plano",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-smith-plano",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-smith-plano",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-smith-plano",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-militar-barra",
+    "muscleId": "deltoides-anterior",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-militar-barra",
+    "muscleId": "deltoides-medio",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-militar-barra",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-militar-barra",
+    "muscleId": "trapecio-superior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-militar-barra",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-militar-barra",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-mancuernas-hombros",
+    "muscleId": "deltoides-anterior",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-mancuernas-hombros",
+    "muscleId": "deltoides-medio",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-mancuernas-hombros",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-mancuernas-hombros",
+    "muscleId": "trapecio-superior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-mancuernas-hombros",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "elevaciones-laterales",
+    "muscleId": "deltoides-medio",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "elevaciones-laterales",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "elevaciones-laterales",
+    "muscleId": "supraespinoso",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "elevaciones-laterales",
+    "muscleId": "trapecio-superior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "elevaciones-laterales",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "elevaciones-frontales",
+    "muscleId": "deltoides-anterior",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "elevaciones-frontales",
+    "muscleId": "deltoides-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "elevaciones-frontales",
+    "muscleId": "pectoral-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "elevaciones-frontales",
+    "muscleId": "trapecio-superior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "remo-al-menton",
+    "muscleId": "deltoides-medio",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "remo-al-menton",
+    "muscleId": "trapecio-superior",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "remo-al-menton",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-al-menton",
+    "muscleId": "supraespinoso",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-al-menton",
+    "muscleId": "biceps-braquial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "remo-al-menton",
+    "muscleId": "braquial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "pajaros-mancuernas",
+    "muscleId": "deltoides-posterior",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "pajaros-mancuernas",
+    "muscleId": "infraespinoso",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "pajaros-mancuernas",
+    "muscleId": "redondo-menor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "pajaros-mancuernas",
+    "muscleId": "trapecio-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "pajaros-mancuernas",
+    "muscleId": "romboides-mayor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-arnold",
+    "muscleId": "deltoides-anterior",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-arnold",
+    "muscleId": "deltoides-medio",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-arnold",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-arnold",
+    "muscleId": "pectoral-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "press-arnold",
+    "muscleId": "trapecio-superior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "face-pull",
+    "muscleId": "deltoides-posterior",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "face-pull",
+    "muscleId": "infraespinoso",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "face-pull",
+    "muscleId": "redondo-menor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "face-pull",
+    "muscleId": "trapecio-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "face-pull",
+    "muscleId": "trapecio-inferior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "face-pull",
+    "muscleId": "romboides-mayor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "curl-biceps-barra",
+    "muscleId": "biceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "curl-biceps-barra",
+    "muscleId": "braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-biceps-barra",
+    "muscleId": "braquiorradial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-biceps-barra",
+    "muscleId": "flexor-carpi-radialis",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "curl-biceps-mancuernas-alterno",
+    "muscleId": "biceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "curl-biceps-mancuernas-alterno",
+    "muscleId": "braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-biceps-mancuernas-alterno",
+    "muscleId": "braquiorradial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-biceps-mancuernas-alterno",
+    "muscleId": "supinador",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "curl-martillo",
+    "muscleId": "braquiorradial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "curl-martillo",
+    "muscleId": "braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "curl-martillo",
+    "muscleId": "biceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-martillo",
+    "muscleId": "flexor-carpi-radialis",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "curl-concentrado",
+    "muscleId": "biceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "curl-concentrado",
+    "muscleId": "braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-concentrado",
+    "muscleId": "braquiorradial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "curl-predicador",
+    "muscleId": "biceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "curl-predicador",
+    "muscleId": "braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-predicador",
+    "muscleId": "braquiorradial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-predicador",
+    "muscleId": "flexor-carpi-radialis",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "extension-triceps-polea",
+    "muscleId": "triceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "extension-triceps-polea",
+    "muscleId": "extensor-carpi-radialis",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-frances",
+    "muscleId": "triceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "press-frances",
+    "muscleId": "deltoides-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "press-frances",
+    "muscleId": "pectoral-mayor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "fondos-banco-triceps",
+    "muscleId": "triceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "fondos-banco-triceps",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "fondos-banco-triceps",
+    "muscleId": "pectoral-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "extension-triceps-sobre-cabeza",
+    "muscleId": "triceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "extension-triceps-sobre-cabeza",
+    "muscleId": "deltoides-posterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "extension-triceps-sobre-cabeza",
+    "muscleId": "recto-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "dominadas-agarre-prono",
+    "muscleId": "dorsal-ancho",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-prono",
+    "muscleId": "biceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-prono",
+    "muscleId": "braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-prono",
+    "muscleId": "romboides-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-prono",
+    "muscleId": "trapecio-inferior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-prono",
+    "muscleId": "redondo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-prono",
+    "muscleId": "infraespinoso",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "dominadas-agarre-prono",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "dominadas-agarre-supino",
+    "muscleId": "biceps-braquial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-supino",
+    "muscleId": "dorsal-ancho",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-supino",
+    "muscleId": "braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-supino",
+    "muscleId": "redondo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "dominadas-agarre-supino",
+    "muscleId": "romboides-mayor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "dominadas-agarre-supino",
+    "muscleId": "trapecio-inferior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "jalones-al-pecho",
+    "muscleId": "dorsal-ancho",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "jalones-al-pecho",
+    "muscleId": "biceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "jalones-al-pecho",
+    "muscleId": "braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "jalones-al-pecho",
+    "muscleId": "redondo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "jalones-al-pecho",
+    "muscleId": "romboides-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "jalones-al-pecho",
+    "muscleId": "trapecio-inferior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "jalones-al-pecho",
+    "muscleId": "pectoral-menor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "remo-barra-inclinado",
+    "muscleId": "dorsal-ancho",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "remo-barra-inclinado",
+    "muscleId": "romboides-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "remo-barra-inclinado",
+    "muscleId": "trapecio-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-barra-inclinado",
+    "muscleId": "biceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-barra-inclinado",
+    "muscleId": "deltoides-posterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-barra-inclinado",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "remo-barra-inclinado",
+    "muscleId": "cuadrado-lumbar",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "remo-mancuerna-un-brazo",
+    "muscleId": "dorsal-ancho",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "remo-mancuerna-un-brazo",
+    "muscleId": "romboides-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-mancuerna-un-brazo",
+    "muscleId": "trapecio-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-mancuerna-un-brazo",
+    "muscleId": "biceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-mancuerna-un-brazo",
+    "muscleId": "deltoides-posterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-mancuerna-un-brazo",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "remo-cable-sentado",
+    "muscleId": "dorsal-ancho",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "remo-cable-sentado",
+    "muscleId": "romboides-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-cable-sentado",
+    "muscleId": "trapecio-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-cable-sentado",
+    "muscleId": "biceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-cable-sentado",
+    "muscleId": "deltoides-posterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-cable-sentado",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "remo-t",
+    "muscleId": "dorsal-ancho",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "remo-t",
+    "muscleId": "romboides-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "remo-t",
+    "muscleId": "trapecio-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-t",
+    "muscleId": "biceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-t",
+    "muscleId": "deltoides-posterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-t",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "remo-t",
+    "muscleId": "cuadrado-lumbar",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "pull-over-mancuerna",
+    "muscleId": "dorsal-ancho",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "pull-over-mancuerna",
+    "muscleId": "pectoral-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "pull-over-mancuerna",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "pull-over-mancuerna",
+    "muscleId": "serrato-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "pull-over-mancuerna",
+    "muscleId": "redondo-mayor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "remo-banda-elastica",
+    "muscleId": "dorsal-ancho",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "remo-banda-elastica",
+    "muscleId": "romboides-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-banda-elastica",
+    "muscleId": "trapecio-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-banda-elastica",
+    "muscleId": "biceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "remo-banda-elastica",
+    "muscleId": "deltoides-posterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "encogimientos-trapecio",
+    "muscleId": "trapecio-superior",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "encogimientos-trapecio",
+    "muscleId": "trapecio-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "encogimientos-trapecio",
+    "muscleId": "romboides-menor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "encogimientos-trapecio",
+    "muscleId": "esternocleidomastoideo",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "extensiones-espalda",
+    "muscleId": "erector-espinal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "extensiones-espalda",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "extensiones-espalda",
+    "muscleId": "biceps-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "extensiones-espalda",
+    "muscleId": "multifido",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "extensiones-espalda",
+    "muscleId": "cuadrado-lumbar",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "erector-espinal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "gluteo-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "biceps-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "dorsal-ancho",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "trapecio-superior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "cuadrado-lumbar",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "multifido",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "peso-muerto-convencional",
+    "muscleId": "braquiorradial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "peso-muerto-rumano",
+    "muscleId": "biceps-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "peso-muerto-rumano",
+    "muscleId": "semitendinoso",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "peso-muerto-rumano",
+    "muscleId": "semimembranoso",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "peso-muerto-rumano",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "peso-muerto-rumano",
+    "muscleId": "erector-espinal",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "peso-muerto-rumano",
+    "muscleId": "cuadrado-lumbar",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "peso-muerto-rumano",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "peso-muerto-sumo",
+    "muscleId": "gluteo-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "peso-muerto-sumo",
+    "muscleId": "aductor-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "peso-muerto-sumo",
+    "muscleId": "biceps-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "peso-muerto-sumo",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "peso-muerto-sumo",
+    "muscleId": "erector-espinal",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "peso-muerto-sumo",
+    "muscleId": "cuadrado-lumbar",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "peso-muerto-sumo",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "good-morning",
+    "muscleId": "biceps-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "good-morning",
+    "muscleId": "semitendinoso",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "good-morning",
+    "muscleId": "erector-espinal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "good-morning",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "good-morning",
+    "muscleId": "cuadrado-lumbar",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "good-morning",
+    "muscleId": "multifido",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-trasera",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-trasera",
+    "muscleId": "cuadriceps-vasto-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-trasera",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-trasera",
+    "muscleId": "cuadriceps-vasto-intermedio",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-trasera",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-trasera",
+    "muscleId": "biceps-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-trasera",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-trasera",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-trasera",
+    "muscleId": "soleo",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-frontal",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-frontal",
+    "muscleId": "cuadriceps-vasto-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-frontal",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-frontal",
+    "muscleId": "cuadriceps-vasto-intermedio",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-frontal",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-frontal",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-frontal",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-goblet",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-goblet",
+    "muscleId": "cuadriceps-vasto-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-goblet",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-goblet",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-goblet",
+    "muscleId": "aductor-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-goblet",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-hack",
+    "muscleId": "cuadriceps-vasto-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-hack",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-hack",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-hack",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-hack",
+    "muscleId": "soleo",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "prensa-de-piernas",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "prensa-de-piernas",
+    "muscleId": "cuadriceps-vasto-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "prensa-de-piernas",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "prensa-de-piernas",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "prensa-de-piernas",
+    "muscleId": "biceps-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "prensa-de-piernas",
+    "muscleId": "gastrocnemio-medial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "extension-cuadriceps-maquina",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "extension-cuadriceps-maquina",
+    "muscleId": "cuadriceps-vasto-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "extension-cuadriceps-maquina",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "extension-cuadriceps-maquina",
+    "muscleId": "cuadriceps-vasto-intermedio",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "extension-cuadriceps-maquina",
+    "muscleId": "recto-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-bulgara-barra",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-bulgara-barra",
+    "muscleId": "cuadriceps-vasto-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-bulgara-barra",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-bulgara-barra",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-bulgara-barra",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-bulgara-barra",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-banda-elastica",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-banda-elastica",
+    "muscleId": "cuadriceps-vasto-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-banda-elastica",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-banda-elastica",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-banda-elastica",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "curl-femoral-maquina",
+    "muscleId": "biceps-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "curl-femoral-maquina",
+    "muscleId": "semitendinoso",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "curl-femoral-maquina",
+    "muscleId": "semimembranoso",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "curl-femoral-maquina",
+    "muscleId": "gastrocnemio-medial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-femoral-maquina",
+    "muscleId": "gastrocnemio-lateral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "curl-femoral-maquina",
+    "muscleId": "gluteo-mayor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "hip-thrust",
+    "muscleId": "gluteo-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "hip-thrust",
+    "muscleId": "gluteo-medio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "hip-thrust",
+    "muscleId": "biceps-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "hip-thrust",
+    "muscleId": "semitendinoso",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "hip-thrust",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "hip-thrust",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "patada-trasera-cable",
+    "muscleId": "gluteo-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "patada-trasera-cable",
+    "muscleId": "biceps-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "patada-trasera-cable",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "patada-trasera-cable",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "abduccion-cadera-maquina",
+    "muscleId": "gluteo-medio",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "abduccion-cadera-maquina",
+    "muscleId": "gluteo-menor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "abduccion-cadera-maquina",
+    "muscleId": "tensor-fascia-lata",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "abduccion-cadera-maquina",
+    "muscleId": "piriforme",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "zancada-mancuernas",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "zancada-mancuernas",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "zancada-mancuernas",
+    "muscleId": "gluteo-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "zancada-mancuernas",
+    "muscleId": "biceps-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "zancada-mancuernas",
+    "muscleId": "sartorio",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "zancada-mancuernas",
+    "muscleId": "soleo",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "zancada-mancuernas",
+    "muscleId": "gluteo-medio",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "zancada-bulgara",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "zancada-bulgara",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "zancada-bulgara",
+    "muscleId": "gluteo-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "zancada-bulgara",
+    "muscleId": "biceps-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "zancada-bulgara",
+    "muscleId": "iliopsoas",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "zancada-bulgara",
+    "muscleId": "gluteo-medio",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "zancada-bulgara",
+    "muscleId": "soleo",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "pantorrillas-de-pie",
+    "muscleId": "gastrocnemio-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "pantorrillas-de-pie",
+    "muscleId": "gastrocnemio-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "pantorrillas-de-pie",
+    "muscleId": "soleo",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "pantorrillas-de-pie",
+    "muscleId": "peroneo-largo",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "pantorrillas-de-pie",
+    "muscleId": "flexor-largo-dedos",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "pantorrillas-sentado",
+    "muscleId": "soleo",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "pantorrillas-sentado",
+    "muscleId": "gastrocnemio-medial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "pantorrillas-sentado",
+    "muscleId": "gastrocnemio-lateral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "pantorrillas-sentado",
+    "muscleId": "flexor-largo-dedos",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "crunch-abdominal",
+    "muscleId": "recto-abdominal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "crunch-abdominal",
+    "muscleId": "oblicuo-externo",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "crunch-abdominal",
+    "muscleId": "oblicuo-interno",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "crunch-abdominal",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "crunch-abdominal",
+    "muscleId": "iliopsoas",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "crunch-en-polea",
+    "muscleId": "recto-abdominal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "crunch-en-polea",
+    "muscleId": "oblicuo-externo",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "crunch-en-polea",
+    "muscleId": "oblicuo-interno",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "crunch-en-polea",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "plancha",
+    "muscleId": "transverso-abdominal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "plancha",
+    "muscleId": "recto-abdominal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "plancha",
+    "muscleId": "oblicuo-externo",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "plancha",
+    "muscleId": "oblicuo-interno",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "plancha",
+    "muscleId": "gluteo-mayor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "plancha",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "plancha",
+    "muscleId": "serrato-anterior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "plancha",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "rueda-abdominal",
+    "muscleId": "recto-abdominal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "rueda-abdominal",
+    "muscleId": "transverso-abdominal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "rueda-abdominal",
+    "muscleId": "oblicuo-externo",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "rueda-abdominal",
+    "muscleId": "dorsal-ancho",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "rueda-abdominal",
+    "muscleId": "serrato-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "rueda-abdominal",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "rueda-abdominal",
+    "muscleId": "triceps-braquial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "elevacion-piernas-colgado",
+    "muscleId": "recto-abdominal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "elevacion-piernas-colgado",
+    "muscleId": "iliopsoas",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "elevacion-piernas-colgado",
+    "muscleId": "oblicuo-externo",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "elevacion-piernas-colgado",
+    "muscleId": "oblicuo-interno",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "elevacion-piernas-colgado",
+    "muscleId": "tensor-fascia-lata",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "elevacion-piernas-colgado",
+    "muscleId": "dorsal-ancho",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "elevacion-piernas-colgado",
+    "muscleId": "braquiorradial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "swing-kettlebell",
+    "muscleId": "gluteo-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "swing-kettlebell",
+    "muscleId": "biceps-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "swing-kettlebell",
+    "muscleId": "semitendinoso",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "swing-kettlebell",
+    "muscleId": "erector-espinal",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "swing-kettlebell",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "swing-kettlebell",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "swing-kettlebell",
+    "muscleId": "cuadrado-lumbar",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "swing-kettlebell",
+    "muscleId": "trapecio-superior",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "gluteo-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "transverso-abdominal",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "oblicuo-externo",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "oblicuo-interno",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "supraespinoso",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "infraespinoso",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "redondo-menor",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "turkish-get-up",
+    "muscleId": "erector-espinal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "burpee",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "burpee",
+    "muscleId": "pectoral-mayor",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "burpee",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "burpee",
+    "muscleId": "triceps-braquial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "burpee",
+    "muscleId": "deltoides-anterior",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "burpee",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "burpee",
+    "muscleId": "recto-abdominal",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "burpee",
+    "muscleId": "gastrocnemio-medial",
+    "type": "stabilizer"
+  },
+  {
+    "exerciseId": "sentadilla-salto",
+    "muscleId": "cuadriceps-recto-femoral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-salto",
+    "muscleId": "cuadriceps-vasto-lateral",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-salto",
+    "muscleId": "cuadriceps-vasto-medial",
+    "type": "primary"
+  },
+  {
+    "exerciseId": "sentadilla-salto",
+    "muscleId": "gluteo-mayor",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-salto",
+    "muscleId": "gastrocnemio-medial",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-salto",
+    "muscleId": "gastrocnemio-lateral",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-salto",
+    "muscleId": "soleo",
+    "type": "secondary"
+  },
+  {
+    "exerciseId": "sentadilla-salto",
+    "muscleId": "transverso-abdominal",
+    "type": "stabilizer"
+  }
+]
