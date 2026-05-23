@@ -1,3 +1,4 @@
+import { CONFIG } from "@/core/shared/utils/config";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { DevToolsBubble } from "react-native-react-query-devtools";
 
@@ -42,7 +43,9 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       {children}
-      <DevToolsBubble onCopy={onCopy} queryClient={queryClient} />
+      {CONFIG.NODE_ENV === "development" && (
+        <DevToolsBubble onCopy={onCopy} queryClient={queryClient} />
+      )}
     </QueryClientProvider>
   );
 }
