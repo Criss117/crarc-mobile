@@ -1,15 +1,38 @@
-import { Stack } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 import { Button } from "heroui-native/button";
 import { Card } from "heroui-native/card";
 import { Text } from "heroui-native/text";
 import { ScrollView, View } from "react-native";
 
+import { useCreateWorkout } from "@/core/workouts/application/mutations/use-create-workout";
 import { useWorkoutForm } from "@/core/workouts/presentation/components/workout-form";
 
 export function CreateWorkoutScreen() {
+  const router = useRouter();
+  const createWorkout = useCreateWorkout();
+
   const form = useWorkoutForm({
     onSubmit: (data, options) => {
-      console.log(data);
+      createWorkout.mutate(
+        {
+          values: {
+            name: data.name,
+            description: data.description,
+            exercises: data.exercises.map((e, index) => ({
+              exerciseId: e.id,
+              orderIndex: index,
+            })),
+          },
+        },
+        {
+          onSuccess: () => {
+            options.resetForm();
+            router.replace({
+              pathname: "/workouts",
+            });
+          },
+        },
+      );
     },
   });
 

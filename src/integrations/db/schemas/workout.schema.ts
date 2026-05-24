@@ -9,12 +9,12 @@ import {
   uniqueIndex,
 } from "drizzle-orm/sqlite-core";
 import { exercise } from "./exercises.schema";
-import { auditMetadata } from "./shared";
+import { auditMetadata, uuid } from "./shared";
 
 export const workout = sqliteTable(
   "workout",
   {
-    id: text("id").primaryKey(),
+    id: uuid("id").primaryKey(),
     name: text("name").notNull(),
     searchName: text("search_name").notNull(),
     description: text("description"),
