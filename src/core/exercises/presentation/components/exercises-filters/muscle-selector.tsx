@@ -1,7 +1,7 @@
 import { Button } from "heroui-native";
 import { FlatList } from "react-native";
 
-import { useFindMuscles } from "@/core/exercises/application/queries/use-find-muscles";
+import { useFindMuscles } from "@/core/exercises/application/hooks/use-find-muscles";
 import { useExercisesFilters } from "./provider";
 
 interface MuscleSelectorButtonProps {

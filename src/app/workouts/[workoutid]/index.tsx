@@ -1,10 +1,10 @@
 import { Stack, useGlobalSearchParams, useRouter } from "expo-router";
+import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { Text } from "heroui-native/text";
 import { Suspense } from "react";
 import { View } from "react-native";
-import { SkeletonGroup } from "heroui-native/skeleton-group";
 
-import { useFindOneWorkout } from "@/core/workouts/application/queries/use-find-one-workout";
+import { useFindOneWorkout } from "@/core/workouts/application/hooks/use-find-workouts";
 
 interface Props {
   workoutId: string;

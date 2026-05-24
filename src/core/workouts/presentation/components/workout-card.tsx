@@ -11,15 +11,15 @@ import {
   InitWorkoutSession,
   InitWorkoutSessionSkeleton,
 } from "@/core/workout-sessions/presentation/components/init-workout-session";
-import { useRemoveWorkout } from "@/core/workouts/application/mutations/use-remove-workout";
-import type { WorkoutSummary } from "@/core/workouts/application/queries/use-find-workouts";
+import { useMutateWorkouts } from "@/core/workouts/application/hooks/use-mutate-workouts";
+import type { WorkoutSummary } from "@/core/workouts/domain/workout.entity";
 
 interface Props {
   workout: WorkoutSummary;
 }
 
 function RemoveWorkout({ workout }: Props) {
-  const removeWorkout = useRemoveWorkout();
+  const { remove } = useMutateWorkouts();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -38,8 +38,8 @@ function RemoveWorkout({ workout }: Props) {
           </Dialog.Title>
           <Button
             variant="danger"
-            onPress={() => removeWorkout.mutate(workout.id)}
-            isDisabled={removeWorkout.isPending}
+            onPress={() => remove.mutate({ workoutId: workout.id })}
+            isDisabled={remove.isPending}
           >
             <Button.Label>Eliminar</Button.Label>
           </Button>

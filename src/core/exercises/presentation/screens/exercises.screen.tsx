@@ -1,16 +1,16 @@
+import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { FlatList, View } from "react-native";
 
-import { useFindExercises } from "@/core/exercises/application/queries/use-find-exercises";
-import { Text } from "@/core/shared/components/text";
-import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
-import { ExercisesMuscleSelector } from "../components/exercises-filters/muscle-selector";
-import { useExercisesFilters } from "../components/exercises-filters/provider";
-import { ExercisesSearchBar } from "../components/exercises-filters/search-bar";
+import { useFindExercises } from "@/core/exercises/application/hooks/use-find-exercises";
+import { ExercisesMuscleSelector } from "@/core/exercises/presentation/components/exercises-filters/muscle-selector";
+import { useExercisesFilters } from "@/core/exercises/presentation/components/exercises-filters/provider";
+import { ExercisesSearchBar } from "@/core/exercises/presentation/components/exercises-filters/search-bar";
 import {
   ExercisesItem,
   ExercisesItemSkeleton,
-} from "../components/exercises-item";
+} from "@/core/exercises/presentation/components/exercises-item";
+import { Text } from "@/core/shared/components/text";
 
 export function ExercisesScreen() {
   const bottomTabBarHeight = useBottomTabBarHeight();

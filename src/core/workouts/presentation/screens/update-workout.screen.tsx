@@ -5,17 +5,17 @@ import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { Text } from "heroui-native/text";
 import { ScrollView, View } from "react-native";
 
-import { useUpdateWorkout } from "@/core/workouts/application/mutations/use-update-workout";
-import type { WorkoutDetail } from "@/core/workouts/application/queries/use-find-one-workout";
+import { useMutateWorkouts } from "@/core/workouts/application/hooks/use-mutate-workouts";
+import type { WorkoutSummary } from "@/core/workouts/domain/workout.entity";
 import { useWorkoutForm } from "@/core/workouts/presentation/components/workout-form";
 
 interface Props {
-  workout: WorkoutDetail;
+  workout: WorkoutSummary;
 }
 
 export function UpdateWorkoutScreen({ workout }: Props) {
   const router = useRouter();
-  const updateWorkout = useUpdateWorkout();
+  const { update } = useMutateWorkouts();
 
   const form = useWorkoutForm({
     defaultValues: {
@@ -27,17 +27,15 @@ export function UpdateWorkoutScreen({ workout }: Props) {
       workoutId: workout.id,
     },
     onSubmit: (data, options) => {
-      updateWorkout.mutate(
+      update.mutate(
         {
-          values: {
-            id: workout.id,
-            name: data.name,
-            description: data.description,
-            exercises: data.exercises.map((e, index) => ({
-              exerciseId: e.id,
-              orderIndex: index,
-            })),
-          },
+          id: workout.id,
+          name: data.name,
+          description: data.description,
+          exercises: data.exercises.map((e, index) => ({
+            exerciseId: e.id,
+            orderIndex: index,
+          })),
         },
         {
           onSuccess: () => {

@@ -5,25 +5,23 @@ import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { Text } from "heroui-native/text";
 import { ScrollView, View } from "react-native";
 
-import { useCreateWorkout } from "@/core/workouts/application/mutations/use-create-workout";
+import { useMutateWorkouts } from "@/core/workouts/application/hooks/use-mutate-workouts";
 import { useWorkoutForm } from "@/core/workouts/presentation/components/workout-form";
 
 export function CreateWorkoutScreen() {
   const router = useRouter();
-  const createWorkout = useCreateWorkout();
+  const { create } = useMutateWorkouts();
 
   const form = useWorkoutForm({
     onSubmit: (data, options) => {
-      createWorkout.mutate(
+      create.mutate(
         {
-          values: {
-            name: data.name,
-            description: data.description,
-            exercises: data.exercises.map((e, index) => ({
-              exerciseId: e.id,
-              orderIndex: index,
-            })),
-          },
+          name: data.name,
+          description: data.description,
+          exercises: data.exercises.map((e, index) => ({
+            exerciseId: e.id,
+            orderIndex: index,
+          })),
         },
         {
           onSuccess: () => {
@@ -74,7 +72,12 @@ export function CreateWorkoutScreen() {
       <Stack.Screen
         options={{
           headerRight: () => (
-            <Button variant="outline" size="sm" onPress={form.handleSubmit}>
+            <Button
+              variant="outline"
+              size="sm"
+              onPress={form.handleSubmit}
+              isDisabled={create.isPending}
+            >
               <Button.Label className="text-accent">Guardar</Button.Label>
             </Button>
           ),

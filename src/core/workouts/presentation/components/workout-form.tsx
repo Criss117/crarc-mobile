@@ -12,13 +12,12 @@ import {
   TextField,
 } from "heroui-native";
 import { BottomSheet } from "heroui-native/bottom-sheet";
+import { useMemo, useState } from "react";
 import { View } from "react-native";
 import { z } from "zod";
 
-import {
-  ExerciseSummary,
-  useFindExercises,
-} from "@/core/exercises/application/queries/use-find-exercises";
+import { useFindExercises } from "@/core/exercises/application/hooks/use-find-exercises";
+import type { ExerciseSummary } from "@/core/exercises/domain/execises.entity";
 import {
   ExercisesFiltersProvider,
   useExercisesFilters,
@@ -26,7 +25,6 @@ import {
 import { ExercisesSearchBar } from "@/core/exercises/presentation/components/exercises-filters/search-bar";
 import { FieldError } from "@/core/shared/components/field-errors";
 import { MaterialIcons } from "@/core/shared/components/icons";
-import { useMemo, useState } from "react";
 
 interface UseWorkoutFormOptions {
   onSubmit: (data: WorkoutFormData, options: { resetForm: () => void }) => void;

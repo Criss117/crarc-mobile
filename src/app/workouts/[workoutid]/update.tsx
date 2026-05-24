@@ -1,7 +1,7 @@
 import { useGlobalSearchParams, useRouter } from "expo-router";
 import { Suspense } from "react";
 
-import { useFindOneWorkout } from "@/core/workouts/application/queries/use-find-one-workout";
+import { useFindOneWorkout } from "@/core/workouts/application/hooks/use-find-workouts";
 import {
   UpdateWorkoutScreen,
   UpdateWorkoutScreenSkeleton,

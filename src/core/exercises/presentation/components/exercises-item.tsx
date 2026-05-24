@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import { Card, PressableFeedback, SkeletonGroup } from "heroui-native";
 
-import type { ExerciseSummary } from "@/core/exercises/application/queries/use-find-exercises";
+import type { ExerciseSummary } from "@/core/exercises/application/actions/queries/use-find-exercises";
 import { MaterialIcons } from "@/core/shared/components/icons";
 
 interface Props {
