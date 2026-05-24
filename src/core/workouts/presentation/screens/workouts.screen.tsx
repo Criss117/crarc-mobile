@@ -4,7 +4,7 @@ import { Text } from "heroui-native/text";
 import { FlatList, View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
-import { useFindWorkouts } from "@/core/workouts/application/queries/use-find-workouts";
+import { useFindWorkouts } from "@/core/workouts/application/hooks/use-find-workouts";
 import {
   WorkoutCard,
   WorkoutCardSkeleton,

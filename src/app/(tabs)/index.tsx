@@ -1,7 +1,8 @@
-import { Text } from "@/core/shared/components/text";
-import { useFindAllWorkoutSessions } from "@/core/workout-sessions/application/queries/use-find-workout-sessions";
 import { Pressable, View } from "react-native";
 import { Uniwind, useUniwind } from "uniwind";
+
+import { Text } from "@/core/shared/components/text";
+import { useFindAllWorkoutSessions } from "@/core/workout-sessions/application/hooks/use-find-workout-sessions";
 
 const themes = [
   { name: "light", label: "Light", icon: "☀️" },

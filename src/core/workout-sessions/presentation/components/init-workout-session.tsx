@@ -1,24 +1,24 @@
-import { MaterialIcons } from "@expo/vector-icons";
 import { Button } from "heroui-native/button";
 
-import { useInitWorkoutSession } from "@/core/workout-sessions/application/mutations/use-init-workout-session";
+import { useMutateWorkoutSessions } from "@/core/workout-sessions/application/hooks/use-mutate-workout-sessions";
+import { MaterialIcons } from "@expo/vector-icons";
 
 interface Props {
   workoutId: string;
 }
 
 export function InitWorkoutSession({ workoutId }: Props) {
-  const initWorkoutSession = useInitWorkoutSession();
+  const { init } = useMutateWorkoutSessions();
 
   const handlePress = () => {
-    initWorkoutSession.mutate({ workoutId });
+    init.mutate({ workoutId });
   };
 
   return (
     <Button
       variant="outline"
       size="sm"
-      isDisabled={initWorkoutSession.isPending}
+      isDisabled={init.isPending}
       onPress={handlePress}
     >
       <Button.Label>Iniciar</Button.Label>
