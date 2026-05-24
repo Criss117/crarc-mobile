@@ -82,3 +82,7 @@ export function CreateWorkoutScreen() {
     </ScrollView>
   );
 }
+
+export function CreateWorkoutScreenSkeleton() {
+  return null;
+}

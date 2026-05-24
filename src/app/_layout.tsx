@@ -42,6 +42,12 @@ export default function RootLayout() {
               headerTitle: "Nuevo Workout",
             }}
           />
+          <Stack.Screen
+            name="workouts/[workoutid]/update"
+            options={{
+              headerTitle: "Actualizar Workout",
+            }}
+          />
         </Stack>
       </Integrations>
     </GestureHandlerRootView>
