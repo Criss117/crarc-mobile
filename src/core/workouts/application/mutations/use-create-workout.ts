@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { count, inArray } from "drizzle-orm";
+import { count, eq, inArray } from "drizzle-orm";
 
 import { normalizeString } from "@/core/shared/utils/normalize";
 import { findWorkoutsQueryOptions } from "@/core/workouts/application/queries/use-find-workouts";
@@ -28,6 +28,16 @@ async function createWorkout({ values }: CreateWorkoutValues) {
 
   if (total !== exercisesIds.length)
     throw new Error("Algunos ejercicios no se encuentran");
+
+  const nameExists = await dbConnection
+    .select({
+      name: workout.name,
+    })
+    .from(workout)
+    .where(eq(workout.name, values.name))
+    .limit(1);
+
+  if (nameExists.length) throw new Error("El nombre ya existe");
 
   await dbConnection.transaction(async (tx) => {
     const [workoutCreated] = await tx

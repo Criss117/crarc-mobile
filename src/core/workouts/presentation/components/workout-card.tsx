@@ -83,6 +83,29 @@ function WorkoutCardOptions({ workout }: Props) {
                 asChild
                 push
                 href={{
+                  pathname: "/workouts/[workoutid]",
+                  params: {
+                    workoutid: workout.id,
+                  },
+                }}
+              >
+                <Button
+                  variant="ghost"
+                  className="justify-start gap-x-6"
+                  onPress={closePopover}
+                >
+                  <MaterialIcons
+                    name="info"
+                    size={20}
+                    className="dark:text-white"
+                  />
+                  <Button.Label>Ver Detalle</Button.Label>
+                </Button>
+              </Link>
+              <Link
+                asChild
+                push
+                href={{
                   pathname: "/workouts/[workoutid]/update",
                   params: {
                     workoutid: workout.id,
@@ -92,7 +115,6 @@ function WorkoutCardOptions({ workout }: Props) {
                 <Button
                   variant="ghost"
                   className="justify-start gap-x-6"
-                  isDisabled={!popoverRef.current}
                   onPress={closePopover}
                 >
                   <MaterialIcons

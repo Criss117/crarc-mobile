@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { count, eq, inArray } from "drizzle-orm";
+import { and, count, eq, inArray, not } from "drizzle-orm";
 
 import { normalizeString } from "@/core/shared/utils/normalize";
 import { findWorkoutsQueryOptions } from "@/core/workouts/application/queries/use-find-workouts";
@@ -30,17 +30,27 @@ async function updateWorkout({ values }: UpdateWorkoutValues) {
   if (total !== exercisesIds.length)
     throw new Error("Algunos ejercicios no se encuentran");
 
-  const existingWorkout = await dbConnection
+  const existisWorkout = await dbConnection
     .select({
-      id: workout.id,
+      name: workout.name,
     })
     .from(workout)
-    .where(eq(workout.name, values.name))
-    .limit(1)
-    .execute();
+    .where(eq(workout.id, values.id))
+    .limit(1);
 
-  if (existingWorkout.length)
-    throw new Error("Ya existe un workout con ese nombre");
+  if (!existisWorkout.length) throw new Error("El workout no existe");
+
+  if (existisWorkout[0].name !== values.name) {
+    const nameExists = await dbConnection
+      .select({
+        name: workout.name,
+      })
+      .from(workout)
+      .where(and(not(eq(workout.id, values.id)), eq(workout.name, values.name)))
+      .limit(1);
+
+    if (nameExists.length) throw new Error("El nombre ya existe");
+  }
 
   await dbConnection.transaction(async (tx) => {
     const [workoutUpdated] = await tx

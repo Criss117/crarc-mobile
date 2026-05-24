@@ -43,3 +43,6 @@ app-example
 /android
 
 *.apk
+
+# SDD artifacts
+.atl/
