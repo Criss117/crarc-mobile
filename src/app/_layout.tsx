@@ -48,6 +48,12 @@ export default function RootLayout() {
               headerTitle: "Actualizar Workout",
             }}
           />
+          <Stack.Screen
+            name="session/[workoutsessionid]"
+            options={{
+              headerTitle: "Sesión de trabajo",
+            }}
+          />
         </Stack>
       </Integrations>
     </GestureHandlerRootView>

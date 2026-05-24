@@ -5,7 +5,7 @@ import migrations from "../../../drizzle/migrations";
 import { Text } from "@/core/shared/components/text";
 import { useEffect, useState } from "react";
 import { dbConnection } from ".";
-import { seedExercises } from "./seed";
+import { seedAppConfig, seedExercises } from "./seed";
 
 export function DBProvider({ children }: { children: React.ReactNode }) {
   const [isPending, setIsPending] = useState(true);
@@ -15,7 +15,9 @@ export function DBProvider({ children }: { children: React.ReactNode }) {
     if (!success) return;
 
     setIsPending(true);
-    seedExercises(dbConnection).finally(() => setIsPending(false));
+    seedAppConfig(dbConnection).then(() =>
+      seedExercises(dbConnection).finally(() => setIsPending(false)),
+    );
   }, [success]);
 
   if (error)

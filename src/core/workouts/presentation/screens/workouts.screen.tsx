@@ -1,9 +1,14 @@
 import { Link } from "expo-router";
 import { Button } from "heroui-native/button";
 import { Text } from "heroui-native/text";
+import { Suspense } from "react";
 import { FlatList, View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import {
+  ActiveWorkoutSessionCard,
+  ActiveWorkoutSessionCardSkeleton,
+} from "@/core/workout-sessions/presentation/components/active-workout-session-card";
 import { useFindWorkouts } from "@/core/workouts/application/hooks/use-find-workouts";
 import {
   WorkoutCard,
@@ -20,8 +25,13 @@ export function WorkoutsScreen() {
         keyExtractor={(w) => w.id}
         renderItem={({ item }) => <WorkoutCard workout={item} />}
         ListHeaderComponent={
-          <View className="py-3">
-            <Text type="h5">Mis Rutinas</Text>
+          <View>
+            <Suspense fallback={<ActiveWorkoutSessionCardSkeleton />}>
+              <ActiveWorkoutSessionCard />
+            </Suspense>
+            <View className="py-3">
+              <Text type="h5">Mis Rutinas</Text>
+            </View>
           </View>
         }
         ItemSeparatorComponent={<View className="h-4" />}

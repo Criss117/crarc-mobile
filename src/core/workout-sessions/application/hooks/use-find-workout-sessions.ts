@@ -7,6 +7,15 @@ export const findAllWorkoutSessionsQueryOptions = queryOptions({
   queryFn: workoutSessionActions.queries.findAll,
 });
 
+export const findActiveWorkoutSessionQueryOptions = queryOptions({
+  queryKey: ["active-workout-session"],
+  queryFn: workoutSessionActions.queries.findActive,
+});
+
 export function useFindAllWorkoutSessions() {
   return useSuspenseQuery(findAllWorkoutSessionsQueryOptions);
+}
+
+export function useFindActiveWorkoutSession() {
+  return useSuspenseQuery(findActiveWorkoutSessionQueryOptions);
 }

@@ -1,7 +1,8 @@
 import { Button } from "heroui-native/button";
 
+import { useAppConfig } from "@/core/profile/application/hooks/use-app-config";
+import { MaterialIcons } from "@/core/shared/components/icons";
 import { useMutateWorkoutSessions } from "@/core/workout-sessions/application/hooks/use-mutate-workout-sessions";
-import { MaterialIcons } from "@expo/vector-icons";
 
 interface Props {
   workoutId: string;
@@ -9,6 +10,9 @@ interface Props {
 
 export function InitWorkoutSession({ workoutId }: Props) {
   const { init } = useMutateWorkoutSessions();
+  const { appConfig } = useAppConfig();
+
+  const activeWorkoutSessionId = appConfig.data?.activeWorkoutSessionId;
 
   const handlePress = () => {
     init.mutate({ workoutId });
@@ -18,7 +22,7 @@ export function InitWorkoutSession({ workoutId }: Props) {
     <Button
       variant="outline"
       size="sm"
-      isDisabled={init.isPending}
+      isDisabled={init.isPending || !!activeWorkoutSessionId}
       onPress={handlePress}
     >
       <Button.Label>Iniciar</Button.Label>

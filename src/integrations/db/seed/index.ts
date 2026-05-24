@@ -4,6 +4,7 @@ import exercisesData from "../../../assets/data/exercises.json";
 import musclesData from "../../../assets/data/muscles.json";
 
 import { exercise, muscle } from "../schemas";
+import { appConfig } from "../schemas/app-state.schema";
 import {
   ExerciseInsert,
   exerciseMuscle,
@@ -46,4 +47,8 @@ export async function seedExercises(db: DBConnection) {
     });
 
   return exercisesMusclesQuery;
+}
+
+export async function seedAppConfig(db: DBConnection) {
+  return db.insert(appConfig).values({ id: 1 }).onConflictDoNothing();
 }

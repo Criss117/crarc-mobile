@@ -66,6 +66,11 @@ export const workoutSessionExercise = sqliteTable(
     weightDisplayUnit: text("weight_display_unit", {
       enum: weightUnits,
     }).notNull(),
+    completed: integer("completed", {
+      mode: "boolean",
+    })
+      .notNull()
+      .default(false),
 
     ...auditMetadata,
   },
