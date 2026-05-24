@@ -22,6 +22,7 @@ export default function RootLayout() {
             headerStyle: {
               backgroundColor: background,
             },
+            headerShadowVisible: false,
             headerTitleStyle: {
               color: accent,
             },
@@ -35,6 +36,12 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen name="exercises/[exerciseid]" />
+          <Stack.Screen
+            name="workouts/create"
+            options={{
+              headerTitle: "Nuevo Workout",
+            }}
+          />
         </Stack>
       </Integrations>
     </GestureHandlerRootView>

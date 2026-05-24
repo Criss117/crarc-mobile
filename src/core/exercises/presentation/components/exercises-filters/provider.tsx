@@ -55,3 +55,15 @@ export function ExercisesFiltersProvider({
     </ExercisesFilters.Provider>
   );
 }
+
+export function withExercisesFilters<P extends object>(
+  Component: React.ComponentType<P>,
+) {
+  return function WithExercisesFilters(props: P) {
+    return (
+      <ExercisesFiltersProvider>
+        <Component {...props} />
+      </ExercisesFiltersProvider>
+    );
+  };
+}

@@ -7,14 +7,14 @@
   /* Primitive Colors */
   --white: oklch(100% 0 0);
   --black: oklch(0% 0 0);
-  --snow: oklch(0.9911 0 0);
-  --eclipse: oklch(0.2103 0.0059 152.56);
+  --snow: oklch(98.7% 0.002 197.1);
+  --eclipse: oklch(14.8% 0.004 228.8);
 
   /* Border */
   --border-width: 1px;
   --field-border-width: 0px;
 
-  /* Base radius — ajustado del tema web */
+  /* Base radius */
   --radius: 0.25rem;
   --field-radius: 0.75rem;
 
@@ -38,57 +38,57 @@
   :root {
     @variant light {
       /* Base Colors */
-      --background: oklch(0.9702 0.0058 152.56);
-      --foreground: oklch(0.2103 0.0058 152.56);
+      --background: oklch(0.97 0.003 152.56);
+      --foreground: oklch(0.21 0.006 152.56);
 
       /* Surface */
-      --surface: oklch(1 0.0029 152.56);
-      --surface-foreground: oklch(0.2103 0.0058 152.56);
+      --surface: oklch(1 0.003 152.56);
+      --surface-foreground: oklch(0.21 0.006 152.56);
 
-      --surface-secondary: oklch(0.9524 0.0046 152.56);
-      --surface-secondary-foreground: oklch(0.2103 0.0058 152.56);
+      --surface-secondary: oklch(0.95 0.005 152.56);
+      --surface-secondary-foreground: oklch(0.21 0.006 152.56);
 
-      --surface-tertiary: oklch(0.9373 0.0046 152.56);
-      --surface-tertiary-foreground: oklch(0.2103 0.0058 152.56);
+      --surface-tertiary: oklch(0.937 0.005 152.56);
+      --surface-tertiary-foreground: oklch(0.21 0.006 152.56);
 
       /* Overlay */
-      --overlay: oklch(1 0.0017 152.56);
-      --overlay-foreground: oklch(0.2103 0.0058 152.56);
+      --overlay: oklch(1 0.002 152.56);
+      --overlay-foreground: oklch(0.21 0.006 152.56);
       --backdrop: oklch(0% 0 0 / 20%);
 
-      --muted: oklch(0.5517 0.0116 152.56);
+      --muted: oklch(0.55 0.012 152.56);
 
-      --default: oklch(0.94 0.0058 152.56);
-      --default-foreground: oklch(0.2103 0.0059 152.56);
+      --default: oklch(0.94 0.006 152.56);
+      --default-foreground: oklch(0.21 0.006 152.56);
 
-      --accent: oklch(0.4625 0.1202 152.56);
-      --accent-foreground: var(--snow);
+      --accent: oklch(0.448 0.119 151.328);
+      --accent-foreground: oklch(0.982 0.018 155.826);
 
       /* Form Fields */
-      --field-background: oklch(1 0.0029 152.56);
-      --field-foreground: oklch(0.2103 0.0058 152.56);
-      --field-placeholder: oklch(0.5517 0.0116 152.56);
+      --field-background: oklch(1 0.003 152.56);
+      --field-foreground: oklch(0.21 0.006 152.56);
+      --field-placeholder: oklch(0.55 0.012 152.56);
       --field-border: transparent;
 
       /* Status Colors */
       --success: oklch(0.7329 0.1957 138.66);
-      --success-foreground: oklch(0.2103 0.0059 138.66);
+      --success-foreground: oklch(0.21 0.006 138.66);
 
       --warning: oklch(0.7819 0.1603 60.18);
-      --warning-foreground: oklch(0.2103 0.0059 60.18);
+      --warning-foreground: oklch(0.21 0.006 60.18);
 
-      --danger: oklch(0.6532 0.2355 13.59);
+      --danger: oklch(0.704 0.191 22.216);
       --danger-foreground: var(--snow);
 
       /* Component Colors */
-      --segment: oklch(1 0.0058 152.56);
-      --segment-foreground: oklch(0.2103 0.0059 152.56);
+      --segment: oklch(1 0.006 152.56);
+      --segment-foreground: oklch(0.21 0.006 152.56);
 
       /* Misc */
-      --border: oklch(0.9 0.0058 152.56);
-      --separator: oklch(0.92 0.0058 152.56);
-      --focus: oklch(0.4625 0.1202 152.56);
-      --link: oklch(0.2103 0.0058 152.56);
+      --border: oklch(0.9 0.006 152.56);
+      --separator: oklch(0.92 0.006 152.56);
+      --focus: oklch(0.448 0.119 151.328);
+      --link: oklch(0.21 0.006 152.56);
 
       /* Shadows */
       --surface-shadow:
@@ -104,62 +104,62 @@
 
     @variant dark {
       /* Base Colors */
-      --background: oklch(0.12 0.0058 152.56);
-      --foreground: var(--snow);
+      --background: oklch(0.148 0.004 228.8);
+      --foreground: oklch(0.987 0.002 197.1);
 
       /* Surface */
-      --surface: oklch(0.2103 0.0116 152.56);
+      --surface: oklch(0.218 0.008 223.9);
       --surface-foreground: var(--foreground);
 
-      --surface-secondary: oklch(0.257 0.0087 152.56);
+      --surface-secondary: oklch(0.275 0.011 216.9);
       --surface-secondary-foreground: var(--foreground);
 
-      --surface-tertiary: oklch(0.2721 0.0087 152.56);
+      --surface-tertiary: oklch(0.323 0.006 152.56);
       --surface-tertiary-foreground: var(--foreground);
 
       /* Overlay */
-      --overlay: oklch(0.2103 0.0116 152.56);
+      --overlay: oklch(0.218 0.008 223.9);
       --overlay-foreground: var(--foreground);
-      --backdrop: oklch(0% 0 0 / 20%);
+      --backdrop: oklch(0% 0 0 / 40%);
 
-      --muted: oklch(0.705 0.0116 152.56);
+      --muted: oklch(0.723 0.014 214.4);
 
-      --default: oklch(0.274 0.0058 152.56);
-      --default-foreground: var(--snow);
+      --default: oklch(0.275 0.011 216.9);
+      --default-foreground: var(--foreground);
 
-      --accent: oklch(0.4625 0.1202 152.56);
-      --accent-foreground: var(--snow);
+      --accent: oklch(0.6 0.119 151.328);
+      --accent-foreground: oklch(0.982 0.018 155.826);
 
       /* Form Fields */
-      --field-background: oklch(0.2103 0.0116 152.56);
+      --field-background: oklch(0.218 0.008 223.9);
       --field-foreground: var(--foreground);
-      --field-placeholder: oklch(0.705 0.0116 152.56);
+      --field-placeholder: oklch(0.723 0.014 214.4);
       --field-border: transparent;
 
       /* Status Colors */
       --success: oklch(0.7329 0.1957 138.66);
-      --success-foreground: oklch(0.2103 0.0059 138.66);
+      --success-foreground: oklch(0.21 0.006 138.66);
 
       --warning: oklch(0.8203 0.1404 64.19);
-      --warning-foreground: oklch(0.2103 0.0059 64.19);
+      --warning-foreground: oklch(0.21 0.006 64.19);
 
-      --danger: oklch(0.594 0.199 12.48);
+      --danger: oklch(0.704 0.191 22.216);
       --danger-foreground: var(--snow);
 
       /* Component Colors */
-      --segment: oklch(0.3964 0.0058 152.56);
+      --segment: oklch(0.396 0.006 152.56);
       --segment-foreground: var(--foreground);
 
       /* Misc */
-      --border: oklch(0.28 0.0058 152.56);
-      --separator: oklch(0.25 0.0058 152.56);
-      --focus: oklch(0.4625 0.1202 152.56);
+      --border: oklch(1 0 0 / 10%);
+      --separator: oklch(1 0 0 / 8%);
+      --focus: oklch(0.56 0.021 213.5);
       --link: var(--foreground);
 
       /* Shadows */
-      --surface-shadow: 0 0 0 0 transparent inset;
-      --overlay-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.2) inset;
-      --field-shadow: 0 0 0 0 transparent inset;
+      --surface-shadow: 0 0 0 0 transparent;
+      --overlay-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.12) inset;
+      --field-shadow: 0 0 0 0 transparent;
     }
   }
 }

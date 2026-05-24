@@ -1,12 +1,13 @@
 import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { Tabs } from "expo-router";
-import { cn, useThemeColor } from "heroui-native";
+import { Link, Tabs } from "expo-router";
+import { Button, cn, useThemeColor } from "heroui-native";
 import { Tabs as HeroTabs } from "heroui-native/tabs";
-import { useState } from "react";
+import { useMemo } from "react";
+import { StatusBar, View } from "react-native";
+import { useUniwind } from "uniwind";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
-import { StatusBar } from "react-native";
-import { useUniwind } from "uniwind";
+import { Text } from "@/core/shared/components/text";
 
 const Routes = {
   index: { Icon: "home", title: "Inicio" },
@@ -15,14 +16,38 @@ const Routes = {
   profile: { Icon: "person", title: "Perfil" },
 } as const;
 
+interface TabHeaderProps {
+  route: (typeof Routes)[keyof typeof Routes];
+}
+
+function TabHeader({ route }: TabHeaderProps) {
+  return (
+    <View className="flex-row items-center gap-x-2">
+      <MaterialIcons name={route.Icon} size={24} className="text-accent" />
+      <Text
+        className="text-accent dark:text-accent"
+        variants={{
+          size: "h5",
+        }}
+      >
+        {route.title}
+      </Text>
+    </View>
+  );
+}
+
 function BottomTabs(props: BottomTabBarProps) {
   const [accent, muted] = useThemeColor(["success", "muted"]);
-  const [activeTab, setActiveTab] = useState(props.state.routes[0].key);
+
+  const currentRoute = useMemo(
+    () => props.state.routes[props.state.index],
+    [props.state.routes, props.state.index],
+  );
 
   return (
     <HeroTabs
-      value={activeTab}
-      onValueChange={setActiveTab}
+      value={currentRoute.key}
+      onValueChange={() => {}}
       className="absolute py-2 px-5 inset-x-0 bottom-0"
     >
       <HeroTabs.List className="rounded-full">
@@ -34,7 +59,7 @@ function BottomTabs(props: BottomTabBarProps) {
             className="flex-col gap-y-0 rounded-full flex-1"
             onPress={() => props.navigation.navigate(r.name)}
           >
-            {({ isSelected, value, isDisabled }) => (
+            {({ isSelected }) => (
               <>
                 <MaterialIcons
                   color={isSelected ? accent : muted}
@@ -77,6 +102,7 @@ export default function TabsLayout() {
           headerStyle: {
             backgroundColor: background,
           },
+          headerShadowVisible: false,
           headerTitleStyle: {
             color: accent,
           },
@@ -84,11 +110,28 @@ export default function TabsLayout() {
         }}
       >
         <Tabs.Screen name="index" />
-        <Tabs.Screen name="workouts" />
+        <Tabs.Screen
+          name="workouts"
+          options={{
+            headerTitle: () => <TabHeader route={Routes.workouts} />,
+            headerRight: () => (
+              <Link asChild push href="/workouts/create">
+                <Button
+                  isIconOnly
+                  variant="outline"
+                  size="sm"
+                  className="rounded-full mr-4 bg-background-tertiary"
+                >
+                  <MaterialIcons name="add" size={24} className="text-accent" />
+                </Button>
+              </Link>
+            ),
+          }}
+        />
         <Tabs.Screen
           name="exercises"
           options={{
-            headerTitle: "Ejercicios",
+            headerTitle: () => <TabHeader route={Routes.exercises} />,
           }}
         />
         <Tabs.Screen name="profile" />

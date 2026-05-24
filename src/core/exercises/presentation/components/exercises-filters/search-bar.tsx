@@ -1,28 +1,19 @@
-import { MaterialIcons } from "@/core/shared/components/icons";
-import { InputGroup } from "heroui-native";
+import { SearchField } from "heroui-native/search-field";
 import { useExercisesFilters } from "./provider";
 
 export function ExercisesSearchBar() {
   const { dispatch, filters } = useExercisesFilters();
 
   return (
-    <InputGroup>
-      <InputGroup.Prefix>
-        <MaterialIcons name="search" size={24} className="text-muted" />
-      </InputGroup.Prefix>
-      <InputGroup.Input
-        placeholder="Buscar ejercicios"
-        value={filters.query}
-        onChangeText={(text) => dispatch({ type: "set-query", payload: text })}
-      />
-      <InputGroup.Suffix>
-        <MaterialIcons
-          name="close"
-          className="text-muted"
-          size={24}
-          onPress={() => dispatch({ type: "set-query", payload: "" })}
-        />
-      </InputGroup.Suffix>
-    </InputGroup>
+    <SearchField
+      value={filters.query}
+      onChange={(v) => dispatch({ type: "set-query", payload: v })}
+    >
+      <SearchField.Group>
+        <SearchField.SearchIcon />
+        <SearchField.Input />
+        <SearchField.ClearButton />
+      </SearchField.Group>
+    </SearchField>
   );
 }
