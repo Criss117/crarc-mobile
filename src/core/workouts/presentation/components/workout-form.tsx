@@ -26,7 +26,7 @@ import {
 import { ExercisesSearchBar } from "@/core/exercises/presentation/components/exercises-filters/search-bar";
 import { FieldError } from "@/core/shared/components/field-errors";
 import { MaterialIcons } from "@/core/shared/components/icons";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 interface UseWorkoutFormOptions {
   onSubmit: (data: WorkoutFormData, options: { resetForm: () => void }) => void;
@@ -54,8 +54,6 @@ const workoutSchema = z.object({
     .array(
       z.object({
         id: z.string(),
-        name: z.string(),
-        muscles: z.string(),
       }),
     )
     .min(1, {
@@ -217,12 +215,21 @@ function AddExercisesField() {
 }
 
 function ExercisesListField() {
+  const { data: exercises } = useFindExercises();
   const field = useFieldContext<WorkoutFormData["exercises"]>();
   const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
 
   const removeExercise = (exerciseId: string) => {
     field.setValue((prev) => prev.filter((e) => e.id !== exerciseId));
   };
+
+  const selectedExercises = useMemo(
+    () =>
+      field.state.value
+        .map((e) => exercises.find((e2) => e.id === e2.id))
+        .filter((e) => e !== undefined),
+    [field.state.value, exercises],
+  );
 
   return (
     <View className="gap-y-4">
@@ -232,7 +239,7 @@ function ExercisesListField() {
         </View>
       )}
       {isInvalid && <FieldError errors={field.state.meta.errors} />}
-      {field.state.value.map((exercise) => (
+      {selectedExercises.map((exercise) => (
         <PressableFeedback key={exercise.id}>
           <Card className="bg-background shadow-none">
             <Card.Header className="flex-row justify-between items-center">
@@ -243,11 +250,17 @@ function ExercisesListField() {
                 size="md"
                 variant="ghost"
               >
-                <MaterialIcons name="close" size={20} />
+                <MaterialIcons
+                  name="close"
+                  size={20}
+                  className="dark:text-white"
+                />
               </Button>
             </Card.Header>
             <Card.Body>
-              <Card.Description>{exercise.muscles}</Card.Description>
+              <Card.Description>
+                {exercise.muscles.map((m) => m.name).join(", ")}
+              </Card.Description>
             </Card.Body>
           </Card>
         </PressableFeedback>
