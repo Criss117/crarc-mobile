@@ -1,5 +1,5 @@
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { eq, sql } from "drizzle-orm";
+import { desc, eq, sql } from "drizzle-orm";
 
 import { dbConnection } from "@/integrations/db";
 import { workout, workoutExercise } from "@/integrations/db/schemas";
@@ -28,6 +28,7 @@ async function findAllWorkouts() {
     .from(workout)
     .innerJoin(workoutExercise, eq(workoutExercise.workoutId, workout.id))
     .groupBy(workout.id)
+    .orderBy(desc(workout.createdAt))
     .execute();
 
   return allWorkouts.map((w) => ({

@@ -1,4 +1,5 @@
 import { Text } from "@/core/shared/components/text";
+import { useFindAllWorkoutSessions } from "@/core/workout-sessions/application/queries/use-find-workout-sessions";
 import { Pressable, View } from "react-native";
 import { Uniwind, useUniwind } from "uniwind";
 
@@ -9,6 +10,7 @@ const themes = [
 ] as const;
 
 export default function Home() {
+  const { data } = useFindAllWorkoutSessions();
   const { theme, hasAdaptiveThemes } = useUniwind();
 
   const activeTheme = hasAdaptiveThemes ? "system" : theme;
@@ -46,6 +48,8 @@ export default function Home() {
           </Pressable>
         ))}
       </View>
+
+      <Text>{JSON.stringify(data, null, 2)}</Text>
     </View>
   );
 }

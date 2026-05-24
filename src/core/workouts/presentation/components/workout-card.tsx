@@ -1,5 +1,5 @@
 import { Link } from "expo-router";
-import { Dialog, Separator, Text } from "heroui-native";
+import { Dialog, Separator, SkeletonGroup, Text } from "heroui-native";
 import { Button } from "heroui-native/button";
 import { Card } from "heroui-native/card";
 import { Popover, PopoverTriggerRef } from "heroui-native/popover";
@@ -7,6 +7,10 @@ import { useRef, useState } from "react";
 import { View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import {
+  InitWorkoutSession,
+  InitWorkoutSessionSkeleton,
+} from "@/core/workout-sessions/presentation/components/init-workout-session";
 import { useRemoveWorkout } from "@/core/workouts/application/mutations/use-remove-workout";
 import type { WorkoutSummary } from "@/core/workouts/application/queries/use-find-workouts";
 
@@ -149,16 +153,34 @@ export function WorkoutCard({ workout }: Props) {
       </Card.Header>
       <Card.Body className="flex-row justify-between">
         <View></View>
-        <View>
-          <Button variant="outline" size="sm">
-            <Button.Label>Iniciar</Button.Label>
-            <MaterialIcons
-              name="play-circle-outline"
-              size={20}
-              className="dark:text-white"
-            />
-          </Button>
+        <InitWorkoutSession workoutId={workout.id} />
+      </Card.Body>
+    </Card>
+  );
+}
+
+export function WorkoutCardSkeleton() {
+  return (
+    <Card>
+      <Card.Header className="flex-row items-start">
+        <View className="flex-1">
+          <SkeletonGroup variant="shimmer" className="gap-y-1">
+            <SkeletonGroup.Item className="h-6 w-3/5 rounded-md" />
+            <SkeletonGroup.Item className="h-4 w-4/5 rounded-md" />
+            <SkeletonGroup.Item className="h-4 w-1/3 rounded-md" />
+          </SkeletonGroup>
         </View>
+        <Button variant="ghost" isIconOnly isDisabled>
+          <MaterialIcons
+            name="more-horiz"
+            size={20}
+            className="dark:text-white"
+          />
+        </Button>
+      </Card.Header>
+      <Card.Body className="flex-row justify-between">
+        <View></View>
+        <InitWorkoutSessionSkeleton />
       </Card.Body>
     </Card>
   );

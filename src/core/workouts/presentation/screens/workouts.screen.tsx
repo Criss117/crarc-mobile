@@ -5,7 +5,10 @@ import { FlatList, View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
 import { useFindWorkouts } from "@/core/workouts/application/queries/use-find-workouts";
-import { WorkoutCard } from "@/core/workouts/presentation/components/workout-card";
+import {
+  WorkoutCard,
+  WorkoutCardSkeleton,
+} from "@/core/workouts/presentation/components/workout-card";
 
 export function WorkoutsScreen() {
   const { data } = useFindWorkouts();
@@ -45,5 +48,21 @@ export function WorkoutsScreen() {
 }
 
 export function WorkoutsScreenSkeleton() {
-  return null;
+  return (
+    <View
+      className="px-3"
+      accessibilityRole="none"
+      accessibilityLabel="Cargando contenido"
+    >
+      <View className="py-3">
+        <Text type="h5">Mis Rutinas</Text>
+      </View>
+
+      <View className="gap-y-4">
+        <WorkoutCardSkeleton />
+        <WorkoutCardSkeleton />
+        <WorkoutCardSkeleton />
+      </View>
+    </View>
+  );
 }

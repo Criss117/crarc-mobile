@@ -11,13 +11,13 @@ import {
 } from "drizzle-orm/sqlite-core";
 
 import { exercise } from "./exercises.schema";
-import { auditMetadata, weightUnits } from "./shared";
+import { auditMetadata, uuid, weightUnits } from "./shared";
 import { workout } from "./workout.schema";
 
 export const workoutSession = sqliteTable(
   "workout_session",
   {
-    id: text("id").primaryKey(),
+    id: uuid("id").primaryKey(),
     workoutId: text("workout_id").references(() => workout.id, {
       onDelete: "set null",
     }),
@@ -51,8 +51,7 @@ export const workoutSession = sqliteTable(
 export const workoutSessionExercise = sqliteTable(
   "workout_session_exercise",
   {
-    id: text("id").primaryKey(),
-
+    id: uuid("id").primaryKey(),
     workoutSessionId: text("workout_session_id")
       .notNull()
       .references(() => workoutSession.id, {

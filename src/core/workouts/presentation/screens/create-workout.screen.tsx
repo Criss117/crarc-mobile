@@ -1,6 +1,7 @@
 import { Stack, useRouter } from "expo-router";
 import { Button } from "heroui-native/button";
 import { Card } from "heroui-native/card";
+import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { Text } from "heroui-native/text";
 import { ScrollView, View } from "react-native";
 
@@ -83,6 +84,33 @@ export function CreateWorkoutScreen() {
   );
 }
 
+function WorkoutFormSkeleton() {
+  return (
+    <ScrollView
+      contentContainerClassName="px-2 gap-y-6 pb-8"
+      showsVerticalScrollIndicator={false}
+      accessibilityRole="none"
+      accessibilityLabel="Cargando contenido"
+    >
+      {/* Section: Información de la rutina */}
+      <View>
+        <SkeletonGroup isSkeletonOnly variant="shimmer">
+          <SkeletonGroup.Item className="h-7 w-56 rounded-md mb-3" />
+        </SkeletonGroup>
+        <View className="rounded-lg bg-background border border-muted p-4 gap-y-4"></View>
+      </View>
+
+      {/* Section: Lista de ejercicios */}
+      <View>
+        <SkeletonGroup isSkeletonOnly variant="shimmer">
+          <SkeletonGroup.Item className="h-7 w-48 rounded-md mb-3" />
+        </SkeletonGroup>
+        <View className="rounded-lg bg-background border border-muted p-4 gap-y-4"></View>
+      </View>
+    </ScrollView>
+  );
+}
+
 export function CreateWorkoutScreenSkeleton() {
-  return null;
+  return <WorkoutFormSkeleton />;
 }

@@ -5,7 +5,7 @@ import { dbConnection } from "@/integrations/db";
 import { workout, workoutExercise } from "@/integrations/db/schemas";
 import type { WorkoutExerciseSelect } from "@/integrations/db/schemas/workout.schema";
 
-async function findOneWorkout(wotkoutId: string) {
+export async function findOneWorkout(wotkoutId: string) {
   const allWorkouts = await dbConnection
     .select({
       id: workout.id,
