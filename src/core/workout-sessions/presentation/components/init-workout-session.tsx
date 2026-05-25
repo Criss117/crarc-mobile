@@ -3,19 +3,30 @@ import { Button } from "heroui-native/button";
 import { useAppConfig } from "@/core/profile/application/hooks/use-app-config";
 import { MaterialIcons } from "@/core/shared/components/icons";
 import { useMutateWorkoutSessions } from "@/core/workout-sessions/application/hooks/use-mutate-workout-sessions";
+import { useRouter } from "expo-router";
 
 interface Props {
   workoutId: string;
 }
 
 export function InitWorkoutSession({ workoutId }: Props) {
+  const router = useRouter();
   const { init } = useMutateWorkoutSessions();
   const { appConfig } = useAppConfig();
 
   const activeWorkoutSessionId = appConfig.data?.activeWorkoutSessionId;
 
   const handlePress = () => {
-    init.mutate({ workoutId });
+    init.mutate(
+      { workoutId },
+      {
+        onSuccess: () => {
+          router.push({
+            pathname: "/session/active",
+          });
+        },
+      },
+    );
   };
 
   return (

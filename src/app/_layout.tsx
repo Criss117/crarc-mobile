@@ -49,7 +49,7 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
-            name="session/[workoutsessionid]"
+            name="session/active"
             options={{
               headerTitle: "Sesión de trabajo",
             }}

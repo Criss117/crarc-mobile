@@ -1,10 +1,12 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { Link } from "expo-router";
 import { Button } from "heroui-native/button";
 import { Text } from "heroui-native/text";
 import { Suspense } from "react";
-import { FlatList, View } from "react-native";
+import { FlatList, RefreshControl, View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { findActiveWorkoutSessionQueryOptions } from "@/core/workout-sessions/application/hooks/use-find-workout-sessions";
 import {
   ActiveWorkoutSessionCard,
   ActiveWorkoutSessionCardSkeleton,
@@ -16,13 +18,24 @@ import {
 } from "@/core/workouts/presentation/components/workout-card";
 
 export function WorkoutsScreen() {
-  const { data } = useFindWorkouts();
+  const queryClient = useQueryClient();
+  const { data, refetch, isRefetching } = useFindWorkouts();
+
+  const handleRefresh = () => {
+    refetch();
+    queryClient.refetchQueries(findActiveWorkoutSessionQueryOptions);
+  };
 
   return (
-    <View className="px-3">
+    <View className="px-3 flex-1">
       <FlatList
+        className="flex-1"
+        contentContainerClassName="flex-1"
         data={data}
         keyExtractor={(w) => w.id}
+        refreshControl={
+          <RefreshControl refreshing={isRefetching} onRefresh={handleRefresh} />
+        }
         renderItem={({ item }) => <WorkoutCard workout={item} />}
         ListHeaderComponent={
           <View>

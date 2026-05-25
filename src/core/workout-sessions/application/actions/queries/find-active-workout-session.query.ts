@@ -1,14 +1,16 @@
-import { eq, inArray } from "drizzle-orm";
+import { eq, getTableColumns, inArray } from "drizzle-orm";
 
 import { findAppConfigQuery } from "@/core/profile/application/actions/queries/find-app-config.query";
+import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
 import { dbConnection } from "@/integrations/db";
 import {
+  exercise,
   workoutSession,
   workoutSessionExercise,
   workoutSessionExerciseSet,
 } from "@/integrations/db/schemas";
 
-export async function findActiveWorkoutSessionQuery() {
+export async function findActiveWorkoutSessionQuery(): Promise<WorkoutSessionDetail | null> {
   const appConfig = await findAppConfigQuery();
 
   if (!appConfig.activeWorkoutSessionId) return null;
@@ -23,8 +25,12 @@ export async function findActiveWorkoutSessionQuery() {
   if (!workoutSessionData) return null;
 
   const allWorkoutSessionExercises = await dbConnection
-    .select()
+    .select({
+      ...getTableColumns(workoutSessionExercise),
+      name: exercise.name,
+    })
     .from(workoutSessionExercise)
+    .leftJoin(exercise, eq(exercise.id, workoutSessionExercise.exerciseId))
     .where(eq(workoutSessionExercise.workoutSessionId, workoutSessionData.id));
 
   const allSets = await dbConnection

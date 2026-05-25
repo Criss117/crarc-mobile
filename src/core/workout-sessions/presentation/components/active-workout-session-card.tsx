@@ -27,6 +27,9 @@ export function ActiveWorkoutSessionCard() {
     return () => clearInterval(interval);
   }, [data]);
 
+  const completedWorkoutExercises =
+    data?.exercises.filter((e) => e.completed).length || 0;
+
   if (!data) return null;
 
   return (
@@ -43,7 +46,7 @@ export function ActiveWorkoutSessionCard() {
           <View className="px-2 bg-background rounded-xl flex-row items-center gap-x-1 py-1">
             <MaterialIcons name="list-alt" size={20} className="text-muted" />
             <Text className="text-sm text-muted">
-              {data.exercises.length} ejercicios
+              {completedWorkoutExercises} / {data.exercises.length} ejercicios
             </Text>
           </View>
         </View>
@@ -51,10 +54,7 @@ export function ActiveWorkoutSessionCard() {
           asChild
           push
           href={{
-            pathname: "/session/[workoutsessionid]",
-            params: {
-              workoutsessionid: data.id,
-            },
+            pathname: "/session/active",
           }}
         >
           <Button>
