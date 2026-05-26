@@ -21,35 +21,7 @@ export function useMutateWorkoutSessions() {
     },
   });
 
-  const saveExerciseSet = useMutation({
-    mutationKey: ["save-exercise-set"],
-    mutationFn: workoutSessionActions.commands.saveExerciseSet,
-    onSuccess: () => {
-      queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
-    },
-  });
-
-  const toggleCompleteWorkoutSessionExercise = useMutation({
-    mutationKey: ["toggle-complete-workout-session-exercise"],
-    mutationFn:
-      workoutSessionActions.commands.toggleCompleteWorkoutSessionExercise,
-    onSuccess: () => {
-      queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
-    },
-  });
-
-  const completeWorkoutSession = useMutation({
-    mutationKey: ["complete-workout-session"],
-    mutationFn: workoutSessionActions.commands.completeWorkoutSession,
-    onSuccess: () => {
-      queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
-    },
-  });
-
   return {
     init,
-    saveExerciseSet,
-    toggleCompleteWorkoutSessionExercise,
-    completeWorkoutSession,
   };
 }

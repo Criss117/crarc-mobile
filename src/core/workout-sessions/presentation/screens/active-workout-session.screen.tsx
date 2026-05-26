@@ -2,7 +2,7 @@ import { Stack, useRouter } from "expo-router";
 import { Button } from "heroui-native";
 import { ScrollView } from "react-native";
 
-import { useMutateWorkoutSessions } from "@/core/workout-sessions/application/hooks/use-mutate-workout-sessions";
+import { useActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
 import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
 import { WorkoutSessionExercisesList } from "@/core/workout-sessions/presentation/sections/workout-session-exercises-list";
 import { WorkoutSessionHeader } from "@/core/workout-sessions/presentation/sections/workout-session-header";
@@ -13,10 +13,10 @@ interface Props {
 
 export function ActiveWorkoutSessionScreen({ workoutSession }: Props) {
   const router = useRouter();
-  const { completeWorkoutSession } = useMutateWorkoutSessions();
+  const { completeWorkout } = useActiveWorkoutSession();
 
   const handleComplete = () => {
-    completeWorkoutSession.mutate(undefined, {
+    completeWorkout.mutate(undefined, {
       onSuccess: () => {
         router.replace({
           pathname: "/workouts",

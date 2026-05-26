@@ -6,7 +6,7 @@ import { View } from "react-native";
 import { z } from "zod";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
-import { useMutateWorkoutSessions } from "@/core/workout-sessions/application/hooks/use-mutate-workout-sessions";
+import { useActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
 import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
 
 interface Props {
@@ -25,7 +25,7 @@ function convertWeight(weight: number, displayUnit: "kg" | "lb") {
 
 export function WorkoutSessionExerciseItem({ exercise }: Props) {
   const { saveExerciseSet, toggleCompleteWorkoutSessionExercise } =
-    useMutateWorkoutSessions();
+    useActiveWorkoutSession();
   const lastSetIndex = exercise.sets.length;
 
   const isPending =
@@ -189,11 +189,7 @@ export function WorkoutSessionExerciseItem({ exercise }: Props) {
                     isDisabled={isPending}
                     className="w-full text-center"
                     keyboardType="numeric"
-                    value={
-                      field.state.value === 0
-                        ? ""
-                        : field.state.value.toString()
-                    }
+                    value={field.state.value.toString()}
                     placeholder="0"
                     onBlur={field.handleBlur}
                     onChangeText={(v) => field.handleChange(Number(v))}
