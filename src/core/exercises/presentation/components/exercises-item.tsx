@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import { Card, PressableFeedback, SkeletonGroup } from "heroui-native";
 
-import type { ExerciseSummary } from "@/core/exercises/application/actions/queries/use-find-exercises";
+import type { ExerciseSummary } from "@/core/exercises/domain/execises.entity";
 import { MaterialIcons } from "@/core/shared/components/icons";
 
 interface Props {
@@ -20,7 +20,7 @@ export function ExercisesItem({ exercise }: Props) {
         })
       }
     >
-      <Card className="flex-row gap-x-4 items-center">
+      <Card className="flex-row gap-x-4 items-center flex-1">
         <Card.Header className="flex-1">
           <Card.Title>{exercise.name}</Card.Title>
           <Card.Description className="text-sm line-clamp-1">
