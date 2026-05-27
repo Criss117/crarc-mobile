@@ -1,5 +1,4 @@
-import { BottomSheetScrollView } from "@gorhom/bottom-sheet";
-import { createFormHook, createFormHookContexts } from "@tanstack/react-form";
+import { createFormHookContexts } from "@tanstack/react-form";
 import {
   Button,
   Card,
@@ -11,66 +10,24 @@ import {
   TextArea,
   TextField,
 } from "heroui-native";
-import { BottomSheet } from "heroui-native/bottom-sheet";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { View } from "react-native";
-import { z } from "zod";
 
 import { useFindExercises } from "@/core/exercises/application/hooks/use-find-exercises";
 import type { ExerciseSummary } from "@/core/exercises/domain/execises.entity";
-import {
-  ExercisesFiltersProvider,
-  useExercisesFilters,
-} from "@/core/exercises/presentation/components/exercises-filters/provider";
-import { ExercisesSearchBar } from "@/core/exercises/presentation/components/exercises-filters/search-bar";
+import { useExercisesFilters } from "@/core/exercises/presentation/components/exercises-filters/provider";
 import { FieldError } from "@/core/shared/components/field-errors";
 import { MaterialIcons } from "@/core/shared/components/icons";
-
-interface UseWorkoutFormOptions {
-  onSubmit: (data: WorkoutFormData, options: { resetForm: () => void }) => void;
-  defaultValues?: z.infer<typeof workoutSchema> & {
-    workoutId: string;
-  };
-}
 
 interface AddExercisesListProps {
   handleSelectExercise: (exercise: ExerciseSummary) => void;
   isSelected: (exercise: ExerciseSummary) => boolean;
 }
 
-const workoutSchema = z.object({
-  name: z
-    .string()
-    .min(5, {
-      error: "El nombre es muy corto",
-    })
-    .max(50, {
-      error: "El nombre es muy largo",
-    }),
-  description: z.string(),
-  exercises: z
-    .array(
-      z.object({
-        id: z.string(),
-      }),
-    )
-    .min(1, {
-      error: "Debes seleccionar al menos un ejercicio",
-    }),
-});
-
-export type WorkoutFormData = z.infer<typeof workoutSchema>;
-
-const defaultValues: WorkoutFormData = {
-  name: "",
-  description: "",
-  exercises: [],
-};
-
 export const { fieldContext, formContext, useFieldContext } =
   createFormHookContexts();
 
-function NameField() {
+export function NameField() {
   const field = useFieldContext<string>();
   const id = "workout-name";
   const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
@@ -91,7 +48,7 @@ function NameField() {
   );
 }
 
-function DescriptionField() {
+export function DescriptionField() {
   const field = useFieldContext<string>();
   const id = "workout-description";
   const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
@@ -112,7 +69,7 @@ function DescriptionField() {
   );
 }
 
-function AddExercisesList({
+export function AddExercisesList({
   handleSelectExercise,
   isSelected,
 }: AddExercisesListProps) {
@@ -148,83 +105,19 @@ function AddExercisesList({
   );
 }
 
-function AddExercisesField() {
-  const [isOpen, setIsOpen] = useState(false);
-  const field = useFieldContext<WorkoutFormData["exercises"]>();
-
-  const handleSelectExercise = (exercise: ExerciseSummary) => {
-    field.setValue((prev) => {
-      if (prev.some((e) => e.id === exercise.id))
-        return prev.filter((e) => e.id !== exercise.id);
-
-      return [
-        ...prev,
-        {
-          id: exercise.id,
-          name: exercise.name,
-          muscles: exercise.muscles.map((m) => m.name).join(", "),
-        },
-      ];
-    });
-  };
-
-  const isSelected = (exercise: ExerciseSummary) =>
-    field.state.value.some((e) => e.id === exercise.id);
-
-  return (
-    <BottomSheet isOpen={isOpen} onOpenChange={(v) => setIsOpen(v)}>
-      <BottomSheet.Trigger asChild>
-        <Button>Añadir ejercicios</Button>
-      </BottomSheet.Trigger>
-      <BottomSheet.Portal>
-        <BottomSheet.Overlay />
-        <BottomSheet.Content
-          snapPoints={["80%"]}
-          enableOverDrag={false}
-          enableDynamicSizing={false}
-          contentContainerClassName="h-full bg-background"
-        >
-          <ExercisesFiltersProvider>
-            <View className="gap-y-2 pb-2">
-              <View className="flex flex-row items-center justify-between">
-                <BottomSheet.Title>Añadir ejercicios</BottomSheet.Title>
-                <BottomSheet.Close />
-              </View>
-              <ExercisesSearchBar />
-            </View>
-
-            <BottomSheetScrollView
-              showsVerticalScrollIndicator={false}
-              contentContainerClassName="gap-y-5"
-            >
-              <AddExercisesList
-                handleSelectExercise={handleSelectExercise}
-                isSelected={isSelected}
-              />
-            </BottomSheetScrollView>
-          </ExercisesFiltersProvider>
-          <View className="pt-2">
-            <Button onPress={() => setIsOpen(false)}>Cerrar</Button>
-          </View>
-        </BottomSheet.Content>
-      </BottomSheet.Portal>
-    </BottomSheet>
-  );
-}
-
-function ExercisesListField() {
+export function ExercisesListField() {
   const { data: exercises } = useFindExercises();
-  const field = useFieldContext<WorkoutFormData["exercises"]>();
+  const field = useFieldContext<string[]>();
   const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
 
   const removeExercise = (exerciseId: string) => {
-    field.setValue((prev) => prev.filter((e) => e.id !== exerciseId));
+    field.setValue((prev) => prev.filter((id) => id !== exerciseId));
   };
 
   const selectedExercises = useMemo(
     () =>
       field.state.value
-        .map((e) => exercises.find((e2) => e.id === e2.id))
+        .map((exerciseId) => exercises.find((e) => exerciseId === e.id))
         .filter((e) => e !== undefined),
     [field.state.value, exercises],
   );
@@ -265,30 +158,4 @@ function ExercisesListField() {
       ))}
     </View>
   );
-}
-
-const { useAppForm } = createFormHook({
-  fieldContext,
-  formContext,
-  fieldComponents: {
-    NameField,
-    DescriptionField,
-    AddExercisesField,
-    ExercisesListField,
-  },
-  formComponents: {},
-});
-
-export function useWorkoutForm(options: UseWorkoutFormOptions) {
-  return useAppForm({
-    defaultValues: options?.defaultValues ?? defaultValues,
-    validators: {
-      onChange: workoutSchema,
-    },
-    onSubmit: ({ value, formApi }) => {
-      options.onSubmit(value, {
-        resetForm: formApi.reset,
-      });
-    },
-  });
 }

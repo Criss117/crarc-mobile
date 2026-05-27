@@ -1,11 +1,16 @@
 import { useRouter } from "expo-router";
-import { Card, PressableFeedback, SkeletonGroup } from "heroui-native";
+import { Card, cn, PressableFeedback, SkeletonGroup } from "heroui-native";
 
 import type { ExerciseSummary } from "@/core/exercises/domain/execises.entity";
 import { MaterialIcons } from "@/core/shared/components/icons";
 
 interface Props {
   exercise: ExerciseSummary;
+}
+
+interface SelectableProps extends Props {
+  isSelected: boolean;
+  handleSelectExercise: (exercise: ExerciseSummary) => void;
 }
 
 export function ExercisesItem({ exercise }: Props) {
@@ -39,6 +44,36 @@ export function ExercisesItem({ exercise }: Props) {
   );
 }
 
+export function SelectableExercisesItem({
+  exercise,
+  isSelected,
+  handleSelectExercise,
+}: SelectableProps) {
+  return (
+    <PressableFeedback onPress={() => handleSelectExercise(exercise)}>
+      <Card
+        className={cn(
+          "flex-row gap-x-4 items-center flex-1 border",
+          isSelected ? "border-accent" : "border-transparent",
+        )}
+      >
+        <Card.Header className="flex-1">
+          <Card.Title>{exercise.name}</Card.Title>
+          <Card.Description className="text-sm line-clamp-1">
+            {exercise.muscles.map((m) => m.name).join(", ")}
+          </Card.Description>
+        </Card.Header>
+        {/* <Card.Body>
+          <MaterialIcons
+            name="arrow-forward-ios"
+            size={18}
+            className="text-muted"
+          />
+        </Card.Body> */}
+      </Card>
+    </PressableFeedback>
+  );
+}
 export function ExercisesItemSkeleton() {
   return (
     <Card className="flex-row gap-x-4 items-center">

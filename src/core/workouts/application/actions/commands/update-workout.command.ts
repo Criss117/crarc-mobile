@@ -42,6 +42,7 @@ export async function updateWorkoutCommand(cmd: UpdateWorkoutCommand) {
         description: cmd.description,
         searchName: normalizeString(cmd.name),
       })
+      .where(eq(workout.id, cmd.id))
       .returning({
         id: workout.id,
       });

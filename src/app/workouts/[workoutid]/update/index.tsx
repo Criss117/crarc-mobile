@@ -7,9 +7,12 @@ import {
   UpdateWorkoutScreenSkeleton,
 } from "@/core/workouts/presentation/screens/update-workout.screen";
 
-function SuspendedWorkout({ workoutId }: { workoutId: string }) {
-  const router = useRouter();
+interface Props {
+  workoutId: string;
+}
 
+function Suspended({ workoutId }: Props) {
+  const router = useRouter();
   const { data } = useFindOneWorkout(workoutId);
 
   if (!data) {
@@ -30,7 +33,7 @@ export default function UpdateWorkout() {
 
   return (
     <Suspense fallback={<UpdateWorkoutScreenSkeleton />}>
-      <SuspendedWorkout workoutId={params.workoutid} />
+      <Suspended workoutId={params.workoutid} />
     </Suspense>
   );
 }
