@@ -1,4 +1,3 @@
-import { updateAppConfigCommand } from "@/core/profile/application/actions/commands/update-app-config.command";
 import { findAppConfigQuery } from "@/core/profile/application/actions/queries/find-app-config.query";
 import { findOneWorkoutQuery } from "@/core/workouts/application/actions/queries/find-one-workout.query";
 import { dbConnection } from "@/integrations/db";
@@ -6,6 +5,7 @@ import {
   workoutSession,
   workoutSessionExercise,
 } from "@/integrations/db/schemas";
+import { appConfig } from "@/integrations/db/schemas/app-state.schema";
 import type { WorkoutSessionExerciseInsert } from "@/integrations/db/schemas/workout-session.schema";
 
 type InitWorkoutSessionCommand = {
@@ -21,6 +21,9 @@ export async function initWorkoutSessionCommand(
 
   const appConfigData = await findAppConfigQuery();
 
+  if (appConfigData.activeWorkoutSessionId !== null)
+    throw new Error("Session already active");
+
   const sessionCreated = await dbConnection.transaction(async (tx) => {
     const [sessionCreated] = await tx
       .insert(workoutSession)
@@ -30,21 +33,27 @@ export async function initWorkoutSessionCommand(
       })
       .returning({
         id: workoutSession.id,
-      });
+      })
+      .execute();
 
-    await tx.insert(workoutSessionExercise).values(
-      workoutData.exercises.map((e) => ({
-        orderIndex: e.orderIndex,
-        weightDisplayUnit: appConfigData.defaultWeightUnit,
-        workoutSessionId: sessionCreated.id,
-        exerciseId: e.exerciseId,
-      })) satisfies WorkoutSessionExerciseInsert[],
-    );
+    await tx
+      .insert(workoutSessionExercise)
+      .values(
+        workoutData.exercises.map((e) => ({
+          orderIndex: e.orderIndex,
+          weightDisplayUnit: appConfigData.defaultWeightUnit,
+          workoutSessionId: sessionCreated.id,
+          exerciseId: e.exerciseId,
+        })) satisfies WorkoutSessionExerciseInsert[],
+      )
+      .execute();
+
+    await tx
+      .update(appConfig)
+      .set({ activeWorkoutSessionId: sessionCreated.id });
 
     return sessionCreated;
   });
 
-  await updateAppConfigCommand({
-    activeWorkoutSessionId: sessionCreated.id,
-  });
+  return sessionCreated;
 }

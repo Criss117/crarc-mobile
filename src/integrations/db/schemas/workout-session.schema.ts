@@ -4,7 +4,6 @@ import {
   check,
   index,
   integer,
-  primaryKey,
   sqliteTable,
   text,
   uniqueIndex,
@@ -92,34 +91,24 @@ export const workoutSessionExercise = sqliteTable(
 export const workoutSessionExerciseSet = sqliteTable(
   "workout_session_exercise_set",
   {
+    id: uuid("id").primaryKey(),
     workoutSessionExerciseId: text("workout_session_exercise_id")
       .notNull()
       .references(() => workoutSessionExercise.id, {
         onDelete: "cascade",
       }),
 
-    setIndex: integer("set_index").notNull(),
     reps: integer("reps").notNull(),
     rir: integer("rir"),
     weightInGrams: integer("weight_in_grams").notNull(),
-    startedAt: integer("started_at", {
-      mode: "timestamp_ms",
-    }).notNull(),
-    endedAt: integer("ended_at", {
-      mode: "timestamp_ms",
-    }),
     notes: text("notes"),
 
     ...auditMetadata,
   },
   (t) => [
-    primaryKey({
-      columns: [t.workoutSessionExerciseId, t.setIndex],
-    }),
     check("chk_workout_set_reps", sql`${t.reps} > 0`),
     check("chk_workout_set_rir", sql`${t.rir} IS NULL OR ${t.rir} >= 0`),
     check("chk_workout_set_weight", sql`${t.weightInGrams} >= 0`),
-    check("chk_workout_set_index", sql`${t.setIndex} >= 0`),
     index("idx_workout_set_session_exercise").on(t.workoutSessionExerciseId),
     index("idx_workout_set_weight").on(t.weightInGrams),
   ],

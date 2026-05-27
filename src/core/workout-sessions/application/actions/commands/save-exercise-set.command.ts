@@ -1,10 +1,11 @@
 import { dbConnection } from "@/integrations/db";
 import { workoutSessionExerciseSet } from "@/integrations/db/schemas";
+import { and, eq } from "drizzle-orm";
 import { findActiveWorkoutSessionQuery } from "../queries/find-active-workout-session.query";
 
 type SaveExerciseSetCommand = {
+  setId?: string;
   workoutSessionExerciseId: string;
-  setIndex: number;
   weightInUnits: number;
   reps: number;
   rir: number;
@@ -27,26 +28,31 @@ export async function saveExerciseSetCommand(cmd: SaveExerciseSetCommand) {
     cmd.weightInUnits *
     (currentExercise.weightDisplayUnit === "kg" ? 1000 : 453.6);
 
-  await dbConnection
-    .insert(workoutSessionExerciseSet)
-    .values({
-      workoutSessionExerciseId: cmd.workoutSessionExerciseId,
-      setIndex: cmd.setIndex,
-      reps: cmd.reps,
-      rir: cmd.rir,
-      weightInGrams: weightInGrams,
-      startedAt: new Date(),
-    })
-    .onConflictDoUpdate({
-      target: [
-        workoutSessionExerciseSet.setIndex,
-        workoutSessionExerciseSet.workoutSessionExerciseId,
-      ],
-      set: {
+  if (cmd.setId) {
+    await dbConnection
+      .update(workoutSessionExerciseSet)
+      .set({
         reps: cmd.reps,
         rir: cmd.rir,
         weightInGrams: weightInGrams,
-        endedAt: new Date(),
-      },
-    });
+      })
+      .where(
+        and(
+          eq(
+            workoutSessionExerciseSet.workoutSessionExerciseId,
+            cmd.workoutSessionExerciseId,
+          ),
+          eq(workoutSessionExerciseSet.id, cmd.setId),
+        ),
+      );
+
+    return;
+  }
+
+  await dbConnection.insert(workoutSessionExerciseSet).values({
+    workoutSessionExerciseId: cmd.workoutSessionExerciseId,
+    reps: cmd.reps,
+    rir: cmd.rir,
+    weightInGrams: weightInGrams,
+  });
 }

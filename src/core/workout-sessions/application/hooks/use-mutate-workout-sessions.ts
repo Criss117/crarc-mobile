@@ -16,8 +16,7 @@ export function useMutateWorkoutSessions() {
     onSuccess: () => {
       queryClient.invalidateQueries(findAppConfigQueryOptions);
       queryClient.invalidateQueries(findAllWorkoutSessionsQueryOptions);
-
-      queryClient.prefetchQuery(findActiveWorkoutSessionQueryOptions);
+      queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
     },
   });
 

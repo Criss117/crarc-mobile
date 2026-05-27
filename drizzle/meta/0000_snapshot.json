@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "82754a83-2e62-450d-aab6-11fc76a7469f",
+  "id": "55150fcf-6a6f-4599-90c2-9f112b692a95",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "app_config": {
@@ -827,16 +827,16 @@
     "workout_session_exercise_set": {
       "name": "workout_session_exercise_set",
       "columns": {
-        "workout_session_exercise_id": {
-          "name": "workout_session_exercise_id",
+        "id": {
+          "name": "id",
           "type": "text",
-          "primaryKey": false,
+          "primaryKey": true,
           "notNull": true,
           "autoincrement": false
         },
-        "set_index": {
-          "name": "set_index",
-          "type": "integer",
+        "workout_session_exercise_id": {
+          "name": "workout_session_exercise_id",
+          "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -860,20 +860,6 @@
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false
-        },
-        "started_at": {
-          "name": "started_at",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "ended_at": {
-          "name": "ended_at",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
           "autoincrement": false
         },
         "notes": {
@@ -936,15 +922,7 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {
-        "workout_session_exercise_set_workout_session_exercise_id_set_index_pk": {
-          "columns": [
-            "workout_session_exercise_id",
-            "set_index"
-          ],
-          "name": "workout_session_exercise_set_workout_session_exercise_id_set_index_pk"
-        }
-      },
+      "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "checkConstraints": {
         "chk_workout_set_reps": {
@@ -958,10 +936,6 @@
         "chk_workout_set_weight": {
           "name": "chk_workout_set_weight",
           "value": "\"workout_session_exercise_set\".\"weight_in_grams\" >= 0"
-        },
-        "chk_workout_set_index": {
-          "name": "chk_workout_set_index",
-          "value": "\"workout_session_exercise_set\".\"set_index\" >= 0"
         }
       }
     }

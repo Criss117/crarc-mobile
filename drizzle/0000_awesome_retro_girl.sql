@@ -119,23 +119,19 @@ CREATE UNIQUE INDEX `uq_workout_session_exercise_order` ON `workout_session_exer
 CREATE INDEX `idx_workout_session_exercise_session` ON `workout_session_exercise` (`workout_session_id`);--> statement-breakpoint
 CREATE INDEX `idx_workout_session_exercise_exercise` ON `workout_session_exercise` (`exercise_id`);--> statement-breakpoint
 CREATE TABLE `workout_session_exercise_set` (
+	`id` text PRIMARY KEY NOT NULL,
 	`workout_session_exercise_id` text NOT NULL,
-	`set_index` integer NOT NULL,
 	`reps` integer NOT NULL,
 	`rir` integer,
 	`weight_in_grams` integer NOT NULL,
-	`started_at` integer NOT NULL,
-	`ended_at` integer,
 	`notes` text,
 	`created_at` integer NOT NULL,
 	`updated_at` integer NOT NULL,
 	`deleted_at` integer,
-	PRIMARY KEY(`workout_session_exercise_id`, `set_index`),
 	FOREIGN KEY (`workout_session_exercise_id`) REFERENCES `workout_session_exercise`(`id`) ON UPDATE no action ON DELETE cascade,
 	CONSTRAINT "chk_workout_set_reps" CHECK("workout_session_exercise_set"."reps" > 0),
 	CONSTRAINT "chk_workout_set_rir" CHECK("workout_session_exercise_set"."rir" IS NULL OR "workout_session_exercise_set"."rir" >= 0),
-	CONSTRAINT "chk_workout_set_weight" CHECK("workout_session_exercise_set"."weight_in_grams" >= 0),
-	CONSTRAINT "chk_workout_set_index" CHECK("workout_session_exercise_set"."set_index" >= 0)
+	CONSTRAINT "chk_workout_set_weight" CHECK("workout_session_exercise_set"."weight_in_grams" >= 0)
 );
 --> statement-breakpoint
 CREATE INDEX `idx_workout_set_session_exercise` ON `workout_session_exercise_set` (`workout_session_exercise_id`);--> statement-breakpoint

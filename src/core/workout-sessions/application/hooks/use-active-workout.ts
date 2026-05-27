@@ -1,3 +1,4 @@
+import { findAppConfigQueryOptions } from "@/core/profile/application/hooks/use-app-config";
 import { workoutSessionActions } from "@/core/workout-sessions/application/actions";
 import {
   queryOptions,
@@ -18,18 +19,22 @@ export function useActiveWorkoutSession() {
   const completeWorkout = useMutation({
     mutationKey: ["workout-session", "complete"],
     mutationFn: workoutSessionActions.commands.completeWorkoutSession,
+    onSuccess: () => {
+      queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
+      queryClient.invalidateQueries(findAppConfigQueryOptions);
+    },
   });
 
   const saveExerciseSet = useMutation({
-    mutationKey: ["save-exercise-set"],
+    mutationKey: ["workout-session", "save-exercise-set"],
     mutationFn: workoutSessionActions.commands.saveExerciseSet,
     onSuccess: () => {
       queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
     },
   });
 
-  const toggleCompleteWorkoutSessionExercise = useMutation({
-    mutationKey: ["toggle-complete-workout-session-exercise"],
+  const completeExercise = useMutation({
+    mutationKey: ["workout-session", "complete-exercise"],
     mutationFn:
       workoutSessionActions.commands.toggleCompleteWorkoutSessionExercise,
     onSuccess: () => {
@@ -41,6 +46,6 @@ export function useActiveWorkoutSession() {
     data,
     completeWorkout,
     saveExerciseSet,
-    toggleCompleteWorkoutSessionExercise,
+    completeExercise,
   };
 }

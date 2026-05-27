@@ -9,3 +9,7 @@ export type WorkoutSummary = WorkoutSelect & {
     "createdAt" | "updatedAt" | "deletedAt"
   >[];
 };
+
+export type WorkoutDetail = WorkoutSelect & {
+  exercises: WorkoutExerciseSelect[];
+};

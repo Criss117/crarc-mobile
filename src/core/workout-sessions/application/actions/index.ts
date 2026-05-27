@@ -4,6 +4,7 @@ import { saveExerciseSetCommand } from "@/core/workout-sessions/application/acti
 import { toggleCompleteWorkoutSessionExerciseCommand } from "@/core/workout-sessions/application/actions/commands/toggle-complete-workout-session-exercise.command";
 import { findActiveWorkoutSessionQuery } from "@/core/workout-sessions/application/actions/queries/find-active-workout-session.query";
 import { findAllWorkoutSessionsQuery } from "@/core/workout-sessions/application/actions/queries/find-all-workout-sessions.query";
+import { findOneWorkoutSessionQuery } from "@/core/workout-sessions/application/actions/queries/find-one-workout-session.query";
 
 export const workoutSessionActions = {
   commands: {
@@ -16,5 +17,6 @@ export const workoutSessionActions = {
   queries: {
     findAll: findAllWorkoutSessionsQuery,
     findActive: findActiveWorkoutSessionQuery,
+    findOne: findOneWorkoutSessionQuery,
   },
 };
