@@ -18,7 +18,7 @@ export function useActiveWorkoutSession() {
 
   const completeWorkout = useMutation({
     mutationKey: ["workout-session", "complete"],
-    mutationFn: workoutSessionActions.commands.completeWorkoutSession,
+    mutationFn: workoutSessionActions.commands.complete,
     onSuccess: () => {
       queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
       queryClient.invalidateQueries(findAppConfigQueryOptions);
@@ -35,8 +35,23 @@ export function useActiveWorkoutSession() {
 
   const completeExercise = useMutation({
     mutationKey: ["workout-session", "complete-exercise"],
-    mutationFn:
-      workoutSessionActions.commands.toggleCompleteWorkoutSessionExercise,
+    mutationFn: workoutSessionActions.commands.toggleCompleteExercise,
+    onSuccess: () => {
+      queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
+    },
+  });
+
+  const deleteExercise = useMutation({
+    mutationKey: ["workout-session", "delete-exercise"],
+    mutationFn: workoutSessionActions.commands.deleteExercise,
+    onSuccess: () => {
+      queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
+    },
+  });
+
+  const changeExerciseWeightUnit = useMutation({
+    mutationKey: ["workout-session", "change-exercise-weight-unit"],
+    mutationFn: workoutSessionActions.commands.changeExerciseWeightUnit,
     onSuccess: () => {
       queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
     },
@@ -47,5 +62,7 @@ export function useActiveWorkoutSession() {
     completeWorkout,
     saveExerciseSet,
     completeExercise,
+    deleteExercise,
+    changeExerciseWeightUnit,
   };
 }

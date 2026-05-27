@@ -21,3 +21,25 @@ export function timeAgo(date: Date | string | number): string {
   if (months < 12) return `${months} meses`;
   return `${years} años`;
 }
+
+export function formatDuration(date: Date | string | number): string {
+  const now = new Date();
+  const past = new Date(date);
+  const diffMs = Math.max(0, now.getTime() - past.getTime());
+
+  const totalSeconds = Math.floor(diffMs / 1000);
+  const seconds = totalSeconds % 60;
+  const totalMinutes = Math.floor(totalSeconds / 60);
+  const minutes = totalMinutes % 60;
+  const totalHours = Math.floor(totalMinutes / 60);
+  const hours = totalHours % 24;
+  const days = Math.floor(totalHours / 24);
+
+  const pad = (n: number) => String(n).padStart(2, "0");
+
+  if (days > 0) {
+    return `${pad(days)}:${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  }
+
+  return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+}

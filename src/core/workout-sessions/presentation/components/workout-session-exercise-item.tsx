@@ -8,11 +8,17 @@ import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workou
 import { CreateExerciseSet } from "./create-exercise-set";
 import { UpdateExerciseSet } from "./update-exercise-set";
 
+type Exercise = WorkoutSessionDetail["exercises"][number];
+
 interface Props {
-  exercise: WorkoutSessionDetail["exercises"][number];
+  exercise: Exercise;
+  selectExercise: (exercise: Exercise) => void;
 }
 
-export function WorkoutSessionExerciseItem({ exercise }: Props) {
+export function WorkoutSessionExerciseItem({
+  exercise,
+  selectExercise,
+}: Props) {
   const { completeExercise } = useActiveWorkoutSession();
 
   const handleToggleComplete = () => {
@@ -27,6 +33,14 @@ export function WorkoutSessionExerciseItem({ exercise }: Props) {
         <Text type="h3" className="flex-1">
           {exercise.name}
         </Text>
+        <Button
+          size="sm"
+          isIconOnly
+          variant="ghost"
+          onPress={() => selectExercise(exercise)}
+        >
+          <MaterialIcons name="more-vert" size={18} />
+        </Button>
         {exercise.completed ? (
           <Button
             size="sm"
@@ -59,7 +73,7 @@ export function WorkoutSessionExerciseItem({ exercise }: Props) {
             <Text>Set</Text>
           </View>
           <View className="flex-1 items-center justify-center">
-            <Text>Kg</Text>
+            <Text>{exercise.weightDisplayUnit}</Text>
           </View>
           <View className="flex-1 items-center justify-center">
             <Text>Reps</Text>

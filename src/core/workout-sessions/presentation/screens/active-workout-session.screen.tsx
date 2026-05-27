@@ -1,11 +1,11 @@
 import { Stack, useRouter } from "expo-router";
 import { Button } from "heroui-native";
-import { ScrollView } from "react-native";
 
 import { useActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
 import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
 import { WorkoutSessionExercisesList } from "@/core/workout-sessions/presentation/sections/workout-session-exercises-list";
 import { WorkoutSessionHeader } from "@/core/workout-sessions/presentation/sections/workout-session-header";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 interface Props {
   workoutSession: WorkoutSessionDetail;
@@ -30,16 +30,20 @@ export function ActiveWorkoutSessionScreen({ workoutSession }: Props) {
       <Stack.Screen
         options={{
           headerRight: () => (
-            <Button onPress={handleComplete}>
-              <Button.Label>Completar rutina</Button.Label>
+            <Button onPress={handleComplete} variant="outline" size="sm">
+              <Button.Label>Completar</Button.Label>
             </Button>
           ),
         }}
       />
-      <ScrollView className="px-3" contentContainerClassName="gap-y-4">
+      <KeyboardAwareScrollView
+        className="px-3"
+        contentContainerClassName="gap-y-6"
+        bottomOffset={64}
+      >
         <WorkoutSessionHeader workoutSession={workoutSession} />
         <WorkoutSessionExercisesList workoutSession={workoutSession} />
-      </ScrollView>
+      </KeyboardAwareScrollView>
     </>
   );
 }

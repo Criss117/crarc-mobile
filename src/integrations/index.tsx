@@ -1,3 +1,5 @@
+import { KeyboardProvider } from "react-native-keyboard-controller";
+
 import { DBProvider } from "./db/provider";
 import { FontsProvider } from "./fonts";
 import { HeroUIProvider } from "./hero-ui";
@@ -12,7 +14,9 @@ export function Integrations({ children }: Props) {
     <DBProvider>
       <QueryProvider>
         <FontsProvider>
-          <HeroUIProvider>{children}</HeroUIProvider>
+          <HeroUIProvider>
+            <KeyboardProvider>{children}</KeyboardProvider>
+          </HeroUIProvider>
         </FontsProvider>
       </QueryProvider>
     </DBProvider>
