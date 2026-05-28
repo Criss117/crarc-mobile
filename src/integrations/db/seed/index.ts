@@ -6,33 +6,54 @@ import musclesData from "../../../assets/data/muscles.json";
 import { exercise, muscle } from "../schemas";
 import { appConfig } from "../schemas/app-state.schema";
 import {
-  ExerciseInsert,
+  type ExerciseInsert,
   exerciseMuscle,
-  ExerciseMuscleInsert,
+  type ExerciseMuscleInsert,
 } from "../schemas/exercises.schema";
 
 export async function seedExercises(db: DBConnection) {
   const musclesQuery = db
     .insert(muscle)
-    .values(musclesData)
+    .values(
+      musclesData.map((m) => ({
+        id: m.id,
+        name: m.name,
+        searchName: m.searchName,
+      })),
+    )
     .onConflictDoUpdate({
       target: muscle.id,
       set: buildConflictUpdateColumns(muscle, ["imageUrl", "searchName"]),
     });
 
+  const exercisesToInsert = exercisesData.map((e) => ({
+    id: e.id,
+    name: e.name,
+    searchName: e.searchName,
+    image: e.image,
+    gifUrl: e.gifUrl,
+    instructions: e.instructions,
+    instructionsStep: e.instructionsStep,
+    category: e.category as ExerciseInsert["category"],
+    equipment: e.equipment as ExerciseInsert["equipment"],
+    target: e.target as ExerciseInsert["target"],
+  })) satisfies ExerciseInsert[];
+
   const exercisesQuery = db
     .insert(exercise)
-    .values(exercisesData as ExerciseInsert[])
+    .values(exercisesToInsert)
     .onConflictDoUpdate({
       target: exercise.id,
       set: buildConflictUpdateColumns(exercise, [
-        "imageUrl",
+        "name",
         "searchName",
+        "image",
+        "gifUrl",
         "instructions",
-        "difficulty",
+        "instructionsStep",
+        "category",
         "equipment",
-        "favorite",
-        "notes",
+        "target",
       ]),
     });
 
@@ -40,11 +61,18 @@ export async function seedExercises(db: DBConnection) {
 
   const exercisesMusclesQuery = db
     .insert(exerciseMuscle)
-    .values(exercisesMusclesData as ExerciseMuscleInsert[])
+    .values(
+      exercisesMusclesData.map((em) => ({
+        exerciseId: em.exerciseId,
+        muscleId: em.muscleId,
+        type: em.type as ExerciseMuscleInsert["type"],
+      })),
+    )
     .onConflictDoUpdate({
       target: [exerciseMuscle.exerciseId, exerciseMuscle.muscleId],
       set: buildConflictUpdateColumns(exerciseMuscle, ["type"]),
-    });
+    })
+    .returning();
 
   return exercisesMusclesQuery;
 }

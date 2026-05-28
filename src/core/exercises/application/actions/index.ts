@@ -1,5 +1,5 @@
-import { findAllExercises } from "./queries/find-all-exercises";
-import { findAllMuscles } from "./queries/find-all-muscles";
+import { findAllExercises } from "./queries/find-all-exercises.queries";
+import { findAllMuscles } from "./queries/find-all-muscles.queries";
 
 export const exerciseActions = {
   queries: {

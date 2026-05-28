@@ -16,7 +16,11 @@ export function DBProvider({ children }: { children: React.ReactNode }) {
 
     setIsPending(true);
     seedAppConfig(dbConnection).then(() =>
-      seedExercises(dbConnection).finally(() => setIsPending(false)),
+      seedExercises(dbConnection)
+        .then((r) => {
+          console.log(JSON.stringify(r, null, 2));
+        })
+        .finally(() => setIsPending(false)),
     );
   }, [success]);
 

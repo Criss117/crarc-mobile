@@ -29,12 +29,14 @@ export async function findAllExercises(): Promise<ExerciseSummary[]> {
       id: exercise.id,
       name: exercise.name,
       searchName: exercise.searchName,
-      imageUrl: exercise.imageUrl,
+      image: exercise.image,
+      gifUrl: exercise.gifUrl,
+      category: exercise.category,
+      target: exercise.target,
+      instructionsStep: exercise.instructionsStep,
       instructions: exercise.instructions,
       equipment: exercise.equipment,
-      difficulty: exercise.difficulty,
       favorite: exercise.favorite,
-      isSystem: exercise.isSystem,
       notes: exercise.notes,
       muscles: sql<string>`
             COALESCE(
@@ -53,6 +55,7 @@ export async function findAllExercises(): Promise<ExerciseSummary[]> {
     .from(exercise)
     .leftJoin(exerciseMuscle, eq(exerciseMuscle.exerciseId, exercise.id))
     .leftJoin(muscle, eq(muscle.id, exerciseMuscle.muscleId))
+    .limit(20)
     .groupBy(exercise.id);
 
   return exercisesquery.map((d) => ({

@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "55150fcf-6a6f-4599-90c2-9f112b692a95",
+  "id": "cef26ed4-d042-40f7-87ce-0cca33b71e28",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "app_config": {
@@ -83,8 +83,15 @@
           "notNull": true,
           "autoincrement": false
         },
-        "image_url": {
-          "name": "image_url",
+        "image": {
+          "name": "image",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "gif_url": {
+          "name": "gif_url",
           "type": "text",
           "primaryKey": false,
           "notNull": false,
@@ -97,16 +104,29 @@
           "notNull": true,
           "autoincrement": false
         },
+        "instructions_step": {
+          "name": "instructions_step",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "category": {
+          "name": "category",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
         "equipment": {
           "name": "equipment",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false,
-          "default": "'other'"
+          "autoincrement": false
         },
-        "difficulty": {
-          "name": "difficulty",
+        "target": {
+          "name": "target",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -114,14 +134,6 @@
         },
         "favorite": {
           "name": "favorite",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false,
-          "default": false
-        },
-        "is_system": {
-          "name": "is_system",
           "type": "integer",
           "primaryKey": false,
           "notNull": true,

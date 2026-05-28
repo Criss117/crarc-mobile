@@ -26,36 +26,6 @@ export const auditMetadata = {
   }),
 };
 
-export const muscleExerciseTypes = [
-  "primary",
-  "secondary",
-  "stabilizer",
-] as const;
-
-export type MuscleExerciseType = (typeof muscleExerciseTypes)[number];
-
-export const exerciseDifficulty = [
-  "beginner",
-  "intermediate",
-  "advanced",
-] as const;
-
-export type ExerciseDifficulty = (typeof exerciseDifficulty)[number];
-
-export const equipmentTypes = [
-  "barbell",
-  "dumbbell",
-  "machine",
-  "cable",
-  "bodyweight",
-  "smith_machine",
-  "kettlebell",
-  "band",
-  "other",
-] as const;
-
-export type EquipmentType = (typeof equipmentTypes)[number];
-
 export const weightUnits = ["kg", "lb"] as const;
 
 export type WeightUnit = (typeof weightUnits)[number];

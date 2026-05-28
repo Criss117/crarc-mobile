@@ -9,11 +9,12 @@ import {
 } from "drizzle-orm/sqlite-core";
 
 import {
-  auditMetadata,
+  categorieTypes,
   equipmentTypes,
-  exerciseDifficulty,
   muscleExerciseTypes,
-} from "./shared";
+  targetTypes,
+} from "./exercise.types";
+import { auditMetadata } from "./shared";
 
 export const muscle = sqliteTable(
   "muscle",
@@ -36,22 +37,28 @@ export const exercise = sqliteTable(
     id: text("id").primaryKey(),
     name: text("name").notNull(),
     searchName: text("search_name").notNull(),
-    imageUrl: text("image_url"),
+
+    image: text("image"),
+    gifUrl: text("gif_url"),
+
     instructions: text("instructions").notNull(),
+    instructionsStep: text("instructions_step", {
+      mode: "json",
+    })
+      .notNull()
+      .$type<string[]>(),
+
+    category: text("category", {
+      enum: categorieTypes,
+    }).notNull(),
     equipment: text("equipment", {
       enum: equipmentTypes,
-    })
-      .notNull()
-      .default("other"),
-    difficulty: text("difficulty", {
-      enum: exerciseDifficulty,
     }).notNull(),
+    target: text("target", {
+      enum: targetTypes,
+    }).notNull(),
+
     favorite: integer("favorite", {
-      mode: "boolean",
-    })
-      .notNull()
-      .default(false),
-    isSystem: integer("is_system", {
       mode: "boolean",
     })
       .notNull()
