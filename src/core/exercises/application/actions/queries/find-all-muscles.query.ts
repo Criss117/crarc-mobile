@@ -2,7 +2,7 @@ import { MuscleSummary } from "@/core/exercises/domain/execises.entity";
 import { dbConnection } from "@/integrations/db";
 import { muscle } from "@/integrations/db/schemas";
 
-export async function findAllMuscles(): Promise<MuscleSummary[]> {
+export async function findAllMusclesQuery(): Promise<MuscleSummary[]> {
   return dbConnection
     .select({
       id: muscle.id,

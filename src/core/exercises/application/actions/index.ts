@@ -1,14 +1,14 @@
-import { findAllExercises } from "./queries/find-all-exercises.queries";
-import { findAllMuscles } from "./queries/find-all-muscles.queries";
+import { findAllExercisesQuery } from "@/core/exercises/application/actions/queries/find-all-exercises.query";
+import { findAllMusclesQuery } from "@/core/exercises/application/actions/queries/find-all-muscles.query";
 
 export const exerciseActions = {
   queries: {
-    findAllExercises,
+    findAllExercises: findAllExercisesQuery,
   },
 };
 
 export const muscleActions = {
   queries: {
-    findAllMuscles,
+    findAllMuscles: findAllMusclesQuery,
   },
 };

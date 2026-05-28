@@ -44,7 +44,7 @@ async function saveData() {
 
     exerciseMuscles.push({
       exerciseId: slugify(exercise.name),
-      muscleId: exercise.muscle_group,
+      muscleId: slugify(exercise.muscle_group),
       type: "primary",
     });
 

@@ -1,10 +1,10 @@
 [
-  { "exerciseId": "34-situp", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "34-situp", "muscleId": "hip-flexors", "type": "primary" },
   { "exerciseId": "34-situp", "muscleId": "hip-flexors", "type": "secondary" },
   { "exerciseId": "34-situp", "muscleId": "lower-back", "type": "secondary" },
   { "exerciseId": "45-side-bend", "muscleId": "obliques", "type": "primary" },
   { "exerciseId": "45-side-bend", "muscleId": "obliques", "type": "secondary" },
-  { "exerciseId": "air-bike", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "air-bike", "muscleId": "hip-flexors", "type": "primary" },
   { "exerciseId": "air-bike", "muscleId": "hip-flexors", "type": "secondary" },
   {
     "exerciseId": "all-fours-squad-stretch",
@@ -48,7 +48,7 @@
   },
   {
     "exerciseId": "ankle-circles",
-    "muscleId": "ankle stabilizers",
+    "muscleId": "ankle-stabilizers",
     "type": "primary"
   },
   {
@@ -127,7 +127,7 @@
   },
   {
     "exerciseId": "arms-overhead-full-situp-male",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -157,7 +157,7 @@
   },
   {
     "exerciseId": "assisted-hanging-knee-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -167,7 +167,7 @@
   },
   {
     "exerciseId": "assisted-hanging-knee-raise-with-throw-down",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -212,7 +212,7 @@
   },
   {
     "exerciseId": "assisted-lying-leg-raise-with-lateral-throw-down",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -227,7 +227,7 @@
   },
   {
     "exerciseId": "assisted-lying-leg-raise-with-throw-down",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -353,7 +353,7 @@
   },
   {
     "exerciseId": "assisted-situp",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -542,7 +542,7 @@
   },
   {
     "exerciseId": "band-alternating-vup",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -567,7 +567,7 @@
   },
   {
     "exerciseId": "band-assisted-wheel-rollerout",
-    "muscleId": "lower back",
+    "muscleId": "lower-back",
     "type": "primary"
   },
   {
@@ -607,7 +607,7 @@
   },
   {
     "exerciseId": "band-bicycle-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -757,7 +757,7 @@
   },
   {
     "exerciseId": "band-jack-knife-situp",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -807,7 +807,7 @@
   },
   {
     "exerciseId": "band-lying-straight-leg-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -918,7 +918,7 @@
   { "exerciseId": "band-push-situp", "muscleId": "chest", "type": "secondary" },
   {
     "exerciseId": "band-reverse-fly",
-    "muscleId": "upper back",
+    "muscleId": "upper-back",
     "type": "primary"
   },
   {
@@ -1200,7 +1200,7 @@
     "muscleId": "forearms",
     "type": "secondary"
   },
-  { "exerciseId": "band-vup", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "band-vup", "muscleId": "hip-flexors", "type": "primary" },
   { "exerciseId": "band-vup", "muscleId": "hip-flexors", "type": "secondary" },
   {
     "exerciseId": "band-vertical-pallof-press",
@@ -1740,7 +1740,7 @@
   },
   {
     "exerciseId": "barbell-good-morning",
-    "muscleId": "lower back",
+    "muscleId": "lower-back",
     "type": "primary"
   },
   {
@@ -2567,7 +2567,7 @@
   },
   {
     "exerciseId": "barbell-rollerout",
-    "muscleId": "lower back",
+    "muscleId": "lower-back",
     "type": "primary"
   },
   {
@@ -2833,7 +2833,7 @@
   },
   {
     "exerciseId": "barbell-sitted-alternate-leg-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -2843,7 +2843,7 @@
   },
   {
     "exerciseId": "barbell-sitted-alternate-leg-raise-female",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -3802,7 +3802,7 @@
   { "exerciseId": "burpee", "muscleId": "calves", "type": "secondary" },
   { "exerciseId": "burpee", "muscleId": "shoulders", "type": "secondary" },
   { "exerciseId": "burpee", "muscleId": "chest", "type": "secondary" },
-  { "exerciseId": "buttups", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "buttups", "muscleId": "hip-flexors", "type": "primary" },
   { "exerciseId": "buttups", "muscleId": "hip-flexors", "type": "secondary" },
   { "exerciseId": "buttups", "muscleId": "lower-back", "type": "secondary" },
   {
@@ -4925,7 +4925,7 @@
   },
   {
     "exerciseId": "cable-reverse-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -5261,7 +5261,7 @@
   },
   {
     "exerciseId": "cable-seated-shoulder-internal-rotation",
-    "muscleId": "rotator cuff",
+    "muscleId": "rotator-cuff",
     "type": "primary"
   },
   {
@@ -5588,7 +5588,7 @@
   },
   {
     "exerciseId": "cable-standing-shoulder-external-rotation",
-    "muscleId": "rotator cuff",
+    "muscleId": "rotator-cuff",
     "type": "primary"
   },
   {
@@ -5738,7 +5738,7 @@
   },
   {
     "exerciseId": "cable-tuck-reverse-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -5928,7 +5928,7 @@
   },
   {
     "exerciseId": "captains-chair-straight-leg-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -6113,7 +6113,7 @@
     "muscleId": "shoulders",
     "type": "secondary"
   },
-  { "exerciseId": "cocoons", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "cocoons", "muscleId": "hip-flexors", "type": "primary" },
   { "exerciseId": "cocoons", "muscleId": "hip-flexors", "type": "secondary" },
   { "exerciseId": "cocoons", "muscleId": "lower-back", "type": "secondary" },
   {
@@ -6143,7 +6143,7 @@
   },
   {
     "exerciseId": "crunch-hands-overhead",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -6153,7 +6153,7 @@
   },
   {
     "exerciseId": "crunch-on-stability-ball",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -6163,7 +6163,7 @@
   },
   {
     "exerciseId": "crunch-on-stability-ball-arms-straight",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -6173,7 +6173,7 @@
   },
   {
     "exerciseId": "crunch-floor",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -6181,7 +6181,7 @@
     "muscleId": "hip-flexors",
     "type": "secondary"
   },
-  { "exerciseId": "curlup", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "curlup", "muscleId": "hip-flexors", "type": "primary" },
   { "exerciseId": "curlup", "muscleId": "hip-flexors", "type": "secondary" },
   {
     "exerciseId": "curtsey-squat",
@@ -6219,12 +6219,12 @@
     "muscleId": "glutes",
     "type": "secondary"
   },
-  { "exerciseId": "dead-bug", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "dead-bug", "muscleId": "hip-flexors", "type": "primary" },
   { "exerciseId": "dead-bug", "muscleId": "hip-flexors", "type": "secondary" },
   { "exerciseId": "dead-bug", "muscleId": "lower-back", "type": "secondary" },
   {
     "exerciseId": "decline-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -6245,7 +6245,7 @@
   },
   {
     "exerciseId": "decline-situp",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -6883,7 +6883,7 @@
   },
   {
     "exerciseId": "dumbbell-finger-curls",
-    "muscleId": "wrist flexors",
+    "muscleId": "wrist-flexors",
     "type": "primary"
   },
   {
@@ -7600,7 +7600,7 @@
   },
   {
     "exerciseId": "dumbbell-lying-external-shoulder-rotation",
-    "muscleId": "rotator cuff",
+    "muscleId": "rotator-cuff",
     "type": "primary"
   },
   {
@@ -8140,7 +8140,7 @@
   },
   {
     "exerciseId": "dumbbell-one-arm-reverse-wrist-curl",
-    "muscleId": "wrist extensors",
+    "muscleId": "wrist-extensors",
     "type": "primary"
   },
   {
@@ -8575,7 +8575,7 @@
   },
   {
     "exerciseId": "dumbbell-pullover",
-    "muscleId": "latissimus dorsi",
+    "muscleId": "latissimus-dorsi",
     "type": "primary"
   },
   {
@@ -9878,7 +9878,7 @@
   },
   {
     "exerciseId": "dumbbell-straight-arm-pullover",
-    "muscleId": "latissimus dorsi",
+    "muscleId": "latissimus-dorsi",
     "type": "primary"
   },
   {
@@ -10013,7 +10013,7 @@
   },
   {
     "exerciseId": "dumbbell-upright-shoulder-external-rotation",
-    "muscleId": "rotator cuff",
+    "muscleId": "rotator-cuff",
     "type": "primary"
   },
   {
@@ -10693,7 +10693,7 @@
   { "exerciseId": "farmers-walk", "muscleId": "core", "type": "secondary" },
   {
     "exerciseId": "finger-curls",
-    "muscleId": "wrist flexors",
+    "muscleId": "wrist-flexors",
     "type": "primary"
   },
   {
@@ -10711,7 +10711,7 @@
   { "exerciseId": "flag", "muscleId": "shoulders", "type": "secondary" },
   {
     "exerciseId": "flexion-leg-sit-up-bent-knee",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -10721,7 +10721,7 @@
   },
   {
     "exerciseId": "flexion-leg-sit-up-straight-arm",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -10751,7 +10751,7 @@
   },
   {
     "exerciseId": "flutter-kicks",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -10812,7 +10812,7 @@
     "muscleId": "calves",
     "type": "secondary"
   },
-  { "exerciseId": "frog-crunch", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "frog-crunch", "muscleId": "hip-flexors", "type": "primary" },
   {
     "exerciseId": "frog-crunch",
     "muscleId": "hip-flexors",
@@ -10949,7 +10949,7 @@
   { "exerciseId": "gorilla-chin", "muscleId": "biceps", "type": "secondary" },
   {
     "exerciseId": "groin-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -11014,7 +11014,7 @@
   },
   {
     "exerciseId": "half-situp-male",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -11096,7 +11096,7 @@
   { "exerciseId": "handstand-pushup", "muscleId": "core", "type": "secondary" },
   {
     "exerciseId": "hanging-leg-hip-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -11111,7 +11111,7 @@
   },
   {
     "exerciseId": "hanging-leg-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -11131,7 +11131,7 @@
   },
   {
     "exerciseId": "hanging-pike",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -11146,7 +11146,7 @@
   },
   {
     "exerciseId": "hanging-straight-leg-hip-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -11156,7 +11156,7 @@
   },
   {
     "exerciseId": "hanging-straight-leg-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -11304,7 +11304,7 @@
   },
   {
     "exerciseId": "incline-leg-hip-raise-leg-straight",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -11576,7 +11576,7 @@
   { "exerciseId": "jack-jump-male", "muscleId": "calves", "type": "secondary" },
   {
     "exerciseId": "jackknife-situp",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -11584,7 +11584,7 @@
     "muscleId": "hip-flexors",
     "type": "secondary"
   },
-  { "exerciseId": "janda-situp", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "janda-situp", "muscleId": "hip-flexors", "type": "primary" },
   {
     "exerciseId": "janda-situp",
     "muscleId": "hip-flexors",
@@ -12330,7 +12330,7 @@
   },
   {
     "exerciseId": "knee-touch-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -12411,7 +12411,7 @@
   { "exerciseId": "lpullup", "muscleId": "forearms", "type": "secondary" },
   {
     "exerciseId": "lsit-on-floor",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -12467,7 +12467,7 @@
   },
   {
     "exerciseId": "leg-pull-in-flat-bench",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -13266,7 +13266,7 @@
   },
   {
     "exerciseId": "lever-seated-leg-raise-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -13553,7 +13553,7 @@
   },
   {
     "exerciseId": "lying-elbow-to-knee",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -13568,7 +13568,7 @@
   },
   {
     "exerciseId": "lying-leg-raise-flat-bench",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -13578,7 +13578,7 @@
   },
   {
     "exerciseId": "lying-leghip-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -13892,7 +13892,7 @@
   },
   {
     "exerciseId": "negative-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -14041,7 +14041,7 @@
     "type": "secondary"
   },
   { "exerciseId": "one-leg-squat", "muscleId": "calves", "type": "secondary" },
-  { "exerciseId": "otis-up", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "otis-up", "muscleId": "hip-flexors", "type": "primary" },
   { "exerciseId": "otis-up", "muscleId": "hip-flexors", "type": "secondary" },
   { "exerciseId": "otis-up", "muscleId": "lower-back", "type": "secondary" },
   {
@@ -14074,7 +14074,7 @@
     "muscleId": "shoulders",
     "type": "secondary"
   },
-  { "exerciseId": "pelvic-tilt", "muscleId": "lower back", "type": "primary" },
+  { "exerciseId": "pelvic-tilt", "muscleId": "lower-back", "type": "primary" },
   {
     "exerciseId": "pelvic-tilt",
     "muscleId": "lower-back",
@@ -14231,7 +14231,7 @@
   },
   {
     "exerciseId": "prisoner-half-situp-male",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -14271,7 +14271,7 @@
   },
   {
     "exerciseId": "pullin-on-stability-ball",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -14506,7 +14506,7 @@
   { "exerciseId": "quads", "muscleId": "glutes", "type": "secondary" },
   {
     "exerciseId": "quarter-situp",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -14686,7 +14686,7 @@
   },
   {
     "exerciseId": "reverse-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -14873,7 +14873,7 @@
   },
   {
     "exerciseId": "roller-reverse-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -15043,7 +15043,7 @@
   },
   {
     "exerciseId": "seated-leg-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -15476,11 +15476,11 @@
   { "exerciseId": "sissy-squat", "muscleId": "calves", "type": "primary" },
   { "exerciseId": "sissy-squat", "muscleId": "calves", "type": "secondary" },
   { "exerciseId": "sissy-squat", "muscleId": "glutes", "type": "secondary" },
-  { "exerciseId": "situp-v-2", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "situp-v-2", "muscleId": "hip-flexors", "type": "primary" },
   { "exerciseId": "situp-v-2", "muscleId": "hip-flexors", "type": "secondary" },
   {
     "exerciseId": "situp-with-arms-on-chest",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -16605,7 +16605,7 @@
   },
   {
     "exerciseId": "stability-ball-crunch-full-range-hands-behind-head",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -16747,7 +16747,7 @@
   },
   {
     "exerciseId": "standing-wheel-rollerout",
-    "muscleId": "lower back",
+    "muscleId": "lower-back",
     "type": "primary"
   },
   {
@@ -16906,7 +16906,7 @@
   { "exerciseId": "suspended-pushup", "muscleId": "core", "type": "secondary" },
   {
     "exerciseId": "suspended-reverse-crunch",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -17059,7 +17059,7 @@
     "muscleId": "shoulders",
     "type": "secondary"
   },
-  { "exerciseId": "tuck-crunch", "muscleId": "hip flexors", "type": "primary" },
+  { "exerciseId": "tuck-crunch", "muscleId": "hip-flexors", "type": "primary" },
   {
     "exerciseId": "tuck-crunch",
     "muscleId": "hip-flexors",
@@ -17168,7 +17168,7 @@
   },
   {
     "exerciseId": "vsit-on-floor",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -17178,7 +17178,7 @@
   },
   {
     "exerciseId": "vertical-leg-raise-on-parallel-bars",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -17359,7 +17359,7 @@
   },
   {
     "exerciseId": "weighted-decline-situp",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -17434,7 +17434,7 @@
   },
   {
     "exerciseId": "weighted-hanging-leghip-raise",
-    "muscleId": "hip flexors",
+    "muscleId": "hip-flexors",
     "type": "primary"
   },
   {
@@ -17846,7 +17846,7 @@
   },
   {
     "exerciseId": "wheel-rollerout",
-    "muscleId": "lower back",
+    "muscleId": "lower-back",
     "type": "primary"
   },
   {

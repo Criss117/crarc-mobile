@@ -31,16 +31,11 @@ CREATE TABLE `exercise_muscle` (
 	`exercise_id` text NOT NULL,
 	`muscle_id` text NOT NULL,
 	`type` text NOT NULL,
-	`created_at` integer NOT NULL,
-	`updated_at` integer NOT NULL,
-	`deleted_at` integer,
-	PRIMARY KEY(`exercise_id`, `muscle_id`),
+	PRIMARY KEY(`exercise_id`, `muscle_id`, `type`),
 	FOREIGN KEY (`exercise_id`) REFERENCES `exercise`(`id`) ON UPDATE no action ON DELETE cascade,
 	FOREIGN KEY (`muscle_id`) REFERENCES `muscle`(`id`) ON UPDATE no action ON DELETE cascade
 );
 --> statement-breakpoint
-CREATE INDEX `idx_exercise_muscle_exercise` ON `exercise_muscle` (`exercise_id`);--> statement-breakpoint
-CREATE INDEX `idx_exercise_muscle_muscle` ON `exercise_muscle` (`muscle_id`);--> statement-breakpoint
 CREATE TABLE `muscle` (
 	`id` text PRIMARY KEY NOT NULL,
 	`name` text NOT NULL,

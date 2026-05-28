@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "cef26ed4-d042-40f7-87ce-0cca33b71e28",
+  "id": "98bb7018-b26a-498e-bb05-4b8acc67ee60",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "app_config": {
@@ -220,45 +220,9 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
-        },
-        "created_at": {
-          "name": "created_at",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "updated_at": {
-          "name": "updated_at",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "deleted_at": {
-          "name": "deleted_at",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
         }
       },
-      "indexes": {
-        "idx_exercise_muscle_exercise": {
-          "name": "idx_exercise_muscle_exercise",
-          "columns": [
-            "exercise_id"
-          ],
-          "isUnique": false
-        },
-        "idx_exercise_muscle_muscle": {
-          "name": "idx_exercise_muscle_muscle",
-          "columns": [
-            "muscle_id"
-          ],
-          "isUnique": false
-        }
-      },
+      "indexes": {},
       "foreignKeys": {
         "exercise_muscle_exercise_id_exercise_id_fk": {
           "name": "exercise_muscle_exercise_id_exercise_id_fk",
@@ -288,12 +252,13 @@
         }
       },
       "compositePrimaryKeys": {
-        "exercise_muscle_exercise_id_muscle_id_pk": {
+        "exercise_muscle_exercise_id_muscle_id_type_pk": {
           "columns": [
             "exercise_id",
-            "muscle_id"
+            "muscle_id",
+            "type"
           ],
-          "name": "exercise_muscle_exercise_id_muscle_id_pk"
+          "name": "exercise_muscle_exercise_id_muscle_id_type_pk"
         }
       },
       "uniqueConstraints": {},

@@ -90,15 +90,11 @@ export const exerciseMuscle = sqliteTable(
     type: text("type", {
       enum: muscleExerciseTypes,
     }).notNull(),
-
-    ...auditMetadata,
   },
   (t) => [
     primaryKey({
-      columns: [t.exerciseId, t.muscleId],
+      columns: [t.exerciseId, t.muscleId, t.type],
     }),
-    index("idx_exercise_muscle_exercise").on(t.exerciseId),
-    index("idx_exercise_muscle_muscle").on(t.muscleId),
   ],
 );
 

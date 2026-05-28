@@ -29,7 +29,14 @@ export function ExercisesItem({ exercise }: Props) {
         <Card.Header className="flex-1">
           <Card.Title>{exercise.name}</Card.Title>
           <Card.Description className="text-sm line-clamp-1">
-            {exercise.muscles.map((m) => m.name).join(", ")}
+            Principal: {exercise.primaryMuscle.name}
+          </Card.Description>
+          <Card.Description className="text-sm line-clamp-1">
+            Secundarios:{" "}
+            {exercise.secondaryMuscles.map((m) => m.name).join(", ")}
+          </Card.Description>
+          <Card.Description className="text-sm line-clamp-1">
+            Objetivo: {exercise.target}
           </Card.Description>
         </Card.Header>
         <Card.Body>
@@ -60,7 +67,10 @@ export function SelectableExercisesItem({
         <Card.Header className="flex-1">
           <Card.Title>{exercise.name}</Card.Title>
           <Card.Description className="text-sm line-clamp-1">
-            {exercise.muscles.map((m) => m.name).join(", ")}
+            Musculo principal: {exercise.primaryMuscle.name}
+          </Card.Description>
+          <Card.Description className="text-sm line-clamp-1">
+            Objetivo: {exercise.target}
           </Card.Description>
         </Card.Header>
         {/* <Card.Body>

@@ -1,9 +1,10 @@
 import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
+import { useEffect, useState } from "react";
 import { View } from "react-native";
+
 import migrations from "../../../drizzle/migrations";
 
 import { Text } from "@/core/shared/components/text";
-import { useEffect, useState } from "react";
 import { dbConnection } from ".";
 import { seedAppConfig, seedExercises } from "./seed";
 
@@ -16,11 +17,7 @@ export function DBProvider({ children }: { children: React.ReactNode }) {
 
     setIsPending(true);
     seedAppConfig(dbConnection).then(() =>
-      seedExercises(dbConnection)
-        .then((r) => {
-          console.log(JSON.stringify(r, null, 2));
-        })
-        .finally(() => setIsPending(false)),
+      seedExercises(dbConnection).finally(() => setIsPending(false)),
     );
   }, [success]);
 

@@ -59,7 +59,7 @@ export async function seedExercises(db: DBConnection) {
 
   await Promise.all([musclesQuery, exercisesQuery]);
 
-  const exercisesMusclesQuery = db
+  await db
     .insert(exerciseMuscle)
     .values(
       exercisesMusclesData.map((em) => ({
@@ -68,13 +68,8 @@ export async function seedExercises(db: DBConnection) {
         type: em.type as ExerciseMuscleInsert["type"],
       })),
     )
-    .onConflictDoUpdate({
-      target: [exerciseMuscle.exerciseId, exerciseMuscle.muscleId],
-      set: buildConflictUpdateColumns(exerciseMuscle, ["type"]),
-    })
+    .onConflictDoNothing()
     .returning();
-
-  return exercisesMusclesQuery;
 }
 
 export async function seedAppConfig(db: DBConnection) {

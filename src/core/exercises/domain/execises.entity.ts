@@ -1,3 +1,4 @@
+import { MuscleExerciseType } from "@/integrations/db/schemas/exercise.types";
 import type {
   ExerciseSelect,
   MuscleSelect,
@@ -6,11 +7,14 @@ import type {
 export type MuscleSummary = Omit<
   MuscleSelect,
   "createdAt" | "updatedAt" | "deletedAt"
->;
+> & {
+  type: MuscleExerciseType;
+};
 
 export type ExerciseSummary = Omit<
   ExerciseSelect,
   "createdAt" | "updatedAt" | "deletedAt"
 > & {
-  muscles: MuscleSummary[];
+  primaryMuscle: MuscleSummary;
+  secondaryMuscles: MuscleSummary[];
 };

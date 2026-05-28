@@ -1,5 +1,4 @@
 import { eq, sql } from "drizzle-orm";
-import { z } from "zod";
 
 import type {
   ExerciseSummary,
@@ -8,22 +7,7 @@ import type {
 import { dbConnection } from "@/integrations/db";
 import { exercise, exerciseMuscle, muscle } from "@/integrations/db/schemas";
 
-const musclesSummarySchema = z.array(
-  z.object({
-    id: z.string(),
-    name: z.string(),
-    searchName: z.string(),
-    imageUrl: z.string().nullable(),
-  }),
-);
-
-function mapMusclesSummary(muscles: string): MuscleSummary[] {
-  const jsonData = JSON.parse(muscles);
-
-  return musclesSummarySchema.parse(jsonData);
-}
-
-export async function findAllExercises(): Promise<ExerciseSummary[]> {
+export async function findAllExercisesQuery(): Promise<ExerciseSummary[]> {
   const exercisesquery = await dbConnection
     .select({
       id: exercise.id,
@@ -38,19 +22,30 @@ export async function findAllExercises(): Promise<ExerciseSummary[]> {
       equipment: exercise.equipment,
       favorite: exercise.favorite,
       notes: exercise.notes,
-      muscles: sql<string>`
-            COALESCE(
-              JSON_GROUP_ARRAY(
+      primaryMuscle: sql<string>`
+            MAX(
+              CASE WHEN ${exerciseMuscle.type} = 'primary' THEN
                 JSON_OBJECT(
                   'id', ${muscle.id},
                   'name', ${muscle.name},
                   'searchName', ${muscle.searchName},
-                  'imageUrl', ${muscle.imageUrl}
-                )
-              ) FILTER (WHERE ${muscle.id} IS NOT NULL),
-              '[]'
+                  'imageUrl', ${muscle.imageUrl},
+                  'type', ${exerciseMuscle.type}
+                ) END
             )
-          `.as("muscles"),
+      `.as("primary_muscle"),
+      secondaryMuscles: sql<string>`
+            JSON_GROUP_ARRAY(
+              CASE WHEN ${exerciseMuscle.type} = 'secondary' THEN
+                JSON_OBJECT(
+                  'id', ${muscle.id},
+                  'name', ${muscle.name},
+                  'searchName', ${muscle.searchName},
+                  'imageUrl', ${muscle.imageUrl},
+                  'type', ${exerciseMuscle.type}
+                ) END
+            ) FILTER (WHERE ${muscle.id} IS NOT NULL)         
+          `.as("secondary_muscles"),
     })
     .from(exercise)
     .leftJoin(exerciseMuscle, eq(exerciseMuscle.exerciseId, exercise.id))
@@ -60,6 +55,9 @@ export async function findAllExercises(): Promise<ExerciseSummary[]> {
 
   return exercisesquery.map((d) => ({
     ...d,
-    muscles: mapMusclesSummary(d.muscles),
+    primaryMuscle: JSON.parse(d.primaryMuscle) as MuscleSummary,
+    secondaryMuscles: (
+      JSON.parse(d.secondaryMuscles) as MuscleSummary[]
+    ).filter(Boolean),
   }));
 }
