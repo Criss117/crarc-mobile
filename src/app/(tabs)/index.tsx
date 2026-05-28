@@ -1,56 +1,34 @@
-import { Pressable, View } from "react-native";
-import { Uniwind, useUniwind } from "uniwind";
+import { StyleSheet, View } from "react-native";
 
-import { Text } from "@/core/shared/components/text";
-import { useFindAllWorkoutSessions } from "@/core/workout-sessions/application/hooks/use-find-workout-sessions";
+import { Image } from "expo-image";
 
-const themes = [
-  { name: "light", label: "Light", icon: "☀️" },
-  { name: "dark", label: "Dark", icon: "🌙" },
-  { name: "system", label: "System", icon: "⚙️" },
-] as const;
+const blurhash =
+  "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
 export default function Home() {
-  const { data } = useFindAllWorkoutSessions();
-  const { theme, hasAdaptiveThemes } = useUniwind();
-
-  const activeTheme = hasAdaptiveThemes ? "system" : theme;
-
   return (
-    <View className="p-4 gap-4">
-      <Text className="text-sm text-gray-600 dark:text-gray-300">
-        Current: {activeTheme}
-      </Text>
-
-      <View className="flex-row gap-2">
-        {themes.map((t) => (
-          <Pressable
-            key={t.name}
-            onPress={() => Uniwind.setTheme(t.name)}
-            className={`
-              px-4 py-3 rounded-lg items-center
-              ${
-                activeTheme === t.name
-                  ? "bg-blue-500"
-                  : "bg-gray-200 dark:bg-gray-700"
-              }
-            `}
-          >
-            <Text className="text-2xl mb-1">{t.icon}</Text>
-            <Text
-              className={`text-xs ${
-                activeTheme === t.name
-                  ? "text-white"
-                  : "text-gray-900 dark:text-white"
-              }`}
-            >
-              {t.label}
-            </Text>
-          </Pressable>
-        ))}
-      </View>
-
-      <Text>{JSON.stringify(data, null, 2)}</Text>
+    <View className="flex-1">
+      <Image
+        style={styles.image}
+        source="https://raw.githubusercontent.com/Criss117/exercises-dataset/refs/heads/main/images/0001-2gPfomN.jpg"
+        placeholder={{ blurhash }}
+        contentFit="cover"
+        transition={1000}
+      />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    flex: 1,
+    width: "100%",
+    backgroundColor: "#0553",
+  },
+});

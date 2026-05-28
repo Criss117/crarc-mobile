@@ -1,4 +1,3 @@
-import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { FlatList, View } from "react-native";
 
@@ -11,9 +10,9 @@ import {
   ExercisesItemSkeleton,
 } from "@/core/exercises/presentation/components/exercises-item";
 import { Text } from "@/core/shared/components/text";
+import { EXERCISES_ITEM_WIDTH } from "@/core/shared/utils/constanst";
 
 export function ExercisesScreen() {
-  const bottomTabBarHeight = useBottomTabBarHeight();
   const { filters } = useExercisesFilters();
   const { data } = useFindExercises({
     muscleTypeId: filters.muscleTypeId,
@@ -21,19 +20,32 @@ export function ExercisesScreen() {
   });
 
   return (
-    <View className="px-2 flex-1 gap-y-4">
+    <View className="px-3 flex-1 gap-y-4">
       <View className="flex gap-y-4">
         <ExercisesSearchBar />
         <ExercisesMuscleSelector />
       </View>
       <FlatList
+        numColumns={2}
+        initialNumToRender={10}
+        maxToRenderPerBatch={10}
+        windowSize={5}
+        removeClippedSubviews={true}
+        getItemLayout={(_, index) => ({
+          length: EXERCISES_ITEM_WIDTH,
+          offset: EXERCISES_ITEM_WIDTH * Math.floor(index / 2),
+          index,
+        })}
         data={data}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <ExercisesItem exercise={item} />}
-        ItemSeparatorComponent={<View className="h-4" />}
+        columnWrapperStyle={{
+          justifyContent: "space-between",
+          marginBottom: 16,
+        }}
+        contentContainerStyle={{ paddingVertical: 16 }}
         showsVerticalScrollIndicator={false}
-        className="flex-1"
-        contentContainerStyle={{ paddingBottom: bottomTabBarHeight }}
+        className="flex-1 "
         ListEmptyComponent={<Text>No hay ejercicios disponibles</Text>}
       />
     </View>
