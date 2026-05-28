@@ -1,14 +1,13 @@
-import { useForm } from "@tanstack/react-form";
 import { Button, Input, Text } from "heroui-native";
 import { useState } from "react";
 import { View } from "react-native";
 import { z } from "zod";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
-
 import { convertWeight } from "@/core/shared/utils/convert-weight";
 import { useActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
-import { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
+import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
+import { useSetForm } from "./exercises-set-form";
 
 interface Props {
   completed: boolean;
@@ -72,38 +71,27 @@ function ExerciseSetItemForm({
   set,
   weightDisplayUnit,
   exerciseId,
-  exerciseSetsLength,
+  index,
   handleCancel,
 }: ItemProps) {
   const { saveExerciseSet } = useActiveWorkoutSession();
-
-  const form = useForm({
+  const form = useSetForm({
+    workoutSessionExerciseId: exerciseId,
     defaultValues: {
       weight: convertWeight(set.weightInGrams, weightDisplayUnit),
       reps: set.reps,
-      rir: set.rir || 0,
+      rir: set.rir,
+      setId: set.id,
     },
-    validators: {
-      onSubmit: setSchema,
-    },
-    onSubmit: ({ value, formApi }) => {
-      saveExerciseSet.mutate({
-        setId: set.id,
-        workoutSessionExerciseId: exerciseId,
-        weightInUnits: value.weight,
-        reps: value.reps,
-        rir: value.rir,
-      });
-
-      formApi.reset();
-      handleCancel();
+    options: {
+      onSuccess: () => handleCancel(),
     },
   });
 
   return (
-    <View className="flex flex-row gap-x-1 py-2">
+    <View className="flex flex-row gap-x-1 py-2 border-b border-accent">
       <View className="flex-1 items-center justify-center">
-        <Text>{exerciseSetsLength + 1}</Text>
+        <Text>{index + 1}</Text>
       </View>
       <View className="flex-1 items-center justify-center">
         <form.Field name="weight">

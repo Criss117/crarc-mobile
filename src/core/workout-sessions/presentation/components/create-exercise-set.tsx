@@ -1,23 +1,16 @@
-import { useForm } from "@tanstack/react-form";
 import { Button, Input } from "heroui-native";
 import { View } from "react-native";
-import { z } from "zod";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
 import { Text } from "@/core/shared/components/text";
 import { useActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
+import { useSetForm } from "@/core/workout-sessions/presentation/components/exercises-set-form";
 
 interface Props {
   exerciseId: string;
   completed: boolean;
   exerciseSetsLength: number;
 }
-
-const setSchema = z.object({
-  weight: z.coerce.number<number>().min(1),
-  reps: z.coerce.number<number>().min(1),
-  rir: z.coerce.number<number>().min(0),
-});
 
 export function CreateExerciseSet({
   exerciseId,
@@ -26,25 +19,8 @@ export function CreateExerciseSet({
 }: Props) {
   const { saveExerciseSet } = useActiveWorkoutSession();
 
-  const form = useForm({
-    defaultValues: {
-      weight: 0,
-      reps: 0,
-      rir: 0,
-    },
-    validators: {
-      onSubmit: setSchema,
-    },
-    onSubmit: ({ value, formApi }) => {
-      saveExerciseSet.mutate({
-        workoutSessionExerciseId: exerciseId,
-        weightInUnits: value.weight,
-        reps: value.reps,
-        rir: value.rir,
-      });
-
-      formApi.reset();
-    },
+  const form = useSetForm({
+    workoutSessionExerciseId: exerciseId,
   });
 
   if (completed) return null;
