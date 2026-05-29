@@ -36,16 +36,23 @@ function RemoveWorkout({ workout }: Props) {
           <Dialog.Title>
             ¿Estás seguro de que quieres eliminar "{workout.name}"?
           </Dialog.Title>
-          <Button
-            variant="danger"
-            onPress={() => remove.mutate({ workoutId: workout.id })}
-            isDisabled={remove.isPending}
-          >
-            <Button.Label>Eliminar</Button.Label>
-          </Button>
-          <Button variant="outline" onPress={() => setIsOpen(false)}>
-            <Button.Label>Cancelar</Button.Label>
-          </Button>
+          <View className="flex-row gap-x-2">
+            <Button
+              variant="danger"
+              onPress={() => remove.mutate({ workoutId: workout.id })}
+              isDisabled={remove.isPending}
+              className="flex-1"
+            >
+              <Button.Label>Eliminar</Button.Label>
+            </Button>
+            <Button
+              className="flex-1"
+              variant="outline"
+              onPress={() => setIsOpen(false)}
+            >
+              <Button.Label>Cancelar</Button.Label>
+            </Button>
+          </View>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog>

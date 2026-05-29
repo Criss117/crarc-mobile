@@ -10,6 +10,12 @@ export async function completeWorkoutSessionCommand() {
 
   if (!activeSession) throw new Error("No active session");
 
+  const hasAnyExerciseCompleted = activeSession.exercises.some(
+    (e) => e.completed,
+  );
+
+  if (!hasAnyExerciseCompleted) throw new Error("No completed exercises");
+
   await dbConnection.transaction(async (trx) => {
     await trx
       .update(workoutSession)

@@ -20,7 +20,18 @@ export function useMutateWorkoutSessions() {
     },
   });
 
+  const remove = useMutation({
+    mutationKey: ["remove-workout-session"],
+    mutationFn: workoutSessionActions.commands.deleteSession,
+    onSuccess: async () => {
+      queryClient.invalidateQueries(findAppConfigQueryOptions);
+      queryClient.invalidateQueries(findAllWorkoutSessionsQueryOptions);
+      queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
+    },
+  });
+
   return {
     init,
+    remove,
   };
 }
