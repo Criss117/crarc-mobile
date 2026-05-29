@@ -15,6 +15,5 @@ export type ExerciseSummary = Omit<
   ExerciseSelect,
   "createdAt" | "updatedAt" | "deletedAt"
 > & {
-  primaryMuscle: MuscleSummary;
-  secondaryMuscles: MuscleSummary[];
+  muscles: MuscleSummary[];
 };

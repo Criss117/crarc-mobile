@@ -1,7 +1,7 @@
 import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { FlatList, View } from "react-native";
 
-import { useFindExercises } from "@/core/exercises/application/hooks/use-find-exercises";
+import { useFindManyExercises } from "@/core/exercises/application/hooks/use-find-exercises";
 import { ExercisesMuscleSelector } from "@/core/exercises/presentation/components/exercises-filters/muscle-selector";
 import { useExercisesFilters } from "@/core/exercises/presentation/components/exercises-filters/provider";
 import { ExercisesSearchBar } from "@/core/exercises/presentation/components/exercises-filters/search-bar";
@@ -14,9 +14,11 @@ import { EXERCISES_ITEM_WIDTH } from "@/core/shared/utils/constanst";
 
 export function ExercisesScreen() {
   const { filters } = useExercisesFilters();
-  const { data } = useFindExercises({
-    muscleTypeId: filters.muscleTypeId,
-    searchQuery: filters.query,
+  const { data, fetchNextPage, hasNextPage } = useFindManyExercises({
+    filters: {
+      muscleTypeId: filters.muscleTypeId,
+      searchQuery: filters.query,
+    },
   });
 
   return (
@@ -47,6 +49,11 @@ export function ExercisesScreen() {
         showsVerticalScrollIndicator={false}
         className="flex-1 "
         ListEmptyComponent={<Text>No hay ejercicios disponibles</Text>}
+        onEndReachedThreshold={0.5}
+        onEndReached={() => fetchNextPage()}
+        ListFooterComponent={
+          <>{hasNextPage && <Text>No hay más ejercicios disponibles</Text>}</>
+        }
       />
     </View>
   );

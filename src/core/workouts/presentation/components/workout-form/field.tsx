@@ -13,7 +13,7 @@ import {
 import { useMemo } from "react";
 import { View } from "react-native";
 
-import { useFindExercises } from "@/core/exercises/application/hooks/use-find-exercises";
+import { useFindManyExercises } from "@/core/exercises/application/hooks/use-find-exercises";
 import type { ExerciseSummary } from "@/core/exercises/domain/execises.entity";
 import { useExercisesFilters } from "@/core/exercises/presentation/components/exercises-filters/provider";
 import { FieldError } from "@/core/shared/components/field-errors";
@@ -74,9 +74,8 @@ export function AddExercisesList({
   isSelected,
 }: AddExercisesListProps) {
   const { filters } = useExercisesFilters();
-  const { data: exercises } = useFindExercises({
-    muscleTypeId: filters.muscleTypeId,
-    searchQuery: filters.query,
+  const { data: exercises } = useFindManyExercises({
+    filters: { muscleTypeId: filters.muscleTypeId, searchQuery: filters.query },
   });
 
   return (
@@ -94,9 +93,6 @@ export function AddExercisesList({
           >
             <Card.Body>
               <Card.Title>{exercise.name}</Card.Title>
-              <Card.Description>
-                {exercise.muscles.map((m) => m.name).join(", ")}
-              </Card.Description>
             </Card.Body>
           </Card>
         </PressableFeedback>
@@ -106,7 +102,7 @@ export function AddExercisesList({
 }
 
 export function ExercisesListField() {
-  const { data: exercises } = useFindExercises();
+  const { data: exercises } = useFindManyExercises();
   const field = useFieldContext<string[]>();
   const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
 

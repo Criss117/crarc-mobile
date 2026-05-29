@@ -13,3 +13,5 @@ export const IMAGES = {
 
 export const EXERCISES_ITEM_WIDTH = (width - 12 * 3) / 2; // 48 = padding + gaps
 export const EXERCISES_ITEM_HEIGHT = EXERCISES_ITEM_WIDTH * 1.5;
+
+export const DEFAULT_LIMIT = 50;

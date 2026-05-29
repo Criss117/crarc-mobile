@@ -1,47 +1,55 @@
-import { useSuspenseQuery } from "@tanstack/react-query";
+import {
+  infiniteQueryOptions,
+  useSuspenseInfiniteQuery,
+} from "@tanstack/react-query";
 import { useMemo } from "react";
-import { exerciseActions } from "../actions";
+
+import { exerciseActions } from "@/core/exercises/application/actions";
 
 type FindExercisesFilters = {
-  searchQuery?: string;
-  muscleTypeId?: string;
+  filters?: {
+    searchQuery?: string;
+    muscleTypeId?: string;
+  };
 };
 
-export const getExercisesQueryOptions = {
-  queryKey: ["exercises"],
-  queryFn: exerciseActions.queries.findAllExercises,
-};
+export function findManyExercisesQueryOptions(options: FindExercisesFilters) {
+  const muscleTypeId =
+    options.filters?.muscleTypeId !== "all"
+      ? options.filters?.muscleTypeId
+      : undefined;
+  const searchQuery = options.filters?.searchQuery;
 
-export function useFindExercises(options?: FindExercisesFilters) {
-  const query = useSuspenseQuery(getExercisesQueryOptions);
+  return infiniteQueryOptions({
+    initialPageParam: {
+      page: 0,
+    },
+    queryKey: ["exercises", muscleTypeId, searchQuery],
+    queryFn: ({ pageParam }) =>
+      exerciseActions.queries.findManyExercises({
+        cursor: {
+          limit: 4,
+          page: pageParam.page,
+        },
+        filters: {
+          muscleId: muscleTypeId,
+          searchQuery,
+        },
+      }),
+    getNextPageParam: (lastPage) =>
+      lastPage.nextPage ? { page: lastPage.nextPage } : undefined,
+  });
+}
 
-  const searchQuery = options?.searchQuery ?? "";
-  const muscleTypeId = options?.muscleTypeId ?? "all";
+export function useFindManyExercises(options: FindExercisesFilters) {
+  const { data, ...query } = useSuspenseInfiniteQuery(
+    findManyExercisesQueryOptions(options),
+  );
 
-  const data = useMemo(() => {
-    if (!query.data.length) return [];
+  const planedData = useMemo(
+    () => data.pages.flatMap((page) => page.data),
+    [data],
+  );
 
-    const filteredBySearchQuery = !searchQuery.length
-      ? query.data
-      : query.data.filter(
-          (exercise) =>
-            exercise.searchName
-              .toLowerCase()
-              .includes(searchQuery.toLowerCase()) ||
-            exercise.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            exercise.muscles.some((m) =>
-              m.name.toLowerCase().includes(searchQuery.toLowerCase()),
-            ),
-        );
-
-    if (muscleTypeId === "all") return filteredBySearchQuery;
-
-    const filteredByMuscleType = filteredBySearchQuery.filter((exercise) =>
-      exercise.muscles.some((m) => m.id === muscleTypeId),
-    );
-
-    return filteredByMuscleType;
-  }, [query.data, searchQuery, muscleTypeId]);
-
-  return { ...query, data };
+  return { ...query, data: planedData };
 }

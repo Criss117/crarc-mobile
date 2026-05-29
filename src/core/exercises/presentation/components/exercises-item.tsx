@@ -48,10 +48,7 @@ function ExerciseCard({ exercise }: Props) {
       <Card.Header className="flex-1 px-4 pb-4">
         <Card.Title>{exercise.name}</Card.Title>
         <Card.Description className="text-sm line-clamp-1">
-          Principal: {exercise.primaryMuscle.name}
-        </Card.Description>
-        <Card.Description className="text-sm line-clamp-1">
-          Secundarios: {exercise.secondaryMuscles.map((m) => m.name).join(", ")}
+          {exercise.muscles.map((m) => m.name).join(", ")}
         </Card.Description>
       </Card.Header>
     </Card>

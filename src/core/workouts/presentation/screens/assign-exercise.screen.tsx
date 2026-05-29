@@ -1,7 +1,7 @@
 import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { FlatList, View } from "react-native";
 
-import { useFindExercises } from "@/core/exercises/application/hooks/use-find-exercises";
+import { useFindManyExercises } from "@/core/exercises/application/hooks/use-find-exercises";
 import { ExercisesMuscleSelector } from "@/core/exercises/presentation/components/exercises-filters/muscle-selector";
 import { useExercisesFilters } from "@/core/exercises/presentation/components/exercises-filters/provider";
 import { ExercisesSearchBar } from "@/core/exercises/presentation/components/exercises-filters/search-bar";
@@ -21,9 +21,8 @@ export function AssingExercisesScreen({
   selectedExercises,
 }: Props) {
   const { filters } = useExercisesFilters();
-  const { data } = useFindExercises({
-    muscleTypeId: filters.muscleTypeId,
-    searchQuery: filters.query,
+  const { data } = useFindManyExercises({
+    filters: { muscleTypeId: filters.muscleTypeId, searchQuery: filters.query },
   });
 
   const isSelected = (exercise: string) => selectedExercises.includes(exercise);
