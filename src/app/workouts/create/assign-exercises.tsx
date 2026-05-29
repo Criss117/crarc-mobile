@@ -15,7 +15,15 @@ export default function AssignExercises() {
                 if (prev.some((e) => e.id === exercise.id))
                   return prev.filter((e) => e.id !== exercise.id);
 
-                return [...prev, exercise];
+                return [
+                  ...prev,
+                  {
+                    id: exercise.id,
+                    name: exercise.name,
+                    muscles: exercise.muscles,
+                    image: exercise.image,
+                  },
+                ];
               })
             }
             selectedExercises={field.state.value.map((e) => e.id)}

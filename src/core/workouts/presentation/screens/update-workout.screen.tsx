@@ -26,6 +26,7 @@ export function UpdateWorkoutScreen({ workout }: Props) {
         id: e.id,
         name: e.name,
         muscles: e.muscles.map((m) => m.name),
+        image: e.image,
       })),
     });
   }, [workout]);

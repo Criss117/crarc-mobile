@@ -25,7 +25,7 @@ const workoutSchema = z.object({
         id: z.string(),
         name: z.string(),
         muscles: z.array(z.string()),
-        image: z.string().optional(),
+        image: z.string().nullable(),
       }),
     )
     .min(1, {

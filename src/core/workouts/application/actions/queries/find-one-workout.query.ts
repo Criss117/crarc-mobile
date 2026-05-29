@@ -1,4 +1,4 @@
-import { eq, getTableColumns, sql } from "drizzle-orm";
+import { desc, eq, getTableColumns, inArray } from "drizzle-orm";
 
 import type { WorkoutDetail } from "@/core/workouts/domain/workout.entity";
 import { dbConnection } from "@/integrations/db";
@@ -28,35 +28,37 @@ export async function findOneWorkoutQuery(
     .select({
       ...getTableColumns(exercise),
       orderIndex: workoutExercise.orderIndex,
-      muscles: sql<string>`
-        COALESCE(
-          JSON_GROUP_ARRAY(
-            JSON_OBJECT(
-              'id', ${muscle.id},
-              'name', ${muscle.name},
-              'searchName', ${muscle.searchName},
-              'imageUrl', ${muscle.imageUrl},
-              'type', ${exerciseMuscle.type}
-            )
-          ) FILTER (WHERE ${muscle.id} IS NOT NULL),
-          '[]'
-        )
-      `,
     })
     .from(workoutExercise)
     .innerJoin(exercise, eq(exercise.id, workoutExercise.exerciseId))
-    .innerJoin(exerciseMuscle, eq(exerciseMuscle.exerciseId, exercise.id))
-    .innerJoin(muscle, eq(muscle.id, exerciseMuscle.muscleId))
     .where(eq(workoutExercise.workoutId, workoutId))
+    .orderBy(desc(workoutExercise.orderIndex))
+    .execute();
+
+  const allMuscles = await dbConnection
+    .select({
+      id: muscle.id,
+      name: muscle.name,
+      searchName: muscle.searchName,
+      imageUrl: muscle.imageUrl,
+      exerciseId: exerciseMuscle.exerciseId,
+      type: exerciseMuscle.type,
+    })
+    .from(exerciseMuscle)
+    .innerJoin(muscle, eq(muscle.id, exerciseMuscle.muscleId))
+    .where(
+      inArray(
+        exerciseMuscle.exerciseId,
+        allWorkoutExercises.map((e) => e.id),
+      ),
+    )
     .execute();
 
   return {
     ...data,
     exercises: allWorkoutExercises.map((e) => ({
       ...e,
-      muscles: JSON.parse(
-        e.muscles,
-      ) as WorkoutDetail["exercises"][number]["muscles"],
+      muscles: allMuscles.filter((m) => m.exerciseId === e.id),
     })),
   };
 }
