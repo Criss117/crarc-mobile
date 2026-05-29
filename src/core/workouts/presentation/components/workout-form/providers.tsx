@@ -32,8 +32,8 @@ export function CreateWorkoutFormProvider({
         {
           name: data.name,
           description: data.description,
-          exercises: data.exerciseIds.map((e, index) => ({
-            exerciseId: e,
+          exercises: data.exercises.map((e, index) => ({
+            exerciseId: e.id,
             orderIndex: index,
           })),
         },
@@ -93,8 +93,8 @@ export function UpdateWorkoutFormProvider({
           id: workoutIdRef.current,
           name: data.name,
           description: data.description,
-          exercises: data.exerciseIds.map((e, index) => ({
-            exerciseId: e,
+          exercises: data.exercises.map((e, index) => ({
+            exerciseId: e.id,
             orderIndex: index,
           })),
         },
@@ -118,7 +118,7 @@ export function UpdateWorkoutFormProvider({
       workoutIdRef.current = values.workoutId;
       form.setFieldValue("name", values.name);
       form.setFieldValue("description", values.description);
-      form.setFieldValue("exerciseIds", values.exerciseIds);
+      form.setFieldValue("exercises", values.exercises);
     },
     [form],
   );

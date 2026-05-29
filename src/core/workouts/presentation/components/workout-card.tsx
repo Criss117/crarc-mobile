@@ -146,7 +146,7 @@ export function WorkoutCard({ workout }: Props) {
           <Card.Title>{workout.name}</Card.Title>
           <Card.Description>{workout.description || "-"}</Card.Description>
           <Card.Description>
-            {workout.exercises.length} ejercicios
+            {workout.totalExercises} ejercicios
           </Card.Description>
         </View>
         <WorkoutCardOptions workout={workout} />

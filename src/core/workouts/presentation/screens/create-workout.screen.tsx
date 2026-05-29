@@ -27,7 +27,7 @@ export function CreateWorkoutScreen() {
         </Card>
 
         <Card>
-          <form.AppField name="exerciseIds">
+          <form.AppField name="exercises">
             {(field) => <field.ExercisesListField />}
           </form.AppField>
         </Card>

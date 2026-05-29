@@ -7,11 +7,11 @@ import { useLayoutEffect } from "react";
 import { ScrollView, View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
-import type { WorkoutSummary } from "@/core/workouts/domain/workout.entity";
+import type { WorkoutDetail } from "@/core/workouts/domain/workout.entity";
 import { useUpdateWorkoutForm } from "@/core/workouts/presentation/components/workout-form/providers";
 
 interface Props {
-  workout: WorkoutSummary;
+  workout: WorkoutDetail;
 }
 
 export function UpdateWorkoutScreen({ workout }: Props) {
@@ -22,7 +22,11 @@ export function UpdateWorkoutScreen({ workout }: Props) {
       name: workout.name,
       description: workout.description || "",
       workoutId: workout.id,
-      exerciseIds: workout.exercises.map((e) => e.exerciseId),
+      exercises: workout.exercises.map((e) => ({
+        id: e.id,
+        name: e.name,
+        muscles: e.muscles.map((m) => m.name),
+      })),
     });
   }, [workout]);
 
@@ -43,7 +47,7 @@ export function UpdateWorkoutScreen({ workout }: Props) {
         </Card>
 
         <Card>
-          <form.AppField name="exerciseIds">
+          <form.AppField name="exercises">
             {(field) => <field.ExercisesListField />}
           </form.AppField>
         </Card>

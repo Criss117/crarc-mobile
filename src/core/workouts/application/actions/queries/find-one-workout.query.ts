@@ -1,8 +1,14 @@
-import { eq } from "drizzle-orm";
+import { eq, getTableColumns, sql } from "drizzle-orm";
 
 import type { WorkoutDetail } from "@/core/workouts/domain/workout.entity";
 import { dbConnection } from "@/integrations/db";
-import { workout, workoutExercise } from "@/integrations/db/schemas";
+import {
+  exercise,
+  exerciseMuscle,
+  muscle,
+  workout,
+  workoutExercise,
+} from "@/integrations/db/schemas";
 
 export async function findOneWorkoutQuery(
   workoutId: string,
@@ -18,14 +24,39 @@ export async function findOneWorkoutQuery(
 
   if (!data) return null;
 
-  const exercises = await dbConnection
-    .select()
+  const allWorkoutExercises = await dbConnection
+    .select({
+      ...getTableColumns(exercise),
+      orderIndex: workoutExercise.orderIndex,
+      muscles: sql<string>`
+        COALESCE(
+          JSON_GROUP_ARRAY(
+            JSON_OBJECT(
+              'id', ${muscle.id},
+              'name', ${muscle.name},
+              'searchName', ${muscle.searchName},
+              'imageUrl', ${muscle.imageUrl},
+              'type', ${exerciseMuscle.type}
+            )
+          ) FILTER (WHERE ${muscle.id} IS NOT NULL),
+          '[]'
+        )
+      `,
+    })
     .from(workoutExercise)
+    .innerJoin(exercise, eq(exercise.id, workoutExercise.exerciseId))
+    .innerJoin(exerciseMuscle, eq(exerciseMuscle.exerciseId, exercise.id))
+    .innerJoin(muscle, eq(muscle.id, exerciseMuscle.muscleId))
     .where(eq(workoutExercise.workoutId, workoutId))
     .execute();
 
   return {
     ...data,
-    exercises,
+    exercises: allWorkoutExercises.map((e) => ({
+      ...e,
+      muscles: JSON.parse(
+        e.muscles,
+      ) as WorkoutDetail["exercises"][number]["muscles"],
+    })),
   };
 }

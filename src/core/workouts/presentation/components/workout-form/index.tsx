@@ -19,9 +19,18 @@ const workoutSchema = z.object({
       error: "El nombre es muy largo",
     }),
   description: z.string(),
-  exerciseIds: z.array(z.string()).min(1, {
-    error: "Debes seleccionar al menos un ejercicio",
-  }),
+  exercises: z
+    .array(
+      z.object({
+        id: z.string(),
+        name: z.string(),
+        muscles: z.array(z.string()),
+        image: z.string().optional(),
+      }),
+    )
+    .min(1, {
+      error: "Debes seleccionar al menos un ejercicio",
+    }),
 });
 
 export type WorkoutFormData = z.infer<typeof workoutSchema>;
@@ -33,7 +42,7 @@ interface UseWorkoutFormOptions {
 const defaultValues: WorkoutFormData = {
   name: "",
   description: "",
-  exerciseIds: [],
+  exercises: [],
 };
 
 const { useAppForm } = createFormHook({

@@ -1,14 +1,20 @@
 import { SearchField } from "heroui-native/search-field";
-import { useExercisesFilters } from "./provider";
+import { useEffect, useState } from "react";
+
+import { useExercisesFilters } from "@/core/exercises/presentation/components/exercises-filters/provider";
+import { useDebounce } from "@/core/shared/hooks/use-debunce";
 
 export function ExercisesSearchBar() {
   const { dispatch, filters } = useExercisesFilters();
+  const [query, setQuery] = useState<string>(filters.query);
+  const debouncedQuery = useDebounce<string>(query, 500);
+
+  useEffect(() => {
+    dispatch({ type: "set-query", payload: debouncedQuery });
+  }, [debouncedQuery]);
 
   return (
-    <SearchField
-      value={filters.query}
-      onChange={(v) => dispatch({ type: "set-query", payload: v })}
-    >
+    <SearchField value={query} onChange={setQuery}>
       <SearchField.Group>
         <SearchField.SearchIcon />
         <SearchField.Input />

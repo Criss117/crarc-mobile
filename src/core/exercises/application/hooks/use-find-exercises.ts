@@ -18,7 +18,7 @@ export function findManyExercisesQueryOptions(options: FindExercisesFilters) {
     options.filters?.muscleTypeId !== "all"
       ? options.filters?.muscleTypeId
       : undefined;
-  const searchQuery = options.filters?.searchQuery;
+  const searchQuery = options.filters?.searchQuery?.toLowerCase();
 
   return infiniteQueryOptions({
     initialPageParam: {
@@ -28,7 +28,7 @@ export function findManyExercisesQueryOptions(options: FindExercisesFilters) {
     queryFn: ({ pageParam }) =>
       exerciseActions.queries.findManyExercises({
         cursor: {
-          limit: 4,
+          limit: 50,
           page: pageParam.page,
         },
         filters: {

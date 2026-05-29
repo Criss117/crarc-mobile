@@ -1,6 +1,6 @@
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
-import { Card, PressableFeedback, SkeletonGroup } from "heroui-native";
+import { Card, cn, PressableFeedback, SkeletonGroup } from "heroui-native";
 import { View } from "react-native";
 
 import type { ExerciseSummary } from "@/core/exercises/domain/execises.entity";
@@ -20,7 +20,7 @@ interface SelectableProps extends Props {
   handleSelectExercise: (exercise: ExerciseSummary) => void;
 }
 
-function ExerciseCard({ exercise }: Props) {
+function ExerciseCard({ exercise, isSelected }: Props) {
   return (
     <Card
       style={{
@@ -29,6 +29,10 @@ function ExerciseCard({ exercise }: Props) {
         minHeight: EXERCISES_ITEM_HEIGHT,
         padding: 0,
       }}
+      className={cn(
+        "border border-transparent",
+        isSelected && "border-success",
+      )}
     >
       {exercise.image && (
         <View className="items-center justify-center">

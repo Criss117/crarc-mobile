@@ -1,8 +1,8 @@
 import { createFormHookContexts } from "@tanstack/react-form";
+import { Image } from "expo-image";
 import {
   Button,
   Card,
-  cn,
   Input,
   Label,
   PressableFeedback,
@@ -10,14 +10,12 @@ import {
   TextArea,
   TextField,
 } from "heroui-native";
-import { useMemo } from "react";
 import { View } from "react-native";
 
-import { useFindManyExercises } from "@/core/exercises/application/hooks/use-find-exercises";
 import type { ExerciseSummary } from "@/core/exercises/domain/execises.entity";
-import { useExercisesFilters } from "@/core/exercises/presentation/components/exercises-filters/provider";
 import { FieldError } from "@/core/shared/components/field-errors";
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { IMAGES } from "@/core/shared/utils/constanst";
 
 interface AddExercisesListProps {
   handleSelectExercise: (exercise: ExerciseSummary) => void;
@@ -69,54 +67,24 @@ export function DescriptionField() {
   );
 }
 
-export function AddExercisesList({
-  handleSelectExercise,
-  isSelected,
-}: AddExercisesListProps) {
-  const { filters } = useExercisesFilters();
-  const { data: exercises } = useFindManyExercises({
-    filters: { muscleTypeId: filters.muscleTypeId, searchQuery: filters.query },
-  });
-
-  return (
-    <View className="gap-y-4">
-      {exercises.map((exercise) => (
-        <PressableFeedback
-          key={exercise.id}
-          onPress={() => handleSelectExercise(exercise)}
-        >
-          <Card
-            className={cn(
-              "border shadow-none border-muted",
-              isSelected(exercise) && "border-success",
-            )}
-          >
-            <Card.Body>
-              <Card.Title>{exercise.name}</Card.Title>
-            </Card.Body>
-          </Card>
-        </PressableFeedback>
-      ))}
-    </View>
-  );
-}
+const SELECTED_EXERCISES_HEIGHT = 80;
 
 export function ExercisesListField() {
-  const { data: exercises } = useFindManyExercises();
-  const field = useFieldContext<string[]>();
+  const field = useFieldContext<
+    {
+      id: string;
+      name: string;
+      muscles: string[];
+      image: string | null;
+    }[]
+  >();
   const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
 
   const removeExercise = (exerciseId: string) => {
-    field.setValue((prev) => prev.filter((id) => id !== exerciseId));
+    field.setValue((prev) => prev.filter((e) => e.id !== exerciseId));
   };
 
-  const selectedExercises = useMemo(
-    () =>
-      field.state.value
-        .map((exerciseId) => exercises.find((e) => exerciseId === e.id))
-        .filter((e) => e !== undefined),
-    [field.state.value, exercises],
-  );
+  const selectedExercises = field.state.value;
 
   return (
     <View className="gap-y-4">
@@ -128,27 +96,49 @@ export function ExercisesListField() {
       {isInvalid && <FieldError errors={field.state.meta.errors} />}
       {selectedExercises.map((exercise) => (
         <PressableFeedback key={exercise.id}>
-          <Card className="bg-background shadow-none">
-            <Card.Header className="flex-row justify-between items-center">
-              <Card.Title className="flex-1">{exercise.name}</Card.Title>
-              <Button
-                onPress={() => removeExercise(exercise.id)}
-                isIconOnly
-                size="md"
-                variant="ghost"
-              >
-                <MaterialIcons
-                  name="close"
-                  size={20}
-                  className="dark:text-white"
+          <Card
+            className="bg-background shadow-none flex-1 flex-row p-0"
+            style={{
+              height: SELECTED_EXERCISES_HEIGHT,
+            }}
+          >
+            {exercise.image && (
+              <View className="h-full rounded-2xl px-4 items-center justify-center">
+                <Image
+                  source={{ uri: exercise.image }}
+                  style={{
+                    width: SELECTED_EXERCISES_HEIGHT - 10,
+                    height: SELECTED_EXERCISES_HEIGHT - 10,
+                  }}
+                  placeholder={IMAGES.placeholder}
+                  contentFit="cover"
+                  className="aspect-square rounded-full"
+                  transition={1000}
                 />
-              </Button>
-            </Card.Header>
-            <Card.Body>
-              <Card.Description>
-                {exercise.muscles.map((m) => m.name).join(", ")}
-              </Card.Description>
-            </Card.Body>
+              </View>
+            )}
+            <View className="flex-1 justify-between flex-row py-4">
+              <Card.Header className="flex-1 justify-center">
+                <Card.Title className="">{exercise.name}</Card.Title>
+                <Card.Description className="line-clamp-1">
+                  {exercise.muscles.join(", ")}
+                </Card.Description>
+              </Card.Header>
+              <Card.Body>
+                <Button
+                  onPress={() => removeExercise(exercise.id)}
+                  isIconOnly
+                  size="md"
+                  variant="ghost"
+                >
+                  <MaterialIcons
+                    name="close"
+                    size={20}
+                    className="dark:text-white"
+                  />
+                </Button>
+              </Card.Body>
+            </View>
           </Card>
         </PressableFeedback>
       ))}

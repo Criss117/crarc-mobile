@@ -1,4 +1,4 @@
-import { desc, eq, getTableColumns, sql } from "drizzle-orm";
+import { count, desc, eq, getTableColumns } from "drizzle-orm";
 
 import type { WorkoutSummary } from "@/core/workouts/domain/workout.entity";
 import { dbConnection } from "@/integrations/db";
@@ -8,16 +8,7 @@ export async function findAllWorkoutsQuery(): Promise<WorkoutSummary[]> {
   const allWorkouts = await dbConnection
     .select({
       ...getTableColumns(workout),
-      exercises: sql<string>`
-          JSON_GROUP_ARRAY(
-            JSON_OBJECT(
-              'workoutId', ${workoutExercise.workoutId},
-              'exerciseId', ${workoutExercise.exerciseId},
-              'orderIndex', ${workoutExercise.orderIndex},
-              'notes', ${workoutExercise.notes}
-            )
-          )
-        `,
+      totalExercises: count(workoutExercise),
     })
     .from(workout)
     .innerJoin(workoutExercise, eq(workoutExercise.workoutId, workout.id))
@@ -25,8 +16,5 @@ export async function findAllWorkoutsQuery(): Promise<WorkoutSummary[]> {
     .orderBy(desc(workout.createdAt))
     .execute();
 
-  return allWorkouts.map((w) => ({
-    ...w,
-    exercises: JSON.parse(w.exercises) as WorkoutSummary["exercises"],
-  }));
+  return allWorkouts;
 }

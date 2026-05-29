@@ -10,10 +10,16 @@ import {
   SelectableExercisesItem,
 } from "@/core/exercises/presentation/components/exercises-item";
 import { Text } from "@/core/shared/components/text";
+import { EXERCISES_ITEM_WIDTH } from "@/core/shared/utils/constanst";
 
 interface Props {
   selectedExercises: string[];
-  handleSelectExercise: (exercise: string) => void;
+  handleSelectExercise: (exercise: {
+    id: string;
+    name: string;
+    muscles: string[];
+    image: string | null;
+  }) => void;
 }
 
 export function AssingExercisesScreen({
@@ -21,7 +27,7 @@ export function AssingExercisesScreen({
   selectedExercises,
 }: Props) {
   const { filters } = useExercisesFilters();
-  const { data } = useFindManyExercises({
+  const { data, fetchNextPage, hasNextPage } = useFindManyExercises({
     filters: { muscleTypeId: filters.muscleTypeId, searchQuery: filters.query },
   });
 
@@ -34,6 +40,16 @@ export function AssingExercisesScreen({
         <ExercisesMuscleSelector />
       </View>
       <FlatList
+        numColumns={2}
+        initialNumToRender={10}
+        maxToRenderPerBatch={10}
+        windowSize={5}
+        removeClippedSubviews={true}
+        getItemLayout={(_, index) => ({
+          length: EXERCISES_ITEM_WIDTH,
+          offset: EXERCISES_ITEM_WIDTH * Math.floor(index / 2),
+          index,
+        })}
         data={data}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
@@ -41,14 +57,28 @@ export function AssingExercisesScreen({
             exercise={item}
             isSelected={isSelected(item.id)}
             handleSelectExercise={(exercise) =>
-              handleSelectExercise(exercise.id)
+              handleSelectExercise({
+                id: exercise.id,
+                name: exercise.name,
+                muscles: exercise.muscles.map((m) => m.name),
+                image: exercise.image,
+              })
             }
           />
         )}
-        ItemSeparatorComponent={<View className="h-4" />}
+        columnWrapperStyle={{
+          justifyContent: "space-between",
+          marginBottom: 16,
+        }}
+        contentContainerStyle={{ paddingVertical: 16 }}
         showsVerticalScrollIndicator={false}
-        className="flex-1"
+        className="flex-1 "
         ListEmptyComponent={<Text>No hay ejercicios disponibles</Text>}
+        onEndReachedThreshold={0.5}
+        onEndReached={() => fetchNextPage()}
+        ListFooterComponent={
+          <>{hasNextPage && <Text>No hay más ejercicios disponibles</Text>}</>
+        }
       />
     </View>
   );
