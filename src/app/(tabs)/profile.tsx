@@ -1,6 +1,5 @@
-import { Text } from "heroui-native/text";
-
 import { useAppConfig } from "@/core/profile/application/hooks/use-app-config";
+import { Text } from "@/core/shared/components/text";
 
 export default function Profile() {
   const { appConfig } = useAppConfig();

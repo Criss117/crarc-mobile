@@ -1,11 +1,11 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { Link } from "expo-router";
 import { Button } from "heroui-native/button";
-import { Text } from "heroui-native/text";
 import { Suspense } from "react";
 import { FlatList, RefreshControl, View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { Text } from "@/core/shared/components/text";
 import { findActiveWorkoutSessionQueryOptions } from "@/core/workout-sessions/application/hooks/use-find-workout-sessions";
 import {
   ActiveWorkoutSessionCard,
@@ -43,14 +43,14 @@ export function WorkoutsScreen() {
               <ActiveWorkoutSessionCard />
             </Suspense>
             <View className="py-3">
-              <Text type="h5">Mis Rutinas</Text>
+              <Text variants={{ size: "h5" }}>Mis Rutinas</Text>
             </View>
           </View>
         }
         ItemSeparatorComponent={<View className="h-4" />}
         ListEmptyComponent={
           <View className="items-center gap-y-2 ">
-            <Text className="text-muted" type="h4">
+            <Text className="text-muted" variants={{ size: "h4" }}>
               No hay workouts
             </Text>
             <Link asChild push href="/workouts/create">
@@ -78,7 +78,7 @@ export function WorkoutsScreenSkeleton() {
       accessibilityLabel="Cargando contenido"
     >
       <View className="py-3">
-        <Text type="h5">Mis Rutinas</Text>
+        <Text variants={{ size: "h5" }}>Mis Rutinas</Text>
       </View>
 
       <View className="gap-y-4">

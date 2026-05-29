@@ -1,8 +1,8 @@
-import { Text } from "heroui-native/text";
 import { useEffect, useState } from "react";
 import { View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { Text } from "@/core/shared/components/text";
 import { SECONDS } from "@/core/shared/utils/constanst";
 import { formatDuration, timeAgo } from "@/core/shared/utils/timeago";
 import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";

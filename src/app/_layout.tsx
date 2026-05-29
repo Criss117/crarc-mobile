@@ -35,7 +35,12 @@ export default function RootLayout() {
               headerShown: false,
             }}
           />
-          <Stack.Screen name="exercises/[exerciseid]" />
+          <Stack.Screen
+            name="exercises/[exerciseid]/(tabs)"
+            options={{
+              title: "...",
+            }}
+          />
           <Stack.Screen
             name="workouts/[workoutid]/index"
             options={{

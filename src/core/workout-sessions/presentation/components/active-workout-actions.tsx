@@ -83,6 +83,7 @@ export function ActiveWorkoutActions({ workoutSession }: Props) {
   const handleComplete = () => {
     completeWorkout.mutate(undefined, {
       onSuccess: () => {
+        popoverRef.current?.close();
         router.push({
           pathname: "/workouts",
         });

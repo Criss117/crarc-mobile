@@ -1,8 +1,8 @@
-import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Link, Tabs } from "expo-router";
-import { Button, cn, useThemeColor } from "heroui-native";
+import { cn, useThemeColor } from "heroui-native";
+import { Button } from "heroui-native/button";
 import { Tabs as HeroTabs } from "heroui-native/tabs";
-import { useMemo } from "react";
+import { useMemo, type ComponentProps } from "react";
 import { StatusBar, View } from "react-native";
 import { useUniwind } from "uniwind";
 
@@ -24,17 +24,16 @@ function TabHeader({ route }: TabHeaderProps) {
   return (
     <View className="flex-row items-center gap-x-2">
       <MaterialIcons name={route.Icon} size={24} className="text-accent" />
-      <Text
-        className="text-accent dark:text-accent"
-        variants={{
-          size: "h5",
-        }}
-      >
+      <Text className="text-accent dark:text-accent" variants={{ size: "h5" }}>
         {route.title}
       </Text>
     </View>
   );
 }
+
+type BottomTabBarProps = Parameters<
+  NonNullable<ComponentProps<typeof Tabs>["tabBar"]>
+>[0];
 
 function BottomTabs(props: BottomTabBarProps) {
   const [accent, muted] = useThemeColor(["success", "muted"]);

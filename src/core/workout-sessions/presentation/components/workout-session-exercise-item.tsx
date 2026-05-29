@@ -2,10 +2,10 @@ import { Image } from "expo-image";
 import { Link } from "expo-router";
 import { Button } from "heroui-native/button";
 import { PressableFeedback } from "heroui-native/pressable-feedback";
-import { Text } from "heroui-native/text";
 import { View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { Text } from "@/core/shared/components/text";
 import { IMAGES } from "@/core/shared/utils/constanst";
 import { useActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
 import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
@@ -66,7 +66,7 @@ export function WorkoutSessionExerciseItem({
             </PressableFeedback>
           </Link>
         )}
-        <Text type="h3" className="flex-1 line-clamp-2">
+        <Text variants={{ size: "h3" }} className="flex-1 line-clamp-2">
           {exercise.name}
         </Text>
         <Button

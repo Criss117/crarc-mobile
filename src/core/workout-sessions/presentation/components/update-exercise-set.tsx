@@ -1,9 +1,11 @@
-import { Button, Input, Text } from "heroui-native";
+import { Button } from "heroui-native/button";
+import { Input } from "heroui-native/input";
 import { useState } from "react";
 import { View } from "react-native";
 import { z } from "zod";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { Text } from "@/core/shared/components/text";
 import { convertWeight } from "@/core/shared/utils/convert-weight";
 import { useActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
 import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";

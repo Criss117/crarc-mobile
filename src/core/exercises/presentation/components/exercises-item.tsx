@@ -1,6 +1,9 @@
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
-import { Card, cn, PressableFeedback, SkeletonGroup } from "heroui-native";
+import { cn } from "heroui-native";
+import { Card } from "heroui-native/card";
+import { PressableFeedback } from "heroui-native/pressable-feedback";
+import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { View } from "react-native";
 
 import type { ExerciseSummary } from "@/core/exercises/domain/execises.entity";

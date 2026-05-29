@@ -62,7 +62,7 @@ export function ExercisesScreen() {
 }
 
 const skeletonData = Array.from({
-  length: 2,
+  length: 20,
 }).map((_, index) => ({
   id: index.toString(),
 }));

@@ -3,11 +3,11 @@ import { Button } from "heroui-native/button";
 import { Dialog } from "heroui-native/dialog";
 import { RadioGroup } from "heroui-native/radio-group";
 import { Separator } from "heroui-native/separator";
-import { Text } from "heroui-native/text";
 import { useState } from "react";
 import { View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { Text } from "@/core/shared/components/text";
 import { useActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
 import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
 
@@ -154,7 +154,7 @@ export function WorkoutSessionExercisesActions({
         <BottomSheet.Content>
           <View className="gap-y-2 mb-14">
             <View>
-              <Text type="h4">{exercise?.name}</Text>
+              <Text variants={{ size: "h4" }}>{exercise?.name}</Text>
             </View>
             <Separator />
             <View className="gap-y-1">

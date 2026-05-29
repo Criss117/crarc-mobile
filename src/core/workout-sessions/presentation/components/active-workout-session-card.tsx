@@ -2,11 +2,11 @@ import { Link } from "expo-router";
 import { Button } from "heroui-native/button";
 import { Card } from "heroui-native/card";
 import { Skeleton } from "heroui-native/skeleton";
-import { Text } from "heroui-native/text";
 import { useEffect, useState } from "react";
 import { View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { Text } from "@/core/shared/components/text";
 import { SECONDS } from "@/core/shared/utils/constanst";
 import { timeAgo } from "@/core/shared/utils/timeago";
 import { useFindActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";

@@ -1,12 +1,15 @@
 import { Link } from "expo-router";
-import { Dialog, Separator, SkeletonGroup, Text } from "heroui-native";
 import { Button } from "heroui-native/button";
 import { Card } from "heroui-native/card";
+import { Dialog } from "heroui-native/dialog";
 import { Popover, PopoverTriggerRef } from "heroui-native/popover";
+import { Separator } from "heroui-native/separator";
+import { SkeletonGroup } from "heroui-native/skeleton-group";
 import { useRef, useState } from "react";
 import { View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { Text } from "@/core/shared/components/text";
 import {
   InitWorkoutSession,
   InitWorkoutSessionSkeleton,
@@ -85,7 +88,7 @@ function WorkoutCardOptions({ workout }: Props) {
         >
           <View className="gap-y-2 mb-14">
             <View>
-              <Text type="h4">{workout.name}</Text>
+              <Text variants={{ size: "h4" }}>{workout.name}</Text>
               <Text>{workout.description || "-"}</Text>
             </View>
             <Separator />

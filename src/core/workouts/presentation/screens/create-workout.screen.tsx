@@ -1,10 +1,10 @@
 import { Link, Stack } from "expo-router";
 import { Button } from "heroui-native/button";
 import { Card } from "heroui-native/card";
-import { Text } from "heroui-native/text";
 import { ScrollView, View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { Text } from "@/core/shared/components/text";
 import { useCreateWorkoutForm } from "@/core/workouts/presentation/components/workout-form/providers";
 
 export function CreateWorkoutScreen() {
@@ -13,7 +13,7 @@ export function CreateWorkoutScreen() {
   return (
     <ScrollView className="px-3 flex-1" showsVerticalScrollIndicator={false}>
       <View className="flex-1 gap-y-4 mb-10">
-        <Text type="h3">Información de la rutina</Text>
+        <Text variants={{ size: "h3" }}>Información de la rutina</Text>
         <Card>
           <Card.Body className="gap-y-3">
             <form.AppField name="name">

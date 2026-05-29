@@ -17,7 +17,10 @@ export function ExercisesSearchBar() {
     <SearchField value={query} onChange={setQuery}>
       <SearchField.Group>
         <SearchField.SearchIcon />
-        <SearchField.Input placeholder="Buscar ejercicios" />
+        <SearchField.Input
+          placeholder="Buscar ejercicios"
+          className="font-regular"
+        />
         <SearchField.ClearButton />
       </SearchField.Group>
     </SearchField>
