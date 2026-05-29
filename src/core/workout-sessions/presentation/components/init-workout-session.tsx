@@ -1,9 +1,9 @@
+import { useRouter } from "expo-router";
 import { Button } from "heroui-native/button";
 
 import { useAppConfig } from "@/core/profile/application/hooks/use-app-config";
 import { MaterialIcons } from "@/core/shared/components/icons";
 import { useMutateWorkoutSessions } from "@/core/workout-sessions/application/hooks/use-mutate-workout-sessions";
-import { useRouter } from "expo-router";
 
 interface Props {
   workoutId: string;

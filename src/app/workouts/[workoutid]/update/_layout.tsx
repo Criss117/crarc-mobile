@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import { useThemeColor } from "heroui-native";
+import { Button, useThemeColor } from "heroui-native";
 
 import { UpdateWorkoutFormProvider } from "@/core/workouts/presentation/components/workout-form/providers";
 
@@ -24,7 +24,17 @@ export default function WorkoutsLayout() {
           headerTintColor: accent,
         }}
       >
-        <Stack.Screen name="index" options={{ title: "Modificar Rutina" }} />
+        <Stack.Screen
+          name="index"
+          options={{
+            title: "Modificar Rutina",
+            headerRight: () => (
+              <Button variant="outline" size="sm" isDisabled>
+                <Button.Label className="text-accent">Guardar</Button.Label>
+              </Button>
+            ),
+          }}
+        />
         <Stack.Screen
           name="assign-exercises"
           options={{ title: "Seleccionar ejercicios" }}

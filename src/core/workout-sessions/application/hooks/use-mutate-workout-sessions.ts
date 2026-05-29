@@ -13,10 +13,10 @@ export function useMutateWorkoutSessions() {
   const init = useMutation({
     mutationKey: ["init-workout-session"],
     mutationFn: workoutSessionActions.commands.init,
-    onSuccess: () => {
+    onSuccess: async () => {
       queryClient.invalidateQueries(findAppConfigQueryOptions);
       queryClient.invalidateQueries(findAllWorkoutSessionsQueryOptions);
-      queryClient.invalidateQueries(findActiveWorkoutSessionQueryOptions);
+      await queryClient.refetchQueries(findActiveWorkoutSessionQueryOptions);
     },
   });
 

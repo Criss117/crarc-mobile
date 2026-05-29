@@ -15,7 +15,10 @@ import { View } from "react-native";
 import type { ExerciseSummary } from "@/core/exercises/domain/execises.entity";
 import { FieldError } from "@/core/shared/components/field-errors";
 import { MaterialIcons } from "@/core/shared/components/icons";
-import { IMAGES } from "@/core/shared/utils/constanst";
+import {
+  IMAGES,
+  SELECTED_EXERCISES_HEIGHT,
+} from "@/core/shared/utils/constanst";
 
 interface AddExercisesListProps {
   handleSelectExercise: (exercise: ExerciseSummary) => void;
@@ -67,8 +70,6 @@ export function DescriptionField() {
   );
 }
 
-const SELECTED_EXERCISES_HEIGHT = 80;
-
 export function ExercisesListField() {
   const field = useFieldContext<
     {
@@ -107,19 +108,22 @@ export function ExercisesListField() {
                 <Image
                   source={{ uri: exercise.image }}
                   style={{
-                    width: SELECTED_EXERCISES_HEIGHT - 10,
-                    height: SELECTED_EXERCISES_HEIGHT - 10,
+                    width: SELECTED_EXERCISES_HEIGHT - 20,
+                    height: SELECTED_EXERCISES_HEIGHT - 20,
+                    aspectRatio: 1,
+                    borderRadius: 10,
                   }}
                   placeholder={IMAGES.placeholder}
                   contentFit="cover"
-                  className="aspect-square rounded-full"
                   transition={1000}
                 />
               </View>
             )}
-            <View className="flex-1 justify-between flex-row py-4">
+            <View className="flex-1 justify-between flex-row">
               <Card.Header className="flex-1 justify-center">
-                <Card.Title className="">{exercise.name}</Card.Title>
+                <Card.Title className="line-clamp-2">
+                  {exercise.name}
+                </Card.Title>
                 <Card.Description className="line-clamp-1">
                   {exercise.muscles.join(", ")}
                 </Card.Description>

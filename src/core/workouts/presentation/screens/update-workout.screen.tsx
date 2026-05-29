@@ -7,6 +7,7 @@ import { useLayoutEffect } from "react";
 import { ScrollView, View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { SELECTED_EXERCISES_HEIGHT } from "@/core/shared/utils/constanst";
 import type { WorkoutDetail } from "@/core/workouts/domain/workout.entity";
 import { useUpdateWorkoutForm } from "@/core/workouts/presentation/components/workout-form/providers";
 
@@ -96,26 +97,42 @@ export function UpdateWorkoutScreen({ workout }: Props) {
 
 export function UpdateWorkoutScreenSkeleton() {
   return (
-    <ScrollView
-      contentContainerClassName="px-2 gap-y-6 pb-8"
-      showsVerticalScrollIndicator={false}
-      accessibilityRole="none"
-      accessibilityLabel="Cargando contenido"
-    >
-      {/* Section: Información de la rutina */}
-      <View>
-        <SkeletonGroup isSkeletonOnly variant="shimmer">
-          <SkeletonGroup.Item className="h-7 w-56 rounded-md mb-3" />
-        </SkeletonGroup>
-        <View className="rounded-lg bg-background border border-muted p-4 gap-y-4"></View>
-      </View>
+    <ScrollView className="px-3 flex-1" showsVerticalScrollIndicator={false}>
+      <View className="flex-1 gap-y-4 mb-10">
+        <Text type="h3">Información de la rutina</Text>
+        <Card>
+          <Card.Body className="gap-y-3">
+            <SkeletonGroup>
+              <SkeletonGroup.Item className="h-8 w-full rounded-md mb-3" />
+              <SkeletonGroup.Item className="h-24 w-full rounded-md mb-3" />
+            </SkeletonGroup>
+          </Card.Body>
+        </Card>
 
-      {/* Section: Lista de ejercicios */}
-      <View>
-        <SkeletonGroup isSkeletonOnly variant="shimmer">
-          <SkeletonGroup.Item className="h-7 w-48 rounded-md mb-3" />
-        </SkeletonGroup>
-        <View className="rounded-lg bg-background border border-muted p-4 gap-y-4"></View>
+        <Card>
+          <SkeletonGroup>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <SkeletonGroup.Item
+                className="w-full rounded-md mb-3"
+                key={index}
+                style={{
+                  height: SELECTED_EXERCISES_HEIGHT,
+                }}
+              />
+            ))}
+          </SkeletonGroup>
+        </Card>
+
+        <View>
+          <Button variant="secondary" className="items-center" isDisabled>
+            <Button.Label>Agregar ejercicios</Button.Label>
+            <MaterialIcons
+              name="arrow-forward-ios"
+              size={14}
+              className="text-accent"
+            />
+          </Button>
+        </View>
       </View>
     </ScrollView>
   );
