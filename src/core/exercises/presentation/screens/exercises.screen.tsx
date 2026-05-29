@@ -45,27 +45,31 @@ export function ExercisesScreen() {
           justifyContent: "space-between",
           marginBottom: 16,
         }}
-        contentContainerStyle={{ paddingVertical: 16 }}
+        contentContainerStyle={{ paddingTop: 16, paddingBottom: 124 }}
         showsVerticalScrollIndicator={false}
-        className="flex-1 "
+        className="flex-1"
         ListEmptyComponent={<Text>No hay ejercicios disponibles</Text>}
         onEndReachedThreshold={0.5}
         onEndReached={() => fetchNextPage()}
         ListFooterComponent={
-          <>{hasNextPage && <Text>No hay más ejercicios disponibles</Text>}</>
+          <View className="items-center">
+            {!hasNextPage && <Text>No hay más ejercicios disponibles</Text>}
+          </View>
         }
       />
     </View>
   );
 }
 
+const skeletonData = Array.from({
+  length: 2,
+}).map((_, index) => ({
+  id: index.toString(),
+}));
+
 export function ExercisesScreenSkeleton() {
   return (
-    <View
-      className="px-2 flex-1 gap-y-4"
-      accessibilityRole="none"
-      accessibilityLabel="Cargando contenido"
-    >
+    <View className="px-3 flex-1 gap-y-4">
       <SkeletonGroup variant="shimmer" className="gap-y-4">
         <SkeletonGroup.Item className="h-10 w-full rounded-xl" />
 
@@ -77,12 +81,30 @@ export function ExercisesScreenSkeleton() {
         </View>
       </SkeletonGroup>
 
-      <View className="gap-y-4">
-        <ExercisesItemSkeleton />
-        <ExercisesItemSkeleton />
-        <ExercisesItemSkeleton />
-        <ExercisesItemSkeleton />
-      </View>
+      <FlatList
+        numColumns={2}
+        initialNumToRender={10}
+        maxToRenderPerBatch={10}
+        windowSize={5}
+        removeClippedSubviews={true}
+        getItemLayout={(_, index) => ({
+          length: EXERCISES_ITEM_WIDTH,
+          offset: EXERCISES_ITEM_WIDTH * Math.floor(index / 2),
+          index,
+        })}
+        data={skeletonData}
+        keyExtractor={(item) => item.id}
+        renderItem={() => <ExercisesItemSkeleton />}
+        columnWrapperStyle={{
+          justifyContent: "space-between",
+          marginBottom: 16,
+        }}
+        contentContainerStyle={{ paddingVertical: 16 }}
+        showsVerticalScrollIndicator={false}
+        className="flex-1 "
+        ListEmptyComponent={<Text>No hay ejercicios disponibles</Text>}
+        onEndReachedThreshold={0.5}
+      />
     </View>
   );
 }

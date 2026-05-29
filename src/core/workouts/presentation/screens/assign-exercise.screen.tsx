@@ -70,14 +70,16 @@ export function AssingExercisesScreen({
           justifyContent: "space-between",
           marginBottom: 16,
         }}
-        contentContainerStyle={{ paddingVertical: 16 }}
+        contentContainerStyle={{ paddingTop: 16, paddingBottom: 124 }}
         showsVerticalScrollIndicator={false}
         className="flex-1 "
         ListEmptyComponent={<Text>No hay ejercicios disponibles</Text>}
         onEndReachedThreshold={0.5}
         onEndReached={() => fetchNextPage()}
         ListFooterComponent={
-          <>{hasNextPage && <Text>No hay más ejercicios disponibles</Text>}</>
+          <View className="items-center">
+            {!hasNextPage && <Text>No hay más ejercicios disponibles</Text>}
+          </View>
         }
       />
     </View>

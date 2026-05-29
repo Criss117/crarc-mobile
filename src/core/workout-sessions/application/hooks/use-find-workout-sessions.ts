@@ -15,7 +15,3 @@ export const findActiveWorkoutSessionQueryOptions = queryOptions({
 export function useFindAllWorkoutSessions() {
   return useSuspenseQuery(findAllWorkoutSessionsQueryOptions);
 }
-
-export function useFindActiveWorkoutSession() {
-  return useSuspenseQuery(findActiveWorkoutSessionQueryOptions);
-}

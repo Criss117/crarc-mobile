@@ -43,7 +43,7 @@ export async function initWorkoutSessionCommand(
           orderIndex: e.orderIndex,
           weightDisplayUnit: appConfigData.defaultWeightUnit,
           workoutSessionId: sessionCreated.id,
-          exerciseId: e.exerciseId,
+          exerciseId: e.id,
         })) satisfies WorkoutSessionExerciseInsert[],
       )
       .execute();

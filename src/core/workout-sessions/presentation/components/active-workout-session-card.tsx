@@ -9,7 +9,7 @@ import { View } from "react-native";
 import { MaterialIcons } from "@/core/shared/components/icons";
 import { SECONDS } from "@/core/shared/utils/constanst";
 import { timeAgo } from "@/core/shared/utils/timeago";
-import { useFindActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-find-workout-sessions";
+import { useFindActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
 
 export function ActiveWorkoutSessionCard() {
   const { data } = useFindActiveWorkoutSession();

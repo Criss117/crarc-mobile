@@ -1,8 +1,12 @@
+import { Image } from "expo-image";
+import { Link } from "expo-router";
 import { Button } from "heroui-native/button";
+import { PressableFeedback } from "heroui-native/pressable-feedback";
 import { Text } from "heroui-native/text";
 import { View } from "react-native";
 
 import { MaterialIcons } from "@/core/shared/components/icons";
+import { IMAGES } from "@/core/shared/utils/constanst";
 import { useActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
 import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
 import { CreateExerciseSet } from "./create-exercise-set";
@@ -29,8 +33,40 @@ export function WorkoutSessionExerciseItem({
 
   return (
     <View className="gap-y-3">
-      <View className="flex-row gap-x-2">
-        <Text type="h3" className="flex-1">
+      <View className="flex-row gap-x-2 h-16">
+        {exercise.image && (
+          <Link
+            href={{
+              pathname: "/exercises/[exerciseid]",
+              params: { exerciseid: exercise.id },
+            }}
+            asChild
+            push
+          >
+            <PressableFeedback>
+              <View className="border size-16 border-muted rounded-3xl relative">
+                <Image
+                  style={{
+                    width: 62,
+                    height: 62,
+                    aspectRatio: 1,
+                    borderRadius: 12,
+                  }}
+                  source={{ uri: exercise.image }}
+                  placeholder={IMAGES.placeholder}
+                  contentFit="contain"
+                  transition={1000}
+                />
+                <MaterialIcons
+                  name="question-mark"
+                  size={18}
+                  className="absolute bottom-1 right-1 text-muted"
+                />
+              </View>
+            </PressableFeedback>
+          </Link>
+        )}
+        <Text type="h3" className="flex-1 line-clamp-2">
           {exercise.name}
         </Text>
         <Button

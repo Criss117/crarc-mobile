@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import { Suspense } from "react";
 
-import { useFindActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-find-workout-sessions";
+import { useFindActiveWorkoutSession } from "@/core/workout-sessions/application/hooks/use-active-workout";
 import {
   ActiveWorkoutSessionScreen,
   ActiveWorkoutSessionScreenSkeleton,

@@ -30,7 +30,7 @@ function ExerciseCard({ exercise, isSelected }: Props) {
         padding: 0,
       }}
       className={cn(
-        "border border-transparent",
+        "border border-transparent gap-y-2",
         isSelected && "border-success",
       )}
     >
@@ -93,20 +93,25 @@ export function ExercisesItemSkeleton() {
       style={{
         flex: 1,
         width: EXERCISES_ITEM_WIDTH,
-        paddingTop: 0,
+        minHeight: EXERCISES_ITEM_HEIGHT,
+        padding: 0,
       }}
+      className="border border-transparent gap-y-2"
     >
-      <View className="flex-1 items-center justify-center">
+      <View className="items-center justify-center">
         <Image
           source={IMAGES.placeholder}
-          style={{ width: EXERCISES_ITEM_WIDTH, height: EXERCISES_ITEM_WIDTH }}
+          style={{
+            width: EXERCISES_ITEM_WIDTH,
+            height: EXERCISES_ITEM_WIDTH,
+          }}
           placeholder={IMAGES.placeholder}
           contentFit="cover"
           className="aspect-square"
           transition={1000}
         />
       </View>
-      <Card.Header className="flex-1 gap-y-1">
+      <Card.Header className="flex-1 px-4 pb-4">
         <SkeletonGroup className="gap-y-1">
           <SkeletonGroup.Item className="h-5 w-3/5 rounded-md" />
           <SkeletonGroup.Item className="h-4 w-4/5 rounded-md" />

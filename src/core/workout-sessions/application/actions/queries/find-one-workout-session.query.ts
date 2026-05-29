@@ -19,7 +19,8 @@ export async function findOneWorkoutSessionQuery(
   const allSessions = await dbConnection
     .select()
     .from(workoutSession)
-    .where(eq(workoutSession.id, query.workoutSessionId));
+    .where(eq(workoutSession.id, query.workoutSessionId))
+    .limit(1);
 
   const workoutSessionData = allSessions.at(0);
 
@@ -29,6 +30,7 @@ export async function findOneWorkoutSessionQuery(
     .select({
       ...getTableColumns(workoutSessionExercise),
       name: exercise.name,
+      image: exercise.image,
     })
     .from(workoutSessionExercise)
     .leftJoin(exercise, eq(exercise.id, workoutSessionExercise.exerciseId))

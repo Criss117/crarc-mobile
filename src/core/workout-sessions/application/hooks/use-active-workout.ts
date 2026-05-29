@@ -12,9 +12,12 @@ export const findActiveWorkoutSessionQueryOptions = queryOptions({
   queryFn: workoutSessionActions.queries.findActive,
 });
 
+export function useFindActiveWorkoutSession() {
+  return useSuspenseQuery(findActiveWorkoutSessionQueryOptions);
+}
+
 export function useActiveWorkoutSession() {
   const queryClient = useQueryClient();
-  const { data } = useSuspenseQuery(findActiveWorkoutSessionQueryOptions);
 
   const completeWorkout = useMutation({
     mutationKey: ["workout-session", "complete"],
@@ -58,7 +61,6 @@ export function useActiveWorkoutSession() {
   });
 
   return {
-    data,
     completeWorkout,
     saveExerciseSet,
     completeExercise,

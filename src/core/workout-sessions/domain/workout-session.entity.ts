@@ -15,6 +15,7 @@ export type WorkoutSessionDetail = WorkoutSessionSelect & {
       "createdAt" | "updatedAt" | "deletedAt"
     > & {
       name: string | null;
+      image: string | null;
       sets: Omit<
         WorkoutSessionExerciseSetSelect,
         "createdAt" | "updatedAt" | "deletedAt"
