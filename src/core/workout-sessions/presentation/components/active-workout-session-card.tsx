@@ -54,7 +54,7 @@ export function ActiveWorkoutSessionCard() {
           asChild
           push
           href={{
-            pathname: "/session/active",
+            pathname: "/session",
           }}
         >
           <Button>

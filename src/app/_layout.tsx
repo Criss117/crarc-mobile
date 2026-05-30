@@ -60,9 +60,9 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
-            name="session/active"
+            name="session"
             options={{
-              headerTitle: "Sesión de trabajo",
+              headerShown: false,
             }}
           />
         </Stack>

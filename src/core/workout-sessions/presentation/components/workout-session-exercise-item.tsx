@@ -66,7 +66,7 @@ export function WorkoutSessionExerciseItem({
             </PressableFeedback>
           </Link>
         )}
-        <Text variants={{ size: "h3" }} className="flex-1 line-clamp-2">
+        <Text variants={{ size: "h4" }} className="flex-1 line-clamp-2">
           {exercise.name}
         </Text>
         <Button

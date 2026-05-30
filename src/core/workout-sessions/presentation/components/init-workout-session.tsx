@@ -22,7 +22,7 @@ export function InitWorkoutSession({ workoutId }: Props) {
       {
         onSuccess: () => {
           router.push({
-            pathname: "/session/active",
+            pathname: "/session",
           });
         },
       },

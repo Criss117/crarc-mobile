@@ -1,10 +1,17 @@
+import { useFindOneExercise } from "@/core/exercises/application/hooks/use-find-exercises";
+import { GeistFonts } from "@/integrations/fonts";
 import {
   createMaterialTopTabNavigator,
   MaterialTopTabNavigationEventMap,
   MaterialTopTabNavigationOptions,
 } from "@react-navigation/material-top-tabs";
 import { ParamListBase, TabNavigationState } from "@react-navigation/native";
-import { withLayoutContext } from "expo-router";
+import {
+  Stack,
+  useGlobalSearchParams,
+  useRouter,
+  withLayoutContext,
+} from "expo-router";
 import { useThemeColor } from "heroui-native";
 
 const { Navigator } = createMaterialTopTabNavigator();
@@ -17,41 +24,62 @@ export const MaterialTopTabs = withLayoutContext<
 >(Navigator);
 
 export default function ExercisesTabsLayout() {
+  const router = useRouter();
   const [background, accent] = useThemeColor(["background", "accent"]);
+  const params = useGlobalSearchParams<{
+    exerciseid: string;
+  }>();
+  const { data } = useFindOneExercise({
+    exerciseId: params.exerciseid,
+  });
+
+  if (!data) {
+    router.replace({
+      pathname: "/exercises",
+    });
+  }
 
   return (
-    <MaterialTopTabs
-      screenOptions={{
-        tabBarStyle: {
-          backgroundColor: background,
-        },
-        tabBarLabelStyle: {
-          fontFamily: "geist-medium",
-        },
-        tabBarActiveTintColor: accent,
-        tabBarIndicatorStyle: {
-          backgroundColor: accent,
-        },
-      }}
-    >
-      <MaterialTopTabs.Screen
-        name="index"
+    <>
+      <Stack.Screen
         options={{
-          title: "Geist",
+          title: data?.name,
         }}
       />
-      <MaterialTopTabs.Screen
-        name="history"
-        options={{
-          title: "Historial",
+      <MaterialTopTabs
+        screenOptions={{
+          title: data?.name,
+          tabBarStyle: {
+            backgroundColor: background,
+          },
+          tabBarLabelStyle: {
+            fontFamily: GeistFonts.SemiBold,
+          },
+          tabBarActiveTintColor: accent,
+          tabBarIndicatorStyle: {
+            backgroundColor: accent,
+          },
         }}
-      />
-      <MaterialTopTabs.Screen
-        name="progress"
-        options={{
-          title: "Progreso",
-        }}
-      />
-    </MaterialTopTabs>
+      >
+        <MaterialTopTabs.Screen
+          name="index"
+          options={{
+            title: "Acerca de",
+          }}
+        />
+        <MaterialTopTabs.Screen
+          name="history"
+          options={{
+            title: "Historial",
+          }}
+        />
+        <MaterialTopTabs.Screen
+          name="progress"
+          options={{
+            title: "Progreso",
+          }}
+        />
+      </MaterialTopTabs>
+    </>
   );
 }

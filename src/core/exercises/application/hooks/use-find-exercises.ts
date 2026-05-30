@@ -1,6 +1,8 @@
 import {
   infiniteQueryOptions,
+  queryOptions,
   useSuspenseInfiniteQuery,
+  useSuspenseQuery,
 } from "@tanstack/react-query";
 import { useMemo } from "react";
 
@@ -12,6 +14,13 @@ type FindExercisesFilters = {
     muscleTypeId?: string;
   };
 };
+
+export function findOneExerciseQueryOptions(query: { exerciseId: string }) {
+  return queryOptions({
+    queryKey: ["exercise", query.exerciseId],
+    queryFn: () => exerciseActions.queries.findOne(query),
+  });
+}
 
 export function findManyExercisesQueryOptions(options: FindExercisesFilters) {
   const muscleTypeId =
@@ -26,7 +35,7 @@ export function findManyExercisesQueryOptions(options: FindExercisesFilters) {
     },
     queryKey: ["exercises", muscleTypeId, searchQuery],
     queryFn: ({ pageParam }) =>
-      exerciseActions.queries.findManyExercises({
+      exerciseActions.queries.findMany({
         cursor: {
           limit: 50,
           page: pageParam.page,
@@ -52,4 +61,8 @@ export function useFindManyExercises(options: FindExercisesFilters) {
   );
 
   return { ...query, data: planedData };
+}
+
+export function useFindOneExercise(query: { exerciseId: string }) {
+  return useSuspenseQuery(findOneExerciseQueryOptions(query));
 }
