@@ -6,7 +6,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import { type GeistVariants } from "@/integrations/fonts";
 
 export const textVariants = tv({
-  base: "font-medium",
+  base: "font-medium dark:text-white",
   variants: {
     size: {
       h1: "text-5xl font-black",

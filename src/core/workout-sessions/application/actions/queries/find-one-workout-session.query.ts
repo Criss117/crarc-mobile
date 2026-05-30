@@ -29,6 +29,7 @@ export async function findOneWorkoutSessionQuery(
   const allWorkoutSessionExercises = await dbConnection
     .select({
       ...getTableColumns(workoutSessionExercise),
+      exerciseId: exercise.id,
       name: exercise.name,
       image: exercise.image,
     })

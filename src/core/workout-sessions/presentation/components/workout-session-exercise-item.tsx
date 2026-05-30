@@ -1,5 +1,5 @@
 import { Image } from "expo-image";
-import { Link } from "expo-router";
+import { useRouter } from "expo-router";
 import { Button } from "heroui-native/button";
 import { PressableFeedback } from "heroui-native/pressable-feedback";
 import { View } from "react-native";
@@ -23,6 +23,7 @@ export function WorkoutSessionExerciseItem({
   exercise,
   selectExercise,
 }: Props) {
+  const router = useRouter();
   const { completeExercise } = useActiveWorkoutSession();
 
   const handleToggleComplete = () => {
@@ -35,36 +36,35 @@ export function WorkoutSessionExerciseItem({
     <View className="gap-y-3">
       <View className="flex-row gap-x-2 h-16">
         {exercise.image && (
-          <Link
-            href={{
-              pathname: "/exercises/[exerciseid]",
-              params: { exerciseid: exercise.id },
+          <PressableFeedback
+            onPress={() => {
+              if (!exercise.exerciseId) return;
+              router.push({
+                pathname: "/exercises/[exerciseid]",
+                params: { exerciseid: exercise.exerciseId },
+              });
             }}
-            asChild
-            push
           >
-            <PressableFeedback>
-              <View className="border size-16 border-muted rounded-3xl relative">
-                <Image
-                  style={{
-                    width: 62,
-                    height: 62,
-                    aspectRatio: 1,
-                    borderRadius: 12,
-                  }}
-                  source={{ uri: exercise.image }}
-                  placeholder={IMAGES.placeholder}
-                  contentFit="contain"
-                  transition={1000}
-                />
-                <MaterialIcons
-                  name="question-mark"
-                  size={18}
-                  className="absolute bottom-1 right-1 text-muted"
-                />
-              </View>
-            </PressableFeedback>
-          </Link>
+            <View className="border size-16 border-muted rounded-3xl relative">
+              <Image
+                style={{
+                  width: 62,
+                  height: 62,
+                  aspectRatio: 1,
+                  borderRadius: 12,
+                }}
+                source={{ uri: exercise.image }}
+                placeholder={IMAGES.placeholder}
+                contentFit="contain"
+                transition={1000}
+              />
+              <MaterialIcons
+                name="question-mark"
+                size={18}
+                className="absolute bottom-1 right-1 text-muted"
+              />
+            </View>
+          </PressableFeedback>
         )}
         <Text variants={{ size: "h4" }} className="flex-1 line-clamp-2">
           {exercise.name}
