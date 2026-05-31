@@ -28,8 +28,9 @@ export async function initWorkoutSessionCommand(
     const [sessionCreated] = await tx
       .insert(workoutSession)
       .values({
-        startedAt: new Date(),
         workoutId: workoutData.id,
+        name: workoutData.name,
+        startedAt: new Date(),
       })
       .returning({
         id: workoutSession.id,

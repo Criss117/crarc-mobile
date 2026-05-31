@@ -20,6 +20,7 @@ export const workoutSession = sqliteTable(
     workoutId: text("workout_id").references(() => workout.id, {
       onDelete: "set null",
     }),
+    name: text("name").notNull(),
     startedAt: integer("started_at", {
       mode: "timestamp_ms",
     }).notNull(),

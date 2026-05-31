@@ -82,6 +82,7 @@ CREATE INDEX `idx_workout_exercise_exercise` ON `workout_exercise` (`exercise_id
 CREATE TABLE `workout_session` (
 	`id` text PRIMARY KEY NOT NULL,
 	`workout_id` text,
+	`name` text NOT NULL,
 	`started_at` integer NOT NULL,
 	`ended_at` integer,
 	`notes` text,

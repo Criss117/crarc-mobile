@@ -49,6 +49,9 @@ export default function ExercisesTabsLayout() {
       <MaterialTopTabs
         screenOptions={{
           title: data?.name,
+          sceneStyle: {
+            backgroundColor: background,
+          },
           tabBarStyle: {
             backgroundColor: background,
           },
