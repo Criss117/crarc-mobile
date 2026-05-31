@@ -108,7 +108,12 @@ export default function TabsLayout() {
           tabBarActiveTintColor: accent,
         }}
       >
-        <Tabs.Screen name="index" />
+        <Tabs.Screen
+          name="index"
+          options={{
+            headerTitle: () => <TabHeader route={Routes.index} />,
+          }}
+        />
         <Tabs.Screen
           name="workouts"
           options={{

@@ -16,6 +16,7 @@ type Options = {
   filters: {
     muscleId?: string;
     searchQuery?: string;
+    byFavorite?: boolean;
   };
 };
 
@@ -25,6 +26,8 @@ export async function findManyExercisesQuery(options: Options) {
     ? 0
     : options.cursor.page * options.cursor.limit;
   const limit = options.cursor.limit || DEFAULT_LIMIT;
+
+  if (options.filters.byFavorite) filters.push(eq(exercise.favorite, true));
 
   if (options.filters.muscleId)
     filters.push(
