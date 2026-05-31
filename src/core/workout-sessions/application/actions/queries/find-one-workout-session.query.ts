@@ -1,4 +1,4 @@
-import { eq, getTableColumns, inArray } from "drizzle-orm";
+import { asc, eq, getTableColumns, inArray } from "drizzle-orm";
 
 import type { WorkoutSessionDetail } from "@/core/workout-sessions/domain/workout-session.entity";
 import { dbConnection } from "@/integrations/db";
@@ -45,7 +45,8 @@ export async function findOneWorkoutSessionQuery(
         workoutSessionExerciseSet.workoutSessionExerciseId,
         allWorkoutSessionExercises.map((e) => e.id),
       ),
-    );
+    )
+    .orderBy(asc(workoutSessionExerciseSet.createdAt));
 
   return {
     ...workoutSessionData,

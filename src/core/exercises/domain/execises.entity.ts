@@ -25,6 +25,7 @@ export type ExerciseDetails = ExerciseSelect & {
     id: string;
     name: string;
     createdAt: Date;
+    weightDisplayUnit: "lb" | "kg";
     sets: Omit<
       WorkoutSessionExerciseSetSelect,
       "createdAt" | "updatedAt" | "deletedAt" | "workoutSessionExerciseId"

@@ -1,4 +1,4 @@
-import { eq, sql } from "drizzle-orm";
+import { asc, eq, inArray } from "drizzle-orm";
 
 import type { ExerciseDetails } from "@/core/exercises/domain/execises.entity";
 import { dbConnection } from "@/integrations/db";
@@ -44,32 +44,13 @@ export async function findOneExerciseQuery(
       id: workoutSession.id,
       name: workoutSession.name,
       createdAt: workoutSession.createdAt,
-      sets: sql<string>`
-        COALESCE(
-          JSON_GROUP_ARRAY(
-            JSON_OBJECT(
-              'id', ${workoutSessionExerciseSet.id},
-              'notes', ${workoutSessionExerciseSet.notes},
-              'reps', ${workoutSessionExerciseSet.reps},
-              'rir', ${workoutSessionExerciseSet.rir},
-              'weightInGrams', ${workoutSessionExerciseSet.weightInGrams}
-            )
-          ) FILTER (WHERE ${workoutSessionExerciseSet.workoutSessionExerciseId} IS NOT NULL),
-          '[]'
-        )
-      `,
+      workoutExerciseId: workoutSessionExercise.id,
+      weightDisplayUnit: workoutSessionExercise.weightDisplayUnit,
     })
     .from(workoutSessionExercise)
     .innerJoin(
       workoutSession,
       eq(workoutSession.id, workoutSessionExercise.workoutSessionId),
-    )
-    .leftJoin(
-      workoutSessionExerciseSet,
-      eq(
-        workoutSessionExerciseSet.workoutSessionExerciseId,
-        workoutSessionExercise.id,
-      ),
     )
     .where(eq(workoutSessionExercise.exerciseId, data.id));
 
@@ -78,14 +59,33 @@ export async function findOneExerciseQuery(
     workoutSessionsQuery,
   ]);
 
+  const allSets = await dbConnection
+    .select({
+      id: workoutSessionExerciseSet.id,
+      notes: workoutSessionExerciseSet.notes,
+      workoutSessionExerciseId:
+        workoutSessionExerciseSet.workoutSessionExerciseId,
+      reps: workoutSessionExerciseSet.reps,
+      rir: workoutSessionExerciseSet.rir,
+      weightInGrams: workoutSessionExerciseSet.weightInGrams,
+    })
+    .from(workoutSessionExerciseSet)
+    .where(
+      inArray(
+        workoutSessionExerciseSet.workoutSessionExerciseId,
+        allWorkoutSessions.map((e) => e.workoutExerciseId),
+      ),
+    )
+    .orderBy(asc(workoutSessionExerciseSet.createdAt));
+
   return {
     ...data,
     muscles: allMuscles,
     workoutSessions: allWorkoutSessions.map((ws) => ({
       ...ws,
-      sets: JSON.parse(
-        ws.sets,
-      ) as ExerciseDetails["workoutSessions"][number]["sets"],
+      sets: allSets.filter(
+        (s) => s.workoutSessionExerciseId === ws.workoutExerciseId,
+      ),
     })),
   };
 }

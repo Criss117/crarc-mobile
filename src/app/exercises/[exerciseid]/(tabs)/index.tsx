@@ -8,13 +8,19 @@ import {
 } from "@/core/exercises/presentation/screens/exercise.screen";
 
 function Suspended({ exerciseId }: { exerciseId: string }) {
-  const { data } = useFindOneExercise({
+  const { data, refetch, isRefetching } = useFindOneExercise({
     exerciseId,
   });
 
   if (!data) return null;
 
-  return <ExerciseScreen exercise={data} />;
+  return (
+    <ExerciseScreen
+      exercise={data}
+      refresh={refetch}
+      isRefreshing={isRefetching}
+    />
+  );
 }
 
 export default function ExercisesTabs() {
